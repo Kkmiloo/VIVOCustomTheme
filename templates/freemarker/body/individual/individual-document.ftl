@@ -65,6 +65,8 @@
             </#if>
         </header>
 
+    <#include "individual-document-datetime.ftl">
+
     <#if individualProductExtension??>
         ${individualProductExtension}
     <#else>

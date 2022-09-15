@@ -1,6 +1,6 @@
 # Este archivo va en la ruta:
 #                               ${vivo-home}/rdf/display/everytime/
-#
+#                           ej: /usr/local/vivo/home/rdf/display/everytime
 
 @prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
