@@ -19,10 +19,10 @@
 <#include "individual-adminPanel.ftl">
 <section id="individual-intro" class="vcard" role="region" <@mf.sectionSchema individual/>>
 
-
-    <h2>  dasjkdlajskldasdjklasdjkla sd</h2>
-    <section id="share-contact" role="region">
+   <#--  <section id="share-contact" role="region">
         <#-- Image -->
+        <#-- En principio no se necesita imagen para los articulos -->
+        <#--
         <#assign individualImage>
         <@p.image individual=individual
             propertyGroups=propertyGroups
@@ -35,7 +35,9 @@
             <#assign infoClass = 'class="withThumb"'/>
         </#if>
         <div id="photo-wrapper">${individualImage}</div>
-    </section>
+       
+    </section>  -->
+
     <!-- start section individual-info -->
     <section id="individual-info" ${infoClass!} role="region">
 
@@ -44,6 +46,10 @@
         </#if>
 
         <header>
+                <@p.mostSpecificTypes individual />
+                <#--- Link del individuo para compartir, ademas de permitir la descarga en vista RDF con la infomación-->
+               <#--   <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>  -->
+                
             <#if relatedSubject??>
                 <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
                 <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
@@ -55,9 +61,7 @@
                         <@p.deleteIndividualLink individual />
                     </#if>
                     <#--  Most-specific types -->
-                    <@p.mostSpecificTypes individual />
-                    <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>
-                </h1>
+                  </h1>
             </#if>
         </header>
 
