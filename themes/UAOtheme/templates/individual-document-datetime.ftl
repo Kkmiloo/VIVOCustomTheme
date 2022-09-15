@@ -1,3 +1,5 @@
+<#import "lib-datetime.ftl" as dt>
+
 <#if dateTimeResults?has_content>
     <h2 id="facultyResearchAreas" class="mainPropGroup">
         Faculty Research Areas}
@@ -8,6 +10,7 @@
                 <a >
                     ${resultRow["displayDate"]}
                     ${resultRow["dateTime"]}
+                    
                 </a>
             </li>
         </#list>
