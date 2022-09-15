@@ -1,0 +1,25 @@
+# Este archivo va en la ruta:
+#                               ${vivo-home}/rdf/display/everytime/
+#
+
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+ 
+bibo:Document display:hasDataGetter display:getDateTimeDocument .
+
+display:getDateTimeDocument
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "dateTimeResults";
+    display:query """
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+
+            select DISTINCT (CONCAT(STR(YEAR(?dateTime)), 
+                                "/", 
+                                STR(MONTH(?dateTime)), 
+                                "/", 
+                                STR(DAY(?dateTime))) as ?displayDate) ?dateTime
+            where { 
+                ?individualURI vivo:dateTimeValue ?dateP .
+                ?dateP vivo:dateTime ?dateTime 
+            }
+      """ .
