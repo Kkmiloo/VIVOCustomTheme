@@ -66,6 +66,7 @@
         </header>
 
     <#include "individual-document-datetime.ftl">
+    <#include "individual-document-authors.ftl">
 
     <#if individualProductExtension??>
         ${individualProductExtension}
