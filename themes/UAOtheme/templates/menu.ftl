@@ -12,7 +12,7 @@
     </ul>
 </nav>
 
-<div id="wrapper-content" role="main">
+<article  class="main-detail-container investigacion header-margin" role="main">
     <#if flash?has_content>
         <#if flash?starts_with(i18n().menu_welcomestart) >
             <section  id="welcome-msg-container" role="container">
