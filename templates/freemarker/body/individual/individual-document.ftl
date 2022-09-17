@@ -17,7 +17,42 @@
 <#-- Default individual profile page template -->
 <#--@dumpAll /-->
 <#include "individual-adminPanel.ftl">
-<section id="individual-intro" class="vcard" role="region" <@mf.sectionSchema individual/>>
+<section id="individual-intro hero show-breadcrumb" class="vcard" role="region" <@mf.sectionSchema individual/>>
+
+
+    <div class="hero-container">
+        <div class="article details">
+            <div class="margin-details">
+                <#if individualProductExtensionPreHeader??>
+                    ${individualProductExtensionPreHeader}
+                </#if>
+                <@p.mostSpecificTypes individual />
+                <#--- Link del individuo para compartir, ademas de permitir la descarga en vista RDF con la infomación-->
+                <#--   <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>  -->
+                
+                <#if relatedSubject??>
+                    <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
+                    <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
+                <#else>
+                <h1 itemprop="name">
+                    <#-- Label -->
+                    <@p.label individual editable labelCount localesCount languageCount/>
+                    <#if editable>
+                        <@p.deleteIndividualLink individual />
+                    </#if>
+                    <#--  Most-specific types -->
+                </h1>
+                <#include "individual-document-datetime.ftl">
+                <#include "individual-document-authors.ftl">
+
+                <#if individualProductExtension??>
+                    ${individualProductExtension}
+                <#else>
+
+        
+            </div>
+        </div>
+    </div>
 
    <#--  <section id="share-contact" role="region">
         <#-- Image -->
@@ -41,38 +76,9 @@
     <!-- start section individual-info -->
     <section id="individual-info" ${infoClass!} role="region">
 
-        <#if individualProductExtensionPreHeader??>
-            ${individualProductExtensionPreHeader}
-        </#if>
-
-        <header>
-                <@p.mostSpecificTypes individual />
-                <#--- Link del individuo para compartir, ademas de permitir la descarga en vista RDF con la infomación-->
-               <#--   <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>  -->
-                
-            <#if relatedSubject??>
-                <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
-                <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
-            <#else>
-                <h1 class="fn" itemprop="name">
-                    <#-- Label -->
-                    <@p.label individual editable labelCount localesCount languageCount/>
-                    <#if editable>
-                        <@p.deleteIndividualLink individual />
-                    </#if>
-                    <#--  Most-specific types -->
-                  </h1>
-            </#if>
-        </header>
-
-    <#include "individual-document-datetime.ftl">
-    <#include "individual-document-authors.ftl">
-
-    <#if individualProductExtension??>
-        ${individualProductExtension}
-    <#else>
-            </section> <!-- individual-info -->
-        </section> <!-- individual-intro -->
+        
+    </section> <!-- individual-info -->
+</section> <!-- individual-intro -->
     </#if>
 
 <#assign nameForOtherGroup = "${i18n().other}">
