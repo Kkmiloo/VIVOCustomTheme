@@ -17,7 +17,7 @@
 <#-- Default individual profile page template -->
 <#--@dumpAll /-->
 <#include "individual-adminPanel.ftl">
-<section id="individual-intro hero show-breadcrumb" class="vcard" role="region" <@mf.sectionSchema individual/>>
+<section class="vcard hero show-breadcrumb" role="region" <@mf.sectionSchema individual/>>
 
 
     <div class="hero-container">
