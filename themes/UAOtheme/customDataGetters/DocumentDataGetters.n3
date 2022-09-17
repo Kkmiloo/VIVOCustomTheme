@@ -24,29 +24,26 @@ display:getDateTimeDocument
                 ?dateP vivo:dateTimePrecision ?dtp . 
             }
       """ .
-
 display:getAuthors
     a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
-    display:saveToVar "authorsResults";
+    display:saveToVar "authorsInfoResults" ;
     display:query """
-            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-            PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>      
-            PREFIX vivo: <http://vivoweb.org/ontology/core#>  
+                PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
+                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>      
+                PREFIX vivo: <http://vivoweb.org/ontology/core#>  
 
-            SELECT ?fullName ?person ?titleLabel  ?imgPath   
-            WHERE {  
-            ?individualURI vivo:relatedBy ?rb .
-            ?rb vivo:relates ?person .
-            ?person a foaf:Person .
-            ?person rdfs:label ?fullName .
-            ?person  <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#mostSpecificType> ?title . 
-            ?title rdfs:label ?titleLabel .
-            filter (lang(?titleLabel) = "en-US" ) 
-            optional {
-                ?person vitro:mainImage ?mainImage .
-                ?mainImage vitro:thumbnailImage ?thumbnailImage .
-                ?thumbnailImage vitro:downloadLocation ?imgPath 
-            }
+                SELECT DISTINCT ?fullName ?person ?imgPath
+                WHERE {  
+                ?individualURI vivo:relatedBy ?rb .
+                ?rb vivo:relates ?person .
+                ?person a foaf:Person .
+                ?person rdfs:label ?fullName .
+                optional {
+                    ?person vitro:mainImage ?mainImage .
+                    ?mainImage vitro:thumbnailImage ?thumbnailImage .
+                    ?thumbnailImage vitro:downloadLocation ?imgPath 
+                }
+            
             }
       """ .
