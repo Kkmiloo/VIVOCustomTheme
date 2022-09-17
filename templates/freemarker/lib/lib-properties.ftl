@@ -330,8 +330,14 @@ name will be used as the label. -->
     </#if>
 </#macro>
 
-<#-- Most specific types -->
+<#-- Most specific types to Document- group Page -->
 <#macro mostSpecificTypes individual >
+    <#list individual.mostSpecificTypes as type>
+        <a class="category-tag">${type}</a>
+    </#list>
+</#macro>
+<#-- Most specific types to Person Page -->
+<#macro mostSpecificTypesResearcher individual >
     <#list individual.mostSpecificTypes as type>
         <span class="display-title">${type}</span>
     </#list>
