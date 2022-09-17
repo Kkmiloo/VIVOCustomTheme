@@ -18,8 +18,10 @@
     </#if>
 </#if>
 
-<#include "stylesheets.ftl">
-<link rel="stylesheet" href="${urls.theme}/css/screen.css" />
+<#--  <#include "stylesheets.ftl">  -->
+<#--  <link rel="stylesheet" href="${urls.theme}/css/screen.css" />  -->
+<link rel="stylesheet" href="${urls.theme}/css/uao.css" />
+<link rel="stylesheet" href="${urls.theme}/css/test.css" />
 
 <#include "headScripts.ftl">
 
