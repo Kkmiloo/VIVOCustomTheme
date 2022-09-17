@@ -34,6 +34,7 @@
                     <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
                     <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
                 <#else>
+                
                 <h1 itemprop="name">
                     <#-- Label -->
                     <@p.label individual editable labelCount localesCount languageCount/>
@@ -42,13 +43,14 @@
                     </#if>
                     <#--  Most-specific types -->
                 </h1>
+                </#if>
                 <#include "individual-document-datetime.ftl">
                 <#include "individual-document-authors.ftl">
 
                 <#if individualProductExtension??>
                     ${individualProductExtension}
                 <#else>
-
+                </#if>
         
             </div>
         </div>
@@ -79,7 +81,7 @@
         
     </section> <!-- individual-info -->
 </section> <!-- individual-intro -->
-    </#if>
+    
 
 <#assign nameForOtherGroup = "${i18n().other}">
 
