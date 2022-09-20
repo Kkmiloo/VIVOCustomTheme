@@ -9,9 +9,9 @@
     </head>
 
     <body class="${bodyClasses!}" onload="${bodyOnload!}">
-        <#include "identity.ftl">
-        <#include "search.ftl" >
-        <#include "menu.ftl">
+       <#--   <#include "identity.ftl">  -->
+       <#--   <#include "search.ftl" >  -->
+        <#include "headerMenu.ftl">
 
 		<#-- VIVO OpenSocial Extension by UCSF -->
 		<#if openSocial??>
