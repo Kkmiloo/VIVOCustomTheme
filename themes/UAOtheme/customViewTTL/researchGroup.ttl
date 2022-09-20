@@ -5,4 +5,4 @@
  
 vivo:ResearchOrganization
       vitro:customDisplayViewAnnot
-              "individual--group-page.ftl"^^xsd:string .
+              "individual--vivo-group.ftl"^^xsd:string .
