@@ -333,7 +333,7 @@ name will be used as the label. -->
 <#-- Most specific types to Document- group Page -->
 <#macro mostSpecificTypes individual >
     <#list individual.mostSpecificTypes as type>
-        <a class="category-tag">${type}</a>
+        <span class="ontology-tag">${type}</span>
     </#list>
 </#macro>
 <#-- Most specific types to Person Page -->
