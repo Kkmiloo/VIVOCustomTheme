@@ -28,4 +28,4 @@
     </#assign>
 </#if>
 
-<#include "individual.ftl">
+<#include "individual--group.ftl">
