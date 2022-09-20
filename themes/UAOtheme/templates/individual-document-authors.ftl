@@ -5,8 +5,8 @@
               <li>
                   <article class="profile-card-article">
                     <a href='${urls.base}/individual${resultRow["person"]?substring(resultRow["person"]?last_index_of("/"))}'>
-                      <div class="pca-top">
-                        <figure class="pca-figure">
+                      <div class="pc-top">
+                        <figure class="pc-figure">
                         <#if resultRow["imgPath"]??>
                             <img
                             src = '${urls.base}/individual${resultRow["imgPath"]?substring(resultRow["imgPath"]?last_index_of("/"))}'
@@ -22,8 +22,8 @@
                          
                         </figure>
                         <div>
-                          <div class="pca-name">${resultRow["fullName"]}</div>
-                          <div class="pca-occupation">Docente Investigador</div>
+                          <div class="pc-name">${resultRow["fullName"]}</div>
+                          <div class="pc-occupation">Docente Investigador</div>
                         </div>
                       </div>
                     </a>
