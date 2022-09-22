@@ -17,7 +17,6 @@
 <#-- Default individual profile page template -->
 <#--@dumpAll /-->
 <#include "individual-adminPanel.ftl">
-
   <section class="hero show-breadcrumb">
         <div class="hero-container group-container">
           <div class="group-image-container"> <#--  Most-specific types -->
@@ -32,34 +31,22 @@
           </div>
           <div class="group details">
             <div class="margin-details">
-              <h1 class="line-separator">
-                Grupo de Investigación en Modelado, Análisis y Simulación de
-                Procesos Ambientales e Industriales – PAI+
-              </h1>
-              <div class="">
-                <div>
-                  <h4>Coordinador</h4>
-                  <div class="margin-profile-card">
-                    <article class="profile-card-container">
-                      <a href="#">
-                        <div class="pc-top">
-                          <figure class="pc-figure">
-                            <img
-                              src="../../../images/example-image.jpg"
-                              alt="imagen de perfil de Camilo"
-                            />
-                          </figure>
-                          <div>
-                            <div class="pc-name">Camilo Reyes Granada</div>
-                            <div class="pc-occupation">
-                              Docente Investigador
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </article>
-                  </div>
-                </div>
+                <#if relatedSubject??>
+                    <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
+                    <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
+                <#else>
+                
+                <h1 itemprop="name" class="line-separator">
+                    <#-- Label -->
+                    <@p.label individual editable labelCount localesCount languageCount/>
+                    <#if editable>
+                        <@p.deleteIndividualLink individual />
+                    </#if>
+                    <#--  Most-specific types -->
+                </#if>
+                </h1>
+                    <#include "individual-group-cordinator.ftl"> 
+
               </div>
             </div>
           </div>
@@ -67,9 +54,9 @@
       </section>
 
 
-<section id="individual-intro" class="vcard" role="region" <@mf.sectionSchema individual/>>
+<#--  <section id="individual-intro" class="vcard" role="region" <@mf.sectionSchema individual/>>
     <section id="share-contact" role="region">
-        <#-- Image -->
+        <#-- Image 
         <#assign individualImage>
         <@p.image individual=individual
             propertyGroups=propertyGroups
@@ -83,7 +70,7 @@
         </#if>
         <div id="photo-wrapper">${individualImage}</div>
     </section>
-    <!-- start section individual-info -->
+    <!-- start section individual-info 
     <section id="individual-info" ${infoClass!} role="region">
 
         <#if individualProductExtensionPreHeader??>
@@ -96,7 +83,7 @@
                 <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
             <#else>
                 <h1 class="fn" itemprop="name">
-                    <#-- Label -->
+                    <#-- Label 
                     <@p.label individual editable labelCount localesCount languageCount/>
                     <#if editable>
                         <@p.deleteIndividualLink individual />
@@ -108,10 +95,10 @@
     <#if individualProductExtension??>
         ${individualProductExtension}
     <#else>
-            </section> <!-- individual-info -->
-        </section> <!-- individual-intro -->
+    </section> <!-- individual-info 
+</section> <!-- individual-intro 
     </#if>
-
+  -->
 <#assign nameForOtherGroup = "${i18n().other}">
 
 <!-- Property group menu or tabs -->
@@ -123,7 +110,6 @@
 
      <#include "individual-property-group-menus.ftl">
 -->
-
 <#include "individual-property-group-tabs.ftl">
 
 <#assign rdfUrl = individual.rdfUrl>
