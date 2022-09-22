@@ -10,22 +10,22 @@
 <section id="noJavascriptContainer" class="hidden">
 <section id="browse-by" role="region">
     <nav role="navigation">
-        <ul id="browse-classes">
+<#--          <ul id="browse-classes">
             <#list vClassGroup?sort_by("displayRank") as vClass>
                 <#------------------------------------------------------------
                 Need to replace vClassCamel with full URL that allows function
                 to degrade gracefully in absence of JavaScript. Something
                 similar to what Brian had setup with widget-browse.ftl
-                ------------------------------------------------------------->
+                -------------------------------------------------------------
                 <#assign vClassCamel = str.camelCase(vClass.name) />
-                <#-- Only display vClasses with individuals -->
+                <#-- Only display vClasses with individuals 
                 <#if (vClass.entityCount > 0)>
                     <li id="${vClassCamel}"><a href="#${vClassCamel}" title="${i18n().browse_all_in_class}" data-uri="${vClass.URI}">${vClass.name} <span class="count-classes">(${vClass.entityCount})</span></a></li>
                 </#if>
             </#list>
-        </ul>
-        <nav id="alpha-browse-container" role="navigation">
-            <h3 class="selected-class"></h3>
+        </ul>  -->
+        <nav id="alpha-browse-container" class="letters" role="navigation">
+<#--              <h3 class="selected-class"></h3>  -->
             <#assign alphabet = ["A", "B", "C", "D", "E", "F", "G" "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] />
             <ul id="alpha-browse-individuals">
                 <li><a href="#" class="selected" data-alpha="all" title="${i18n().select_all}">${i18n().all}</a></li>
@@ -36,7 +36,7 @@
         </nav>
     </nav>
 
-    <section id="individuals-in-class" role="region">
+    <section id="individuals-in-class" class="${currentServlet}" role="region">
         <ul role="list">
 
             <#-- Will be populated dynamically via AJAX request -->
