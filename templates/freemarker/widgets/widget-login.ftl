@@ -28,10 +28,11 @@
         </noscript>
     </#if>
 
-    <section id="login" class="hidden">
-        <h2>${i18n().login_button}</h2>
 
-        <#if infoMessage??>
+
+   <section id="login" class="container-log hidden">
+   
+<#--          <#if infoMessage??>
             <h3>${infoMessage}</h3>
         </#if>
 
@@ -48,32 +49,39 @@
                 <#assign infoClassHide = 'class="vivoAccount"'/>
 
                 <p class="external-auth"><a class="blue button" href="${externalAuthUrl}" title="${i18n().external_auth_name}">${i18n().external_login_text}</a></p>
-                <!--<p class="or-auth">or</p>-->
-                <h3 class="internal-auth"><!--Log in using your--> <b>${i18n().or}</b> ${siteName} ${i18n().account}</h3>
+                <!--<p class="or-auth">or</p>
+                <h3 class="internal-auth"><!--Log in using your <b>${i18n().or}</b> ${siteName} ${i18n().account}</h3>
 
             </#if>
 
             <div ${infoClassHide} ${infoClassShow}>
+            </div>  -->
+        
+        <form role="form" id="login-form" action="${formAction}"   method="post" name="login-form" class="login-form"  >
 
-                <label for="loginName">${i18n().email_capitalized}</label>
-                <input id="loginName" name="loginName" class="text-field focus" type="text" value="${loginName!}" autocapitalize="off" required autofocus />
+            <h2 class="o-h2">Inicio de sesión</h2>
 
-                <label for="loginPassword">${i18n().password_capitalized}</label>
-                <input id="loginPassword" name="loginPassword" class="text-field" type="password" required />
 
-                <p class="submit"><input name="loginForm" class="green button" type="submit" value="${i18n().login_button}"/></p>
 
-                <#-- NC: remember me won't be ready for r1.2
-                <input class="checkbox-remember-me" name="remember-me" type="checkbox" value="" />
-                <label class="label-remember-me" for="remember-me">Remember me</label> -->
-                <#-- mb863: forgot password and request an account won't be part of VIVO r1.2
-                <p class="forgot-password"><a href="#" title="forgot password">Forgot your password?</a></p>
-                <p class="request-account"><a class="blue button" href="#" title="request an account">Request an account</a> </p>
-                -->
+                <input class="flex-input input-login ts-6" type="text" name="loginName" id="loginName"
+                    placeholder="Correo institucional, usuario ó documento" value="${loginName!}" required autofocus />
+
+                <input class="flex-input input-login ts-6" type="password" name="loginPassword" id="loginPassword" placeholder="Contraseña"/>
+
+
+            <div class="column">
+                <a class="ts-6" href="">No puedes acceder a la cuenta?</a>
+                <p class="submit"><input name="loginForm" type="submit" value="Acceder" value="${i18n().login_button}" class="MyButton"> </p>
+
             </div>
+
+
         </form>
 
-    </section><!-- #log-in -->
+    </section>
+
+
+
 </#macro>
 
 <#macro forcePasswordChange>
