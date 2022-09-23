@@ -5,7 +5,7 @@
                 <h4>Coordinador</h4>
                 <div class="margin-profile-card">
                   <article class="profile-card-container">
-                    <a href="#">
+                    <a href='${urls.base}/individual${resultRow["person"]?substring(resultRow["person"]?last_index_of("/"))}'>
                       <div class="pc-top">
                         <figure class="pc-figure">
                 <#if resultRow["imgPath"]??>
