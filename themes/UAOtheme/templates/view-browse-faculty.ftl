@@ -1,6 +1,6 @@
 <#import "lib-properties.ftl" as p>
  
-<li  role="listitem" role="navigation">
+<li  role="listitem" class="browse-margin" role="navigation">
 
     <article class="profile-card-container">
                 <a href="${individual.profileUrl}" title="View the profile page for
