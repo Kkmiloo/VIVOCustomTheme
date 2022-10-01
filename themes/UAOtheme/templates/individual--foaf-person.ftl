@@ -23,7 +23,7 @@
 
 <#--add the VIVO-ORCID interface -->
 <#include "individual-orcidInterface.ftl">
-
+ <#include "individual-adminPanel.ftl">
 <section id="individual-intro" class="vcard person" role="region">
 
     <section id="share-contact" role="region">
@@ -53,34 +53,13 @@
 				</#if>
             </span>
         </div>
-        <#include "individual-contactInfo.ftl">
+
 
         <!-- Websites -->
         <#include "individual-webpage.ftl">
     </section>
 
     <section id="individual-info" ${infoClass!} role="region">
-    <section id="right-hand-column" role="region">
-        <#include "individual-visualizationFoafPerson.ftl">
-        <#if editable>
-            <#if claimSources?size &gt; 0>
-                <br />${i18n().claim_publications_by}<br />
-                <#if claimSources?seq_contains("doi")>
-                    <form action="${urls.base}/createAndLink/doi" method="get" style="float: left;">
-                        <input type="hidden" name="profileUri" value="${individual.uri}" />
-                        <input type="submit" class="submit" value="${i18n().claim_publications_by_doi}" />
-                    </form>
-                </#if>
-                <#if claimSources?seq_contains("pmid")>
-                    <form action="${urls.base}/createAndLink/pmid" method="get" style="float: right;">
-                        <input type="hidden" name="profileUri" value="${individual.uri}" />
-                        <input type="submit" class="submit" value="${i18n().claim_publications_by_pmid}" />
-                    </form>
-                </#if>
-            </#if>
-        </#if>
-        </section>
-        <#include "individual-adminPanel.ftl">
 
         <header>
             <#if relatedSubject??>
@@ -108,25 +87,41 @@
                     </#if>
                     <#-- If preferredTitle is unpopulated, display mostSpecificTypes -->
                     <#if ! (title.statements)?has_content>
-                        <@p.mostSpecificTypes individual />
+                        <@p.mostSpecificTypesResearcher individual />
                     </#if>
                 </section>
             </#if>
-            <!-- Positions -->
-            <#include "individual-positions.ftl">
+
         </header>
 
-        <!-- Overview -->
-        <#include "individual-overview.ftl">
-
-        <!-- Research Areas -->
-        <#include "individual-researchAreas.ftl">
 
         <!-- Geographic Focus -->
-        <#include "individual-geographicFocus.ftl">
+  <#--        <#include "individual-geographicFocus.ftl">  -->
 
 		<#include "individual-openSocial.ftl">
+                <#include "individual-contactInfo.ftl">
     </section>
+
+    <section id="right-hand-column" role="region">
+        <#include "individual-visualizationFoafPerson.ftl">
+        <#if editable>
+            <#if claimSources?size &gt; 0>
+                <br />${i18n().claim_publications_by}<br />
+                <#if claimSources?seq_contains("doi")>
+                    <form action="${urls.base}/createAndLink/doi" method="get" style="float: left;">
+                        <input type="hidden" name="profileUri" value="${individual.uri}" />
+                        <input type="submit" class="submit" value="${i18n().claim_publications_by_doi}" />
+                    </form>
+                </#if>
+                <#if claimSources?seq_contains("pmid")>
+                    <form action="${urls.base}/createAndLink/pmid" method="get" style="float: right;">
+                        <input type="hidden" name="profileUri" value="${individual.uri}" />
+                        <input type="submit" class="submit" value="${i18n().claim_publications_by_pmid}" />
+                    </form>
+                </#if>
+            </#if>
+        </#if>
+        </section>
 
 </span></section>
 
@@ -150,6 +145,15 @@
 -->
 
 <#include "individual-property-group-tabs.ftl">
+
+            <!-- Positions -->
+            <#include "individual-positions.ftl">
+            
+        <!-- Overview -->
+        <#include "individual-overview.ftl">
+
+        <!-- Research Areas -->
+        <#include "individual-researchAreas.ftl">
 
 <#assign rdfUrl = individual.rdfUrl>
 
