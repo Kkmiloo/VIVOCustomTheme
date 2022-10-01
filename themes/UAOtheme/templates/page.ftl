@@ -14,6 +14,7 @@
         <#include "headerMenu.ftl">
 
 		<#-- VIVO OpenSocial Extension by UCSF -->
+        <article  class="main-detail-container header-margin" role="main">
 		<#if openSocial??>
 			<#if openSocial.visible>
             	<div id="gadgets-tools" class="gadgets-gadget-parent"></div>
@@ -21,7 +22,7 @@
 		</#if>
 
         ${body}
-
+        </article>
         <#include "footer.ftl">
     </body>
 </html>
