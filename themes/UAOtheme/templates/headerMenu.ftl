@@ -9,13 +9,15 @@
         <div id="hmdb-logo-container">
             <a id="hmdb-logo" href="https://www.uao.edu.co"></a>
         </div>
+        <#if currentServlet!='home'>
+        <#include "search.ftl"> 
+        </#if>
         <ul role="list">
             <#list menu.items as item>
             <li role="listitem"><a href="${item.url}" title="${item.linkText} ${i18n().menu_item}" <#if item.active> class="selected" </#if>>${item.linkText}</a></li>
             </#list>
 
             <#include "languageSelector.ftl">
-            <li role="listitem"><a href="${urls.index}" title="${i18n().identity_index}">${i18n().identity_index}</a></li>
             <#if user.loggedIn>
                 <#-- COMMENTING OUT THE EDIT PAGE LINK FOR RELEASE 1.5. WE NEED TO IMPLEMENT THIS IN A MORE
                      USER FRIENDLY WAY. PERHAPS INCLUDE A LINK ON THE PAGES THEMSELVES AND DISPLAY IF THE
@@ -25,16 +27,16 @@
                         <li role="listitem"><a href="${page.URLToEditPage}" title="${i18n().identity_edit}">${i18n().identity_edit}</a></li>
                      </#if>
                 -->
-                <#if user.hasSiteAdminAccess>
-                    <li role="listitem"><a href="${urls.siteAdmin}" title="${i18n().identity_admin}">${i18n().identity_admin}</a></li>
-                </#if>
-                    <li>
-                        <ul class="dropdown">
-                            <li><a href="#" title="${i18n().identity_user}">${user.loginName}</a>
-                                <ul >
+                    <li class="dropdown">
+                        <ul >
+                            <li><a href="#" title="${i18n().identity_user}">Hola, ${user.loginName}</a>
+                                <ul class="dropdown-content" >
                                      <#if user.hasProfile>
                                          <li role="listitem"><a href="${user.profileUrl}" title="${i18n().identity_myprofile}">${i18n().identity_myprofile}</a></li>
                                      </#if>
+                                                                    <#if user.hasSiteAdminAccess>
+                                    <li role="listitem"><a href="${urls.siteAdmin}" title="${i18n().identity_admin}">${i18n().identity_admin}</a></li>
+                                </#if>
                                      <#if urls.myAccount??>
                                          <li role="listitem"><a href="${urls.myAccount}" title="${i18n().identity_myaccount}">${i18n().identity_myaccount}</a></li>
                                      </#if>
@@ -55,7 +57,7 @@
     </div>
 </header>
 
-<article  class="main-detail-container header-margin" role="main">
+
     <#if flash?has_content>
         <#if flash?starts_with(i18n().menu_welcomestart) >
             <section  id="welcome-msg-container" role="container">
