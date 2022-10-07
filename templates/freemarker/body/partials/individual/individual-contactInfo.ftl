@@ -7,14 +7,11 @@
 <#assign addlEmail = propertyGroups.pullProperty("http://purl.obolibrary.org/obo/ARG_2000028","http://www.w3.org/2006/vcard/ns#Email")!>
 
 <#if phone?has_content || primaryEmail?has_content || addlEmail?has_content >
-    <ul style="font-size:1em;padding-bottom:4px"><li><strong>${i18n().contact_info}</strong></li></ul>
+    <#--  <ul style="font-size:1em;padding-bottom:4px"><li><strong>${i18n().contact_info}</strong></li></ul>  -->
 </#if>
 
-<#-- Primary Email -->
-<@emailLinks "primaryEmail" primaryEmail />
-
 <#-- Additional Emails -->
-<@emailLinks "email" addlEmail />
+<#--  <@emailLinks "email" addlEmail />  -->
 
 <#-- Phone -->
 
@@ -24,7 +21,7 @@
         <ul id="individual-phone" role="list" <#if editable>style="list-style:none;margin-left:0;"</#if>>
             <#list phone.statements as statement>
                 <li role="listitem">
-                    <span itemprop="telephone">${statement.number!}</span>
+                    <span class="phone" itemprop="telephone">${statement.number!}</span>
                     <@p.editingLinks "${phone.localName}" "${phone.name}" statement editable phone.rangeUri />
                 </li>
             </#list>
@@ -32,10 +29,13 @@
     </#if>
 </#if>
 
+<#-- Primary Email -->
+<@emailLinks "primaryEmail" primaryEmail />
+
 <#macro emailLinks property email>
     <#if property == "primaryEmail">
         <#local listId = "primary-email">
-        <#local label = "${i18n().primary_email_capitalized}">
+        <#local label = "${i18n().primary_email_capitalized}"> <#--    -->
     <#else>
         <#local listId = "additional-emails">
         <#local label = "${i18n().additional_emails_capitalized}">
