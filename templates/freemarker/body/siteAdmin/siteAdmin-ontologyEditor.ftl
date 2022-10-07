@@ -4,7 +4,14 @@
 
 <#if ontologyEditor?has_content>
     <section class="pageBodyGroup" role="region">
-        <h3>${i18n().ontology_editor}</h3>
+            <article class="directory-card" > 
+
+            <header>
+                      <h1>
+                        <div class="clickItem">${i18n().ontology_editor}</div>
+                      </h1>
+            </header>
+
 
         <#if ontologyEditor.tboxReasonerStatus?has_content>
             <div class="notice">
@@ -36,6 +43,6 @@
             <li role="listitem"><a href="${ontologyEditor.urls.fauxPropertyList}" title="${i18n().data_property_hierarchy}">${i18n().faux_property_listing}</a></li>
             <li role="listitem"><a href="${ontologyEditor.urls.propertyGroups}" title="${i18n().property_groups}">${i18n().property_groups}</a></li>
         </ul>
-
+ </article>
     </section>
 </#if>

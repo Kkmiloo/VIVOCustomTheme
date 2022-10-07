@@ -4,7 +4,13 @@
 
 <#if siteMaintenance?has_content>
     <section class="pageBodyGroup" role="region">
-        <h3>${i18n().site_maintenance}</h3>
+            <article class="directory-card" > 
+
+            <header>
+                      <h1>
+                        <div class="clickItem"> ${i18n().site_maintenance}</div>
+                      </h1>
+            </header>
 
         <ul role="navigation">
             <#if siteMaintenance.rebuildSearchIndex?has_content>
@@ -36,5 +42,6 @@
                 <li role="listitem"><a href="${siteMaintenance.activateDeveloperPanel}" title="${i18n().activate_developer_panel}">${i18n().activate_developer_panel_mixed_caps}</a></li>
             </#if>
         </ul>
+        </article>
     </section>
 </#if>

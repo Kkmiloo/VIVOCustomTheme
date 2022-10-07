@@ -4,7 +4,13 @@
 
 <#if dataTools?has_content>
     <section class="pageBodyGroup" role="region">
-        <h3>${i18n().advanced_data_tools}</h3>
+            <article class="directory-card" > 
+
+            <header>
+                      <h1>
+                        <div class="clickItem"> ${i18n().advanced_data_tools}</div>
+                      </h1>
+            </header>
 
         <ul role="navigation">
             <#if dataTools.rdfData?has_content>
@@ -23,5 +29,6 @@
                 <li role="listitem"><a href="${dataTools.sparqlQueryBuilder}" title="${i18n().sparql_query_builder}">${i18n().sparql_query_builder}</a></li>
             </#if>
         </ul>
+        </article>
     </section>
 </#if>
