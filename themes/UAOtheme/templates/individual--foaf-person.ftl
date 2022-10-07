@@ -24,10 +24,14 @@
 <#--add the VIVO-ORCID interface -->
 <#include "individual-orcidInterface.ftl">
  <#include "individual-adminPanel.ftl">
-<section id="individual-intro" class="vcard person" role="region">
 
-    <section id="share-contact" role="region">
-        <!-- Image -->
+
+    <div class="profile-hero">
+      <div class="hero-container">
+
+        <!--imagen-->
+
+                <!-- Image -->
         <#assign individualImage>
             <@p.image individual=individual
                       propertyGroups=propertyGroups
@@ -40,9 +44,17 @@
             <#assign infoClass = 'class="withThumb"'/>
         </#if>
 
-        <div id="photo-wrapper">${individualImage}</div>
-        <!-- Contact Info -->
-        <div id="individual-tools-people">
+        <div id="photo-wrapper"><figure> ${individualImage}</figure></div>
+
+        <div class="info">
+            <h1 class="foaf-person">
+                    <#-- Label -->
+                    <span itemprop="name" class="fn"><@p.label individual editable labelCount localesCount languageCount /></span>
+            </h1>
+            <#include "individual-contactInfo.ftl"> 
+                    <!-- Websites -->
+        <#include "individual-webpage.ftl">
+          <!--URI AND QR-->
             <span id="iconControlsLeftSide">
                 <img id="uriIcon" title="${individual.uri}" src="${urls.images}/individual/uriIcon.gif" alt="${i18n().uri_icon}"/>
   				<#if checkNamesResult?has_content >
@@ -52,57 +64,12 @@
 					</span>
 				</#if>
             </span>
+
+            
+
         </div>
-
-
-        <!-- Websites -->
-        <#include "individual-webpage.ftl">
-    </section>
-
-    <section id="individual-info" ${infoClass!} role="region">
-
-        <header>
-            <#if relatedSubject??>
-                <h2>${relatedSubject.relatingPredicateDomainPublic} ${i18n().indiv_foafperson_for} ${relatedSubject.name}</h2>
-                <p><a href="${relatedSubject.url}" title="${i18n().indiv_foafperson_return}">&larr; ${i18n().indiv_foafperson_return} ${relatedSubject.name}</a></p>
-            <#else>
-                <h1 class="foaf-person">
-                    <#-- Label -->
-                    <span itemprop="name" class="fn"><@p.label individual editable labelCount localesCount languageCount /></span>
-                </h1>
-                <section id="preferredTitle">
-                    <#--  Display preferredTitle if it exists; otherwise mostSpecificTypes -->
-                    <#assign title = propertyGroups.pullProperty("http://purl.obolibrary.org/obo/ARG_2000028","http://www.w3.org/2006/vcard/ns#Title")!>
-                    <#if title?has_content> <#-- true when the property is in the list, even if not populated (when editing) -->
-                        <#if (title.statements?size < 1) >
-                            <@p.addLinkWithLabel title editable />
-                        <#elseif editable>
-                            <h2>${title.name?capitalize!}</h2>
-                            <@p.verboseDisplay title />
-                        </#if>
-                        <#list title.statements as statement>
-                            <span itemprop="jobTitle" class="display-title<#if editable>-editable</#if>">${statement.preferredTitle}</span>
-                            <@p.editingLinks "${title.localName}" "${title.name}" statement editable title.rangeUri />
-                        </#list>
-                    </#if>
-                    <#-- If preferredTitle is unpopulated, display mostSpecificTypes -->
-                    <#if ! (title.statements)?has_content>
-                        <@p.mostSpecificTypesResearcher individual />
-                    </#if>
-                </section>
-            </#if>
-
-        </header>
-
-
-        <!-- Geographic Focus -->
-  <#--        <#include "individual-geographicFocus.ftl">  -->
-
-		<#include "individual-openSocial.ftl">
-                <#include "individual-contactInfo.ftl">
-    </section>
-
-    <section id="right-hand-column" role="region">
+      <!--H index-->
+      <section id="right-hand-column" role="region">
         <#include "individual-visualizationFoafPerson.ftl">
         <#if editable>
             <#if claimSources?size &gt; 0>
@@ -122,8 +89,15 @@
             </#if>
         </#if>
         </section>
+        
+      </div>
+      <!-- Research Areas -->
+        <div id="researcharea"><#include "individual-researchAreas.ftl"> </div>
+        
 
-</span></section>
+    </div>
+
+
 
 <#assign nameForOtherGroup = "${i18n().other}">
 
@@ -146,14 +120,7 @@
 
 <#include "individual-property-group-tabs.ftl">
 
-            <!-- Positions -->
-            <#include "individual-positions.ftl">
-            
-        <!-- Overview -->
-        <#include "individual-overview.ftl">
 
-        <!-- Research Areas -->
-        <#include "individual-researchAreas.ftl">
 
 <#assign rdfUrl = individual.rdfUrl>
 
@@ -162,6 +129,12 @@
         var individualRdfUrl = '${rdfUrl}';
     </script>
 </#if>
+
+<script>
+    let researchItems= document.querySelectorAll("#individual-hasResearchArea>li>a")
+    researchItems.forEach( item => item.classList.add("primary-btn" , "white"))
+</script>
+
 <script>
     var imagesPath = '${urls.images}';
 	var individualUri = '${individual.uri!}';
