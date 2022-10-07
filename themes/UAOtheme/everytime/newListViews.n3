@@ -1,0 +1,3 @@
+<rdf:Description rdf:about="http://vivoweb.org/ontology/core#researchAreaOf">
+    <display:listViewConfigFile rdf:datatype="http://www.w3.org/2001/XMLSchema#string">listViewConfig-researchAreaOf.xml</display:listViewConfigFile>
+</rdf:Description>

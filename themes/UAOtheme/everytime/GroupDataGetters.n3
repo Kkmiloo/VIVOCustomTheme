@@ -1,0 +1,50 @@
+# Este archivo va en la ruta:
+#                               ${vivo-home}/rdf/display/everytime/
+#                           ej: /usr/local/vivo/home/rdf/display/everytime
+
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+ 
+vivo:ResearchOrganization display:hasDataGetter display:getCoordinator .
+
+
+display:getCoordinator
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "coordinatorResults";
+    display:query """
+            PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+            prefix obo: <http://purl.obolibrary.org/obo/>
+            PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
+            select ?person ?fullName ?email ?tel ?imgPath 
+            where 
+            {
+            ?individualURI vivo:relatedBy ?rb .
+            ?rb vivo:relates ?person .
+            ?person a foaf:Person .
+            ?person rdfs:label ?fullName .
+            ?person vivo:relatedBy ?rbp .
+            ?rbp a vivo:Position .
+            ?rbp rdfs:label "Coordinador"@en-US .
+            ?person obo:ARG_2000028 ?vcardIndividual .
+            
+            optional {
+                ?vcardIndividual vcard:hasEmail ?he .
+                ?he vcard:email ?email .
+                ?vcardIndividual vcard:hasTelephone ?ht .
+                ?ht vcard:telephone ?tel .
+            }
+                
+            optional {
+                ?vcardIndividual vcard:hasTelephone ?ht .
+                ?ht vcard:telephone ?tel .
+            }
+            optional {
+                ?person vitro:mainImage ?mainImage .
+                ?mainImage vitro:thumbnailImage ?thumbnailImage . 
+                ?thumbnailImage vitro:downloadLocation ?imgPath 
+            }
+            }
+      """ .
