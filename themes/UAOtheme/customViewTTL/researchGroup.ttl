@@ -1,0 +1,9 @@
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix vitro:   <http://vitro.mannlib.cornell.edu/ns/vitro/0.7#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+
+foaf:Organization
+      vitro:customDisplayViewAnnot
+              "individual--vivo-group.ftl"^^xsd:string .

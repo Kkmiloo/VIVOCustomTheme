@@ -1,8 +1,8 @@
 <#-- $This file is distributed under the terms of the license in LICENSE$ -->
 
 <#-- Template for displaying paged search results -->
-
-<h2 class="searchResultsHeader">
+<div class="virtual-category-title"> 
+<h1 class="searchResultsHeader">
 <#escape x as x?html>
     ${i18n().search_results_for} '${querytext}'
     <#if classGroupName?has_content>${i18n().limited_to_type} '${classGroupName}'</#if>
@@ -22,36 +22,104 @@
 
 	<img id="downloadIcon" src="images/download-icon.png" alt="${i18n().download_results}" title="${i18n().download_results}" />
 <#-- <span id="downloadResults" style="float:left"></span>  -->
-</h2>
-
+</h1>
+</div>
 <span id="searchHelp"><a href="${urls.base}/searchHelp" title="${i18n().search_help}">${i18n().not_expected_results}</a></span>
 <div class="contentsBrowseGroup">
 
     <#-- Refinement links -->
     <#if classGroupLinks?has_content>
-        <div class="searchTOC">
-            <h4>${i18n().display_only}</h4>
+
+<div class="virtual-search-deploy-filter">
+        <div class="virtual-mobile-title">
+          <h2>Filtrar</h2>
+          <a href="" class="close-button"
+            ><span class="icon icon-close"></span>Cerrar</a
+          >
+        </div>
+        <div class="vsdf-container">
+          <div class="vsdf-title">
+            <h2>Filtrar</h2>
+          </div>
+
+          <div id="browse-classes" class="vsdf-filter-wrap">
+
+    
+                <h4>${i18n().display_only}</h4>
+
             <ul>
             <#list classGroupLinks as link>
-                <li><a href="${link.url}" title="${i18n().class_group_link}">${link.text}</a><span>(${link.count})</span></li>
+                 <li >
+            <a class="cb-container r-container" href="${link.url}" title="${i18n().class_group_link}">
+
+
+                    <span class="wpcf7-form-control-wrap aceptar-terminos">
+                    <span class="wpcf7-form-control wpcf7-acceptance">
+                    <span class="wpcf7-list-item">
+                        <input type="radio" name="radio" />
+                    </span>
+                    </span>
+                    </span>
+                    <span class="count-classes"> ${link.text}  (${link.count})</span>
+
+                  </a>
+
             </#list>
             </ul>
+                
+          </div>
         </div>
+
+    </div>
+
     </#if>
 
     <#if classLinks?has_content>
-        <div class="searchTOC">
+
+    <div class="virtual-search-deploy-filter">
+        <div class="virtual-mobile-title">
+          <h2>Filtrar</h2>
+          <a href="" class="close-button"
+            ><span class="icon icon-close"></span>Cerrar</a
+          >
+        </div>
+        <div class="vsdf-container">
+          <div class="vsdf-title">
+            <h2>Filtrar</h2>
+          </div>
+
+          <div id="browse-classes" class="vsdf-filter-wrap">
+
             <#if classGroupName?has_content>
-                <h4>${i18n().limit} ${classGroupName} ${i18n().to}</h4>
+                <h5>${i18n().limit} ${classGroupName} ${i18n().to}</h5>
             <#else>
-                <h4>${i18n().limit_to}</h4>
+                <h5>${i18n().limit_to}</h5>
             </#if>
             <ul>
             <#list classLinks as link>
-                <li><a href="${link.url}" title="${i18n().class_link}">${link.text}</a><span>(${link.count})</span></li>
+                 <li >
+            <a class="cb-container r-container" href="${link.url}" title="${i18n().browse_all_in_class}">
+
+
+                    <span class="wpcf7-form-control-wrap aceptar-terminos">
+                    <span class="wpcf7-form-control wpcf7-acceptance">
+                    <span class="wpcf7-list-item">
+                        <input type="radio" name="radio" />
+                    </span>
+                    </span>
+                    </span>
+                    <span class="count-classes"> ${link.text}  (${link.count})</span>
+
+                  </a>
+
             </#list>
             </ul>
+                
+          </div>
         </div>
+
+    </div>
+
     </#if>
 
     <#-- Search results -->

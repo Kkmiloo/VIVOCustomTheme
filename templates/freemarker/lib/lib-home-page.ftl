@@ -58,7 +58,7 @@
     <#assign selected = 'class="selected" ' />
     <#assign classGroupList>
         <section id="home-stats" class="home-sections" >
-            <h4>${i18n().statistics}</h4>
+            <h2>${i18n().statistics}</h2>
             <ul id="stats">
                 <#assign groupCount = 1>
                 <#list classGroups as group>
@@ -72,9 +72,12 @@
                             <#assign firstPopulatedClassGroup = group />
                         </#if>
                         <#if !group.uri?contains("equipment") && !group.uri?contains("course") >
+
+                        <#if !group.displayName?contains("locations")> <a href="${urls.base}/${group.displayName}">
                             <li>
-                                <a href="${urls.base}/browse">
-                                    <p  class="stats-count">
+                                
+                                <h4 class="stats-type">${group.displayName?capitalize}</h4>
+                                    <h2  class="stats-count">
                                         <#if (group.individualCount > 10000) >
                                             <#assign overTen = group.individualCount/1000>
                                             ${overTen?round}<span>k</span>
@@ -84,10 +87,10 @@
                                         <#else>
                                             ${group.individualCount}<span>&nbsp;</span>
                                         </#if>
-                                    </p>
-                                    <p class="stats-type">${group.displayName?capitalize}</p>
-                                </a>
+                                    </h2>   
                             </li>
+                        </a></#if>
+                        
                             <#assign groupCount = groupCount + 1>
                         </#if>
                     </#if>

@@ -9,11 +9,12 @@
     </head>
 
     <body class="${bodyClasses!}" onload="${bodyOnload!}">
-        <#include "identity.ftl">
-        <#include "search.ftl" >
-        <#include "menu.ftl">
+       <#--   <#include "identity.ftl">  -->
+       <#--   <#include "search.ftl" >  -->
+        <#include "headerMenu.ftl">
 
 		<#-- VIVO OpenSocial Extension by UCSF -->
+        <article  class="main-detail-container header-margin" role="main">
 		<#if openSocial??>
 			<#if openSocial.visible>
             	<div id="gadgets-tools" class="gadgets-gadget-parent"></div>
@@ -21,7 +22,7 @@
 		</#if>
 
         ${body}
-
+        </article>
         <#include "footer.ftl">
     </body>
 </html>

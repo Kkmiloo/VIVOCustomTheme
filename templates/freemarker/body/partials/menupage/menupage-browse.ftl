@@ -7,11 +7,23 @@
 <p style="padding: 20px 20px 20px 20px;background-color:#f8ffb7">${i18n().browse_page_javascript_one} <a href="${urls.base}/browse" title="${i18n().index_page}">${i18n().index_page}</a> ${i18n().browse_page_javascript_two}</p>
 </noscript>
 
-<section id="noJavascriptContainer" class="hidden">
-<section id="browse-by" role="region">
-    <nav role="navigation">
-        <ul id="browse-classes">
-            <#list vClassGroup?sort_by("displayRank") as vClass>
+<section id="noJavascriptContainer" class="hidden" style="display:flex">
+
+<div class="virtual-search-deploy-filter">
+        <div class="virtual-mobile-title">
+          <h2>Filtrar programas</h2>
+          <a href="" class="close-button"
+            ><span class="icon icon-close"></span>Cerrar</a
+          >
+        </div>
+        <div class="vsdf-container">
+          <div class="vsdf-title">
+            <h2>Filtrar</h2>
+          </div>
+
+          <div id="browse-classes" class="vsdf-filter-wrap">
+            <h5>Tipo</h5>
+                <#list vClassGroup?sort_by("displayRank") as vClass>
                 <#------------------------------------------------------------
                 Need to replace vClassCamel with full URL that allows function
                 to degrade gracefully in absence of JavaScript. Something
@@ -20,12 +32,33 @@
                 <#assign vClassCamel = str.camelCase(vClass.name) />
                 <#-- Only display vClasses with individuals -->
                 <#if (vClass.entityCount > 0)>
-                    <li id="${vClassCamel}"><a href="#${vClassCamel}" title="${i18n().browse_all_in_class}" data-uri="${vClass.URI}">${vClass.name} <span class="count-classes">(${vClass.entityCount})</span></a></li>
-                </#if>
+                <li id="${vClassCamel}">
+            <a class="cb-container r-container" href="#${vClassCamel}" title="${i18n().browse_all_in_class}" data-uri="${vClass.URI}">
+
+
+                    <span class="wpcf7-form-control-wrap aceptar-terminos">
+                    <span class="wpcf7-form-control wpcf7-acceptance">
+                    <span class="wpcf7-list-item">
+                        <input type="radio" name="radio" />
+                    </span>
+                    </span>
+                    </span>
+                    <span class="count-classes"> ${vClass.name}  (${vClass.entityCount})</span>
+
+                  </a>
+                  </li>
+               </#if>
             </#list>
-        </ul>
-        <nav id="alpha-browse-container" role="navigation">
-            <h3 class="selected-class"></h3>
+          </div>
+        </div>
+
+</div>
+
+<section id="browse-by" role="region">
+    <nav role="navigation">
+       
+        <nav id="alpha-browse-container" class="letters" role="navigation">
+<#--              <h3 class="selected-class"></h3>  -->
             <#assign alphabet = ["A", "B", "C", "D", "E", "F", "G" "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] />
             <ul id="alpha-browse-individuals">
                 <li><a href="#" class="selected" data-alpha="all" title="${i18n().select_all}">${i18n().all}</a></li>
@@ -36,12 +69,37 @@
         </nav>
     </nav>
 
-    <section id="individuals-in-class" role="region">
+
+<#if currentServlet=="people"  >
+    <section id="individuals-in-class" class="${currentServlet} " role="region">
+        <ul role="list"  class="list" >
+       
+            <#-- Will be populated dynamically via AJAX request -->
+        </ul>
+    </section>
+<#elseif currentServlet!="organizations" >
+    <section id="individuals-in-class" class="${currentServlet}" role="region">
         <ul role="list">
+       
+
+     
 
             <#-- Will be populated dynamically via AJAX request -->
         </ul>
     </section>
+
+<#else>
+    <section id="individuals-in-class" class="${currentServlet} latest-news" role="region">
+        <ul role="list" class="row">
+       
+
+     
+
+            <#-- Will be populated dynamically via AJAX request -->
+        </ul>
+    </section>
+</#if>
+
 </section>
 </section>
 <script type="text/javascript">

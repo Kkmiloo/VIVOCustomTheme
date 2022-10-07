@@ -147,7 +147,7 @@ name will be used as the label. -->
 <#macro showAddLink propertyLocalName label url rangeUri domainUri="">
     <#if (rangeUri?contains("Authorship") && domainUri?contains("IAO_0000030")) || (rangeUri?contains("Editorship") && domainUri?contains("IAO_0000030"))|| rangeUri?contains("URL") || propertyLocalName == "hasResearchArea">
         <a class="add-${propertyLocalName}" href="${url}" title="${i18n().manage_list_of} ${label?lower_case}">
-        <img class="add-individual" data-domain="${domainUri}" data-range="${rangeUri}" src="${urls.images}/individual/manage-icon.png" alt="${i18n().manage}" /></a>
+        <img class="add-individual" data-domain="${domainUri}" data-range="${rangeUri}" src="	https://cdn-icons-png.flaticon.com/512/861/861319.png" alt="${i18n().manage}" /></a>
     <#else>
         <a class="add-${propertyLocalName}" href="${url}" title="${i18n().add_new} ${label?lower_case} ${i18n().entry}">
         <img class="add-individual" data-domain="${domainUri}" data-range="${rangeUri}" src="${urls.images}/individual/addIcon.gif" alt="${i18n().add}" /></a>
@@ -330,8 +330,14 @@ name will be used as the label. -->
     </#if>
 </#macro>
 
-<#-- Most specific types -->
+<#-- Most specific types to Document- group Page -->
 <#macro mostSpecificTypes individual >
+    <#list individual.mostSpecificTypes as type>
+        <span class="ontology-tag">${type}</span>
+    </#list>
+</#macro>
+<#-- Most specific types to Person Page -->
+<#macro mostSpecificTypesResearcher individual >
     <#list individual.mostSpecificTypes as type>
         <span class="display-title">${type}</span>
     </#list>

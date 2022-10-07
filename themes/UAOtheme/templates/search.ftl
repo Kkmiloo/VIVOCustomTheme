@@ -2,16 +2,19 @@
 
 <#--Breaking this out so this can be utilized by other pages such as the jsp advanced tools pages-->
 
-<section id="search" role="region">
-    <fieldset>
-        <legend>${i18n().search_form}</legend>
-
-        <form id="search-form" action="${urls.search}" name="search" role="search" accept-charset="UTF-8" method="POST">
-            <div id="search-field">
-                <input type="text" name="querytext" class="search-vivo" value="${querytext!}" autocapitalize="off" />
-                <input type="submit" value="${i18n().search_button}" class="search">
-            </div>
-        </form>
-    </fieldset>
-</section>
-
+<div class="nav-search">
+                        <form id="search-homepage" action="${urls.search}" name="search-home" role="search" method="post" class="form-search">
+                        <div id="search-home-field" class="input-form-search">
+                            <input
+                            id="search-module-input"
+                            type="search"
+                            required="required"
+                            name="querytext" class="search-homepage"
+                            />
+                            <label for="search-module-input"> Buscar </label>
+                        </div>
+                        <button id="search-module-submit" type="submit" value="${i18n().search_button}" class="search">
+                            <span class="icon icon-search"></span>
+                        </button>
+                        </form>
+</div>

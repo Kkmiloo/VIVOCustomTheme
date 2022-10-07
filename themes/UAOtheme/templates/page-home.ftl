@@ -27,64 +27,49 @@
     <body class="${bodyClasses!}" onload="${bodyOnload!}">
     <#-- supplies the faculty count to the js function that generates a random row number for the search query -->
         <@lh.facultyMemberCount  vClassGroups! />
-        <#include "identity.ftl">
+        <#--  <#include "identity.ftl">  -->
 
-        <#include "menu.ftl">
+         <#include "headerMenu.ftl">
+        <article  class="main-detail-container header-margin" role="main">
+            <section id="intro" role="region">
+    <#--              <h2>${i18n().intro_title}</h2>
 
-        <section id="intro" role="region">
-            <h2>${i18n().intro_title}</h2>
+                <p>${i18n().intro_para1}</p>
+                <p>${i18n().intro_para2}</p>  -->
 
-            <p>${i18n().intro_para1}</p>
-            <p>${i18n().intro_para2}</p>
-
-            <section id="search-home" role="region">
-                <h3>${i18n().intro_searchvivo} <span class="search-filter-selected">filteredSearch</span></h3>
-
-                <fieldset>
-                    <legend>${i18n().search_form}</legend>
-                    <form id="search-homepage" action="${urls.search}" name="search-home" role="search" method="post" >
-                        <div id="search-home-field">
-                            <input type="text" name="querytext" class="search-homepage" value="" autocapitalize="off" />
-                            <input type="submit" value="${i18n().search_button}" class="search" />
-                            <input type="hidden" name="classgroup"  value="" autocapitalize="off" />
+                    <div class="library-hero">
+                    <h1>CRIS UAO</h1>
+                        <div class="hero-container">
+                            <form id="search-homepage" action="${urls.search}" name="search-home" role="search" method="post" class="form-search">
+                            <div id="search-home-field" class="input-form-search">
+                                <input
+                                id="search-module-input"
+                                type="search"
+                                required="required"
+                                name="querytext" class="search-homepage"
+                                />
+                                <label for="search-module-input"> ¿Qué estás buscando? </label>
+                            </div>
+                            <button id="search-module-submit" type="submit" value="${i18n().search_button}" class="search">
+                                <span class="icon icon-search"></span>
+                            </button>
+                            </form>
                         </div>
+                    </div>
 
-                        <a class="filter-search filter-default" href="#" title="${i18n().intro_filtersearch}">
-                            <span class="displace">${i18n().intro_filtersearch}</span>
-                        </a>
-
-                        <ul id="filter-search-nav">
-                            <li><a class="active" href="">${i18n().all_capitalized}</a></li>
-                            <@lh.allClassGroupNames vClassGroups! />
-                        </ul>
-                    </form>
-                </fieldset>
-            </section> <!-- #search-home -->
 
         </section> <!-- #intro -->
 
-        <@widget name="login" />
+    <div style="height:60vh"></div>
 
-        <!-- List of research classes: e.g., articles, books, collections, conference papers -->
-        <@lh.researchClasses />
-
-        <!-- List of four randomly selected faculty members -->
         <@lh.facultyMbrHtml />
-
-        <!-- List of randomly selected academic departments -->
-        <@lh.academicDeptsHtml />
-
-        <#if geoFocusMapsEnabled >
-            <!-- Map display of researchers' areas of geographic focus. Must be enabled in runtime.properties -->
-            <@lh.geographicFocusHtml />
-        </#if>
-
-        <!-- Statistical information relating to property groups and their classes; displayed horizontally, not vertically-->
         <@lh.allClassGroups vClassGroups! />
 
-        <#include "footer.ftl">
+        
         <#-- builds a json object that is used by js to render the academic departments section -->
-        <@lh.listAcademicDepartments />
+        <#--  <@lh.listAcademicDepartments />  -->
+    </article>
+        <#include "footer.ftl">
     <script>
         var i18nStrings = {
             researcherString: '${i18n().researcher?js_string}',

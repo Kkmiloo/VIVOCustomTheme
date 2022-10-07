@@ -3,8 +3,8 @@
 <#include "menupage-checkForData.ftl">
 
 <#if !noData>
-    <section id="menupage-intro" role="region">
-        <h2>${page.title}</h2>
+    <section class="virtual-category-title " role="region">
+        <h1>${page.title}</h1>
     </section>
 
     <#include "menupage-browse.ftl">
