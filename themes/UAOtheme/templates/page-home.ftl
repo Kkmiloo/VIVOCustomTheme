@@ -60,16 +60,39 @@
 
         </section> <!-- #intro -->
 
-    <div style="height:60vh"></div>
+    <section class="container">
+        <h2>Publicaciones recientes</h2>
+        <div class="testimonial mySwiper">
+            <div class="testi-content swiper-wrapper">
+            <#include "recentPub.ftl">
 
-        <@lh.facultyMbrHtml />
+            </div>
+            <!--next-->
+          <div class="swiper-button-next nav-btn"></div>
+          <!--prev-->
+          <div class="swiper-button-prev nav-btn"></div>
+          <!---->
+          <div class="swiper-pagination"></div>
+        </div>
+         
+    </section>
+    
+
+      <#--    <@lh.facultyMbrHtml />  -->
         <@lh.allClassGroups vClassGroups! />
 
         
         <#-- builds a json object that is used by js to render the academic departments section -->
-        <#--  <@lh.listAcademicDepartments />  -->
+         <#--  <@lh.listAcademicDepartments />   -->
+
+        
     </article>
         <#include "footer.ftl">
+
+      <!-- SLIDER Swiper JS -->
+    <script src="${urls.base}/js/swiper-bundle.min.js"></script>
+    <!--SLIDER JavaScript -->
+    <script src="${urls.base}/js/script.js"></script>
     <script>
         var i18nStrings = {
             researcherString: '${i18n().researcher?js_string}',
