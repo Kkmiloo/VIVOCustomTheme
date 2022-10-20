@@ -48,12 +48,34 @@
                                 required="required"
                                 name="querytext" class="search-homepage"
                                 />
-                                <label for="search-module-input"> ¿Qué estás buscando? </label>
+                                <label for="search-module-input"> Buscar artículos, libros, conferencias... </label>
                             </div>
                             <button id="search-module-submit" type="submit" value="${i18n().search_button}" class="search">
                                 <span class="icon icon-search"></span>
                             </button>
                             </form>
+                            <h2>¿Qué estás buscando?</h2>
+                            <div class="btnslist">
+                                <a class="primary-btn  white" href="#">
+                                Article
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Book
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Chapter
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Conference Paper
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Journals
+                                </a>
+                            </div>
                         </div>
                     </div>
 
