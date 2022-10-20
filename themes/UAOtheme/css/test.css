@@ -64,6 +64,10 @@
     margin-right: 2rem;
 }
 
+.main-detail-container {
+    margin-bottom: 0;
+}
+
 .main-detail-container .hero.show-breadcrumb .hero-container figure.pc-figure {
     height: 3.75rem;
     width: 3.75rem;
@@ -577,9 +581,6 @@ p {
     margin-bottom: 100px;
 }
 
-footer {
-    margin-top: 46px;
-}
 
 .dropdown {
     position: relative;
@@ -1663,8 +1664,8 @@ p {
 
 /* FOOTER------>  */
 footer {
-    position: relative;
-    top: 50px;
+    /*     position: relative;
+    top: 50px; */
 }
 
 /*titles siteadmin*/
@@ -1859,4 +1860,159 @@ footer {
 
 #relatedBy-Authorship-List>li>h3 {
     color: #000000
+}
+
+
+/* List Item */
+.profile-hero .hero-container .info #individual-personInPosition li {
+    width: 101% !important;
+}
+
+#hmd-bottom ul li a {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.library-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.2)), url(https://pattern.uao.edu.co/images/bg-desktop-index-virtual-img.jpg) no-repeat center center/cover;
+    background-size: cover;
+    padding-bottom: 1.5625rem;
+    padding-top: 1.5625rem;
+}
+
+#intro .library-hero {
+    margin-bottom: 5rem;
+    min-height: 512px;
+}
+
+.library-hero .hero-container::before {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.library-hero::after {
+    left: 0rem;
+    position: absolute;
+    bottom: 0rem;
+    width: 0%;
+    height: 0rem;
+    border-bottom: 0rem solid rgba(255, 255, 255, 0);
+    border-bottom-left-radius: 1rem;
+    border-left: 0rem solid rgba(255, 255, 255, 0);
+    content: '';
+    display: block;
+}
+
+/* Element | http://localhost:8080/ */
+
+#stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 7rem 0;
+    background: url(https://pattern.uao.edu.co/images/bg-desktop-white-grey.jpg);
+    background-size: cover;
+    margin-top: 2rem;
+}
+
+#stats>a {
+    height: 210px;
+    width: 210px;
+    background-color: white;
+    padding: 40px 0;
+    box-shadow: 0 0.3125rem 0.25rem 0 rgb(0 0 0 / 20%);
+}
+
+#stats>a h4,
+#stats>a hh2 {
+    color: #000000;
+}
+
+.form-search button[type=submit] {
+    background-color: #9E0B0F;
+}
+
+.vivouaologo {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    filter: drop-shadow(5px 5px 5px #222222a3);
+}
+
+.library-hero .hero-container {
+    margin-top: 0rem;
+    flex-direction: column;
+}
+
+.form-search .input-form-search input[type="search"]:focus~label,
+.form-search .input-form-search input[type="search"]:valid~label {
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 2px;
+    font-style: normal;
+}
+
+.form-search .input-form-search input[type=search] {
+    border: 0rem solid #ffffff00;
+}
+
+#header-menu-desktop #hmd-bottom {
+    background-color: #fff;
+    border-bottom: .0625rem solid #ffffff;
+    border-radius: 0 0 0 0;
+    box-shadow: 0 .3125rem .25rem 0 rgba(0, 0, 0, .2);
+}
+
+.library-hero .hero-container .form-search button {
+    height: 3.1rem;
+    width: 4rem;
+}
+
+a.primary-btn {
+    min-width: 6rem;
+    position: initial;
+}
+
+a:link,
+a:visited,
+a:active {
+    text-decoration: none;
+}
+
+#stats>a {
+    text-align: center;
+}
+
+#stats>a>li>h2 {
+    margin-top: 25px;
+}
+
+.btnslist {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+#intro>div>div>div>a {
+    margin-left: 20px;
+}
+
+.library-hero h2 {
+    text-shadow: rgba(0, 0, 0, 0.5) 0 2px;
+    color: white;
+    margin-bottom: 56px;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0.3;
 }
