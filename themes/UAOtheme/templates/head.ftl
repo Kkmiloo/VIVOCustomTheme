@@ -23,6 +23,9 @@
 <link rel="stylesheet" href="${urls.theme}/css/uao.css" />
 <link rel="stylesheet" href="${urls.theme}/css/uao-virtual.css" />
 <link rel="stylesheet" href="${urls.theme}/css/test.css" />
+<link rel="stylesheet" href="${urls.theme}/css/swiper-bundle.min.css" />
+<link rel="stylesheet" href="${urls.theme}/css/slider.css" />
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.22/dist/yasqe.min.css">
 
 <#include "headScripts.ftl">
 

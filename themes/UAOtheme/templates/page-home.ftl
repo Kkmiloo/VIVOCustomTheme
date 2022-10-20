@@ -48,28 +48,73 @@
                                 required="required"
                                 name="querytext" class="search-homepage"
                                 />
-                                <label for="search-module-input"> ¿Qué estás buscando? </label>
+                                <label for="search-module-input"> Buscar artículos, libros, conferencias... </label>
                             </div>
                             <button id="search-module-submit" type="submit" value="${i18n().search_button}" class="search">
                                 <span class="icon icon-search"></span>
                             </button>
                             </form>
+                            <h2>¿Qué estás buscando?</h2>
+                            <div class="btnslist">
+                                <a class="primary-btn  white" href="#">
+                                Article
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Book
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Chapter
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Conference Paper
+                                </a>
+                                
+                                <a class="primary-btn  white" href="#">
+                                Journals
+                                </a>
+                            </div>
                         </div>
                     </div>
 
 
         </section> <!-- #intro -->
 
-    <div style="height:60vh"></div>
+    <section class="container">
+        <h2>Publicaciones recientes</h2>
+        <div class="testimonial mySwiper">
+            <div class="testi-content swiper-wrapper">
+            <#include "recentPub.ftl">
 
-        <@lh.facultyMbrHtml />
+            </div>
+            <!--next-->
+          <div class="swiper-button-next nav-btn"></div>
+          <!--prev-->
+          <div class="swiper-button-prev nav-btn"></div>
+          <!---->
+          <div class="swiper-pagination"></div>
+        </div>
+         
+    </section>
+    
+
+      <#--    <@lh.facultyMbrHtml />  -->
         <@lh.allClassGroups vClassGroups! />
 
         
         <#-- builds a json object that is used by js to render the academic departments section -->
-        <#--  <@lh.listAcademicDepartments />  -->
+         <#--  <@lh.listAcademicDepartments />   -->
+
+        
     </article>
         <#include "footer.ftl">
+
+      <!-- SLIDER Swiper JS -->
+    <script src="${urls.base}/js/swiper-bundle.min.js"></script>
+    <!--SLIDER JavaScript -->
+    <script src="${urls.base}/js/script.js"></script>
     <script>
         var i18nStrings = {
             researcherString: '${i18n().researcher?js_string}',
