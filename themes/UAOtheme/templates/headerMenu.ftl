@@ -7,7 +7,7 @@
 <header id="header-menu-desktop" class="fixed has-scroll-indicator">
     <div id ="hmd-bottom"> 
         <div id="hmdb-logo-container">
-            <a id="hmdb-logo" href="https://www.uao.edu.co"></a>
+            <a id="hmdb-logo" href="${urls.base}"></a>
         </div>
         <#if currentServlet!='home'>
         <#include "search.ftl"> 
