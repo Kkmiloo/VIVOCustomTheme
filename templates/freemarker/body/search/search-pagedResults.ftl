@@ -1,6 +1,8 @@
 <#-- $This file is distributed under the terms of the license in LICENSE$ -->
 
 <#-- Template for displaying paged search results -->
+
+<main class="search-results"> 
 <div class="virtual-category-title"> 
 <h1 class="searchResultsHeader">
 <#escape x as x?html>
@@ -123,14 +125,16 @@
     </#if>
 
     <#-- Search results -->
-    <ul class="searchhits">
-        <#list individuals as individual>
-            <li>
-            	<@shortView uri=individual.uri viewContext="search" />
-            </li>
-        </#list>
-    </ul>
 
+    <section class="results"> 
+        <div class="cards-container">
+            <#list individuals as individual>
+            
+            	<@shortView uri=individual.uri viewContext="search" />
+           
+        </#list>
+        </div>
+    </section>
 
     <#-- Paging controls -->
     <#if (pagingLinks?size > 0)>
@@ -173,7 +177,7 @@
             <div id="gadgets-search" class="gadgets-gadget-parent" style="display:inline-block"></div>
         </#if>
     </#if>
-
+</main>
 </div> <!-- end contentsBrowseGroup -->
 
 ${stylesheets.add('<link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />',
