@@ -1,7 +1,6 @@
 
-  <article class="news-card">
 
-  <div class="link-image-button-container">
+
   <a class="link-image-button " href="${individual.profileUrl}">
     <figure>
               <img
@@ -13,7 +12,7 @@
      ${individual.name}
     </div>
   </a>
-</div>
+
 
   </article>
 
