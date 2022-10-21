@@ -312,11 +312,17 @@ article.property h3 {
 
 
 .browse-margin {
-    margin: 20px 0;
+    margin-top: 3.1875rem;
 }
 
+.results-card {
+    width: 100%;
+}
 
-
+a.link-image-button figure {
+    height: 10.25rem;
+    width: 269px;
+}
 
 
 #individuals-in-class article a .pc-top figure img {
@@ -350,21 +356,11 @@ article.property h3 {
 
 
 .article-sw .article-title {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 21px;
-    /* identical to box height */
-
-
-    /* Principal/Negro */
-
-    color: #000000;
-    text-decoration: none;
-    display: inline-block;
+    color: #363636;
+    display: block;
+    position: relative;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 .article-sw .ontology-tag {
@@ -2015,4 +2011,198 @@ video {
     object-fit: cover;
     position: absolute;
     opacity: 0.3;
+}
+
+
+
+/* FORM EDIT*/
+
+.uploadImages,
+.editRequestDispatch {
+    background-image: url(https://pattern.uao.edu.co/images/bg-desktop-white-grey.jpg);
+}
+
+/* .header-margin {
+    margin-top: 5rem;
+}
+
+.main-detail-container {
+    margin-bottom: 5rem;
+} */
+
+/* Article */
+.uploadImages article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.editRequestDispatch article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5rem 0 10rem 0;
+}
+
+#photoUpload {
+    margin: 5rem 0;
+}
+
+/* Photo upload default image */
+#photoUploadDefaultImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Paragraph */
+#photoUploadForm p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Image */
+#photoUploadDefaultImage img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    margin-bottom: 30px;
+}
+
+
+
+/* Submit Button */
+#photoUploadForm .primary-btn .submit {
+    background-color: rgba(240, 240, 240, 0);
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Span Tag */
+#photoUploadForm .or {
+    margin-left: 10px;
+}
+
+/* Link */
+#photoUploadForm .or a {
+    margin-left: 10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.customupload {
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    word-break: break-word;
+    box-sizing: inherit;
+    font-family: roboto condensed, sans-serif;
+    pointer-events: all;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -.03125rem;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    min-width: 6rem;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
+    color: #000;
+    padding: .65625rem 2.625rem;
+}
+
+.customupload:hover {
+    box-shadow: 0 .3125rem .6875rem 0 rgba(0, 0, 0, .6);
+    background-color: #7a0404;
+    color: #fff;
+    opacity: 1
+}
+
+/* Label */
+#photoUploadForm label {
+    margin-right: 10px;
+}
+
+
+/*nuevo*/
+/* Heading */
+
+#requiredLegend,
+.uploadImages>article:nth-child(6)>form.editForm,
+.editRequestDispatch>article:nth-child(6)>form.editForm {
+    margin-top: 30px;
+    color: #9e0b0f;
+}
+
+
+/* Label nombre */
+#label,
+.editRequestDispatch input[type="text"] {
+    min-height: 50px;
+    font-size: 18px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-left: 26px;
+    box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* Label telefono*/
+#telephoneNumber {
+    min-height: 50px;
+    font-size: 18px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-left: 26px;
+    box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+#emailAddress {
+    min-height: 50px;
+    font-size: 18px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-left: 26px;
+    box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+input.submit:hover {
+    cursor: inherit;
+}
+
+.editRequestDispatch h2,
+.editRequestDispatch a,
+.editRequestDispatch label,
+.editRequestDispatch p,
+.editRequestDispatch input,
+#ie67DisableContent>p,
+.editRequestDispatch>article:nth-child(6)>form.customForm>div {
+    margin-bottom: 30px;
+}
+
+.uploadImages h2,
+.uploadImages a,
+.uploadImages label,
+.uploadImages p,
+.uploadImages input,
+#ie67DisableContent>p,
+.uploadImages>article:nth-child(6)>form.customForm>div {
+    margin-bottom: 30px;
 }
