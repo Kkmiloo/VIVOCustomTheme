@@ -274,7 +274,7 @@ name will be used as the label. -->
          If there's a mainImage statement but no thumbnail image, treat it as if there is no image. -->
     <#if (mainImage.statements)?has_content && thumbUrl?has_content>
         <a href="${individual.imageUrl}" title="${i18n().alt_thumbnail_photo}">
-        	<img class="individual-photo" src="${thumbUrl}" title="${i18n().click_to_view_larger}" alt="${individual.name}" width="${imageWidth!}" />
+        	<img src="${thumbUrl}" title="${i18n().click_to_view_larger}" alt="${individual.name}" width="${imageWidth!}" />
         </a>
         <@editingLinks "${mainImage.localName}" "" mainImage.first() editable />
     <#else>
