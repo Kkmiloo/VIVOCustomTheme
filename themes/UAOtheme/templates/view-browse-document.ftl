@@ -1,30 +1,32 @@
 <#import "lib-properties.ftl" as p>
 <#import "lib-datetime.ftl" as dt>
  
-<li  role="listitem" class="article-sw browse-margin" role="navigation">
 
-                <a href="${individual.profileUrl}" class="article-title" title="${individual.name}">
-               ${individual.name}  </a>
-                    <@p.mostSpecificTypes individual />
-                <ul class="sw-authors ts-6"> 
-                                      
-                    <#list detailsAuthor as resultRow>  
-                    <li class="ts-6">
-                    <a href='${urls.base}/individual${resultRow["author"]?substring(resultRow["author"]?last_index_of("/"))}'> ${resultRow["name"]}</a>
-                    
-                    </li>
-                    <li class="separator">
-                    </li>
-                    </#list>
-                </ul>
+    <div class="article-sw browse-margin" role="navigation">
+         <a href="${individual.profileUrl}"> 
+            <div>
 
-        <#if (abstractDetail[0].abstract)??>
+                        <@p.mostSpecificTypes individual />
+                        <h6  class="article-title" title="${individual.name}">
+                        ${individual.name}  </h6>
+                            
+                        <ul class="sw-authors"> 
+                                            
+                            <#list detailsAuthor as resultRow>  
+                            <li class="ts-6">
+                                <a href='${urls.base}/individual${resultRow["author"]?substring(resultRow["author"]?last_index_of("/"))}'> ${resultRow["name"]}</a>
+                            
+                            </li>
+                            <li class="separator">
+                            </li>
+                            </#list>
+                        </ul>
 
-        <span class="ts-2">  ${abstractDetail[0].abstract}</span> 
-           
-        </#if>
+                <#if (abstractDetail[0].abstract)??>
 
-               
-
-       
-</li>
+                    <span class="ts-2">  ${abstractDetail[0].abstract}</span> 
+                
+                </#if>
+            </div>
+        </a>
+    </div>

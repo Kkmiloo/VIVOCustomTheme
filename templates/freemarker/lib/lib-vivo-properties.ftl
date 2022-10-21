@@ -9,7 +9,7 @@
 <#-- Display preferredTitle if it exists; otherwise display mostSpecificTypes -->
 <#macro displayTitle individual>
     <#if individual.preferredTitle?has_content>
-        <span class="display-title">${individual.preferredTitle}</span>
+        <span class="display-title  category-tag ">${individual.preferredTitle}</span>
     <#else>
         <@p.mostSpecificTypes individual />
     </#if>

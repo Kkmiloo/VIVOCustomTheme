@@ -65,7 +65,7 @@
 }
 
 .main-detail-container {
-    margin-bottom: 0;
+    margin-bottom: 7rem;
 }
 
 .main-detail-container .hero.show-breadcrumb .hero-container figure.pc-figure {
@@ -143,10 +143,10 @@ figure.pc-figure {
 .hero .hero-container:before {
     background-color: #fff;
     content: '';
-    display: block;
+    /*     display: block;
     height: 100%;
     position: absolute;
-    width: 100%;
+    width: 100%; */
 }
 
 .margin-details h4 {
@@ -184,7 +184,12 @@ figure.pc-figure {
 
 .hero .details .margin-details h1 {
 
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+.hero .details .margin-details {
+
+    margin-bottom: 2rem;
 }
 
 .ontology-tag {
@@ -312,11 +317,17 @@ article.property h3 {
 
 
 .browse-margin {
-    margin: 20px 0;
+    margin-top: 3.1875rem;
 }
 
+.results-card {
+    width: 100%;
+}
 
-
+a.link-image-button figure {
+    height: 10.25rem;
+    width: 269px;
+}
 
 
 #individuals-in-class article a .pc-top figure img {
@@ -350,21 +361,11 @@ article.property h3 {
 
 
 .article-sw .article-title {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 21px;
-    /* identical to box height */
-
-
-    /* Principal/Negro */
-
-    color: #000000;
-    text-decoration: none;
-    display: inline-block;
+    color: #363636;
+    display: block;
+    position: relative;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 
 .article-sw .ontology-tag {
@@ -1458,7 +1459,7 @@ p {
     margin-left: 37px !important;
 }
 
-.profile-hero .hero-container {
+.profile-hero .profile {
     -ms-flex-align: center;
     align-items: center;
     display: -ms-flexbox;
@@ -1856,12 +1857,19 @@ footer {
 
 #header-menu-desktop.fixed {
     position: sticky;
+    border-bottom: 0.0625rem solid #ed1d24;
 }
 
 #relatedBy-Authorship-List>li>h3 {
     color: #000000
 }
 
+.hero figure img {
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 10%);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
 
 /* List Item */
 .profile-hero .hero-container .info #individual-personInPosition li {
@@ -2015,4 +2023,425 @@ video {
     object-fit: cover;
     position: absolute;
     opacity: 0.3;
+}
+
+
+
+/* FORM EDIT*/
+
+.uploadImages,
+.editRequestDispatch {
+    background-image: url(https://pattern.uao.edu.co/images/bg-desktop-white-grey.jpg);
+}
+
+/* .header-margin {
+    margin-top: 5rem;
+}
+
+.main-detail-container {
+    margin-bottom: 5rem;
+} */
+
+/* Article */
+.uploadImages article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.editRequestDispatch article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5rem 0 10rem 0;
+}
+
+#photoUpload {
+    margin: 5rem 0;
+}
+
+/* Photo upload default image */
+#photoUploadDefaultImage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Paragraph */
+#photoUploadForm p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Image */
+#photoUploadDefaultImage img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    margin-bottom: 30px;
+}
+
+
+
+/* Submit Button */
+.primary-btn input {
+    background-color: rgba(240, 240, 240, 0);
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Span Tag */
+#photoUploadForm .or {
+    margin-left: 10px;
+}
+
+/* Link */
+#photoUploadForm .or a {
+    margin-left: 10px;
+}
+
+input[type="file"] {
+    /*   display: none; */
+}
+
+.customupload {
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    word-break: break-word;
+    box-sizing: inherit;
+    font-family: roboto condensed, sans-serif;
+    pointer-events: all;
+    border-radius: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -.03125rem;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    min-width: 6rem;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
+    color: #000;
+    padding: .65625rem 2.625rem;
+}
+
+.customupload:hover {
+    box-shadow: 0 .3125rem .6875rem 0 rgba(0, 0, 0, .6);
+    background-color: #7a0404;
+    color: #fff;
+    opacity: 1
+}
+
+/* Label */
+#photoUploadForm label {
+    margin-right: 10px;
+}
+
+
+/*nuevo*/
+/* Heading */
+
+#requiredLegend,
+.uploadImages>article:nth-child(6)>form.editForm,
+.editRequestDispatch>article:nth-child(6)>form.editForm {
+    margin-top: 30px;
+    color: #9e0b0f;
+}
+
+
+/* Label nombre */
+#label,
+.editRequestDispatch input[type="text"] {
+    min-height: 50px;
+    font-size: 18px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-left: 26px;
+    box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* Label telefono*/
+#telephoneNumber {
+    min-height: 50px;
+    font-size: 18px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-left: 26px;
+    box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+#emailAddress {
+    min-height: 50px;
+    font-size: 18px;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding-left: 26px;
+    box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
+}
+
+input.submit:hover {
+    cursor: inherit;
+}
+
+.editRequestDispatch h2,
+.editRequestDispatch a,
+.editRequestDispatch label,
+.editRequestDispatch p,
+.editRequestDispatch input,
+#ie67DisableContent>p,
+.editRequestDispatch>article:nth-child(6)>form.customForm>div {
+    margin-bottom: 30px;
+}
+
+.uploadImages h2,
+.uploadImages a,
+.uploadImages label,
+.uploadImages p,
+.uploadImages input,
+#ie67DisableContent>p,
+.uploadImages>article:nth-child(6)>form.customForm>div {
+    margin-bottom: 30px;
+}
+
+
+
+
+/* jquery.Jcrop.css v0.9.12 - MIT License */
+/*
+  The outer-most container in a typical Jcrop instance
+  If you are having difficulty with formatting related to styles
+  on a parent element, place any fixes here or in a like selector
+
+  You can also style this element if you want to add a border, etc
+  A better method for styling can be seen below with .jcrop-light
+  (Add a class to the holder and style elements for that extended class)
+*/
+.jcrop-holder {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Selection Border */
+.jcrop-vline,
+.jcrop-hline {
+    background: #ffffff url("Jcrop.gif");
+    font-size: 0;
+    position: absolute;
+}
+
+.jcrop-vline {
+    height: 100%;
+    width: 1px !important;
+}
+
+.jcrop-vline.right {
+    right: 0;
+}
+
+.jcrop-hline {
+    height: 1px !important;
+    width: 100%;
+}
+
+.jcrop-hline.bottom {
+    bottom: 0;
+}
+
+/* Invisible click targets */
+.jcrop-tracker {
+    height: 100%;
+    width: 100%;
+    /* "turn off" link highlight */
+    -webkit-tap-highlight-color: transparent;
+    /* disable callout, image save panel */
+    -webkit-touch-callout: none;
+    /* disable cut copy paste */
+    -webkit-user-select: none;
+}
+
+/* Selection Handles */
+.jcrop-handle {
+    background-color: #333333;
+    border: 1px #eeeeee solid;
+    width: 7px;
+    height: 7px;
+    font-size: 1px;
+}
+
+.jcrop-handle.ord-n {
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -4px;
+    top: 0;
+}
+
+.jcrop-handle.ord-s {
+    bottom: 0;
+    left: 50%;
+    margin-bottom: -4px;
+    margin-left: -4px;
+}
+
+.jcrop-handle.ord-e {
+    margin-right: -4px;
+    margin-top: -4px;
+    right: 0;
+    top: 50%;
+}
+
+.jcrop-handle.ord-w {
+    left: 0;
+    margin-left: -4px;
+    margin-top: -4px;
+    top: 50%;
+}
+
+.jcrop-handle.ord-nw {
+    left: 0;
+    margin-left: -4px;
+    margin-top: -4px;
+    top: 0;
+}
+
+.jcrop-handle.ord-ne {
+    margin-right: -4px;
+    margin-top: -4px;
+    right: 0;
+    top: 0;
+}
+
+.jcrop-handle.ord-se {
+    bottom: 0;
+    margin-bottom: -4px;
+    margin-right: -4px;
+    right: 0;
+}
+
+.jcrop-handle.ord-sw {
+    bottom: 0;
+    left: 0;
+    margin-bottom: -4px;
+    margin-left: -4px;
+}
+
+/* Dragbars */
+.jcrop-dragbar.ord-n,
+.jcrop-dragbar.ord-s {
+    height: 7px;
+    width: 100%;
+}
+
+.jcrop-dragbar.ord-e,
+.jcrop-dragbar.ord-w {
+    height: 100%;
+    width: 7px;
+}
+
+.jcrop-dragbar.ord-n {
+    margin-top: -4px;
+}
+
+.jcrop-dragbar.ord-s {
+    bottom: 0;
+    margin-bottom: -4px;
+}
+
+.jcrop-dragbar.ord-e {
+    margin-right: -4px;
+    right: 0;
+}
+
+.jcrop-dragbar.ord-w {
+    margin-left: -4px;
+}
+
+/* The "jcrop-light" class/extension */
+.jcrop-light .jcrop-vline,
+.jcrop-light .jcrop-hline {
+    background: #ffffff;
+    filter: alpha(opacity=70) !important;
+    opacity: .70 !important;
+}
+
+.jcrop-light .jcrop-handle {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #000000;
+    border-color: #ffffff;
+    border-radius: 3px;
+}
+
+/* The "jcrop-dark" class/extension */
+.jcrop-dark .jcrop-vline,
+.jcrop-dark .jcrop-hline {
+    background: #000000;
+    filter: alpha(opacity=70) !important;
+    opacity: 0.7 !important;
+}
+
+.jcrop-dark .jcrop-handle {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #ffffff;
+    border-color: #000000;
+    border-radius: 3px;
+}
+
+/* Simple macro to turn off the antlines */
+.solid-line .jcrop-vline,
+.solid-line .jcrop-hline {
+    background: #ffffff;
+}
+
+/* Fix for twitter bootstrap et al. */
+.jcrop-holder img,
+img.jcrop-preview {
+    max-width: none;
+}
+
+.photoCroppedPreview {
+    width: 115px;
+    height: 115px;
+    overflow: hidden;
+}
+
+#photoCroppingPreview {
+    width: 180px;
+    float: left;
+}
+
+#photoCropping {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    background: #fff;
+    padding: 15px 0 15px 15px;
+}
+
+#photoCroppingContainer {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.container-admin {
+
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
 }

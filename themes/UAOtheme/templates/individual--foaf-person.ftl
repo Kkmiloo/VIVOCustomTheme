@@ -27,7 +27,7 @@
 
 
     <div class="profile-hero">
-      <div class="hero-container">
+      <div class="hero-container profile">
 
         <!--imagen-->
 
@@ -47,15 +47,15 @@
         <div id="photo-wrapper"><figure> ${individualImage}</figure></div>
 
         <div class="info">
-            <h1 class="foaf-person">
+            <h1 class="foaf-person line-separator">
                     <#-- Label -->
-                    <span itemprop="name" class="fn"><@p.label individual editable labelCount localesCount languageCount /></span>
+                    <span style ="color:#363636" itemprop="name" class="fn"><@p.label individual editable labelCount localesCount languageCount /></span>
             </h1>
             <#include "individual-contactInfo.ftl"> 
                     <!-- Websites -->
         <#include "individual-webpage.ftl">
           <!--URI AND QR-->
-            <span id="iconControlsLeftSide">
+  <#--            <span id="iconControlsLeftSide">
                 <img id="uriIcon" title="${individual.uri}" src="${urls.images}/individual/uriIcon.gif" alt="${i18n().uri_icon}"/>
   				<#if checkNamesResult?has_content >
 					<img id="qrIcon"  src="${urls.images}/individual/qr_icon.png" alt="${i18n().qr_icon}" />
@@ -63,7 +63,7 @@
 						<a class="qrCloseLink" href="#"  title="${i18n().qr_code}">${i18n().close_capitalized}</a>
 					</span>
 				</#if>
-            </span>
+            </span>  -->
 
             
 

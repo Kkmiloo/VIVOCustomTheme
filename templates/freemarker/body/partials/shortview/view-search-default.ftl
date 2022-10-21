@@ -3,9 +3,12 @@
 <#-- Default individual search view -->
 
 <#import "lib-vivo-properties.ftl" as p>
+<a class="results-card" href="${individual.profileUrl}">
+    <div>
+    <@p.displayTitle individual />
+        <h6  title="${i18n().individual_name}">${individual.name}</h6>
 
-<a href="${individual.profileUrl}" title="${i18n().individual_name}">${individual.name}</a>
 
-<@p.displayTitle individual />
-
-<p class="snippet">${individual.snippet}</p>
+        <p class="ts-4">${individual.snippet}</p>
+    </div>
+</a>
