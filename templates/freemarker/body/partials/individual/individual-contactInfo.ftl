@@ -6,8 +6,14 @@
 <#assign primaryEmail = propertyGroups.pullProperty("http://purl.obolibrary.org/obo/ARG_2000028","http://www.w3.org/2006/vcard/ns#Work")!>
 <#assign addlEmail = propertyGroups.pullProperty("http://purl.obolibrary.org/obo/ARG_2000028","http://www.w3.org/2006/vcard/ns#Email")!>
 
+<div style="
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    /* padding-top: 0.2rem; */
+"> 
 <#if phone?has_content || primaryEmail?has_content || addlEmail?has_content >
-    <#--  <ul style="font-size:1em;padding-bottom:4px"><li><strong>${i18n().contact_info}</strong></li></ul>  -->
+    <ul><li><strong>${i18n().contact_info}</strong></li></ul>
 </#if>
 
 <#-- Additional Emails -->
@@ -54,3 +60,4 @@
         </#if>
     </#if>
 </#macro>
+</div>
