@@ -19,18 +19,10 @@
 <#include "individual-adminPanel.ftl">
   <section class="hero show-breadcrumb">
         <div class="hero-container group-container">
-          <div class="group-image-container"> <#--  Most-specific types -->
-            <@p.mostSpecificTypes individual />
-            <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>
-            <figure id="group-figure">
-              <img
-                src="https://www.uao.edu.co/wp-content/uploads/2020/04/grupo-de-investigacion-pai-745x552@2x.png"
-                alt=""
-              />
-            </figure>
-          </div>
-          <div class="group details">
+          
+          <div class="details">
             <div class="margin-details">
+             <@p.mostSpecificTypes individual />
                 <#if relatedSubject??>
                     <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
                     <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
@@ -49,6 +41,25 @@
 
               </div>
             </div>
+             <#--  Most-specific types -->
+           <#--  <div class="group-image-container">
+            <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>
+              -->
+                            <!-- Image -->
+            <#assign individualImage>
+                <@p.image individual=individual
+                        propertyGroups=propertyGroups
+                        namespaces=namespaces
+                        editable=editable
+                        showPlaceholder="always" />
+            </#assign>
+
+            <#if ( individualImage?contains('<img class="individual-photo"') )>
+                <#assign infoClass = 'class="withThumb"'/>
+            </#if>
+
+            <#--  <div id="photo-wrapper"> id="group-figure" --><figure > ${individualImage}</figure><#--  </div>  -->
+          <#--  </div>  -->
           </div>
         </div>
       </section>
