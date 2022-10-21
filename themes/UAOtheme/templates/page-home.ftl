@@ -56,24 +56,24 @@
                             </form>
                             <h2>¿Qué estás buscando?</h2>
                             <div class="btnslist">
-                                <a class="primary-btn  white" href="#">
+                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Article%20">
                                 Article
                                 </a>
                                 
-                                <a class="primary-btn  white" href="#">
+                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Book%20">
                                 Book
                                 </a>
                                 
-                                <a class="primary-btn  white" href="#">
+                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Chapter%20">
                                 Chapter
                                 </a>
                                 
-                                <a class="primary-btn  white" href="#">
+                                <a class="primary-btn  white" href="${urls.base}/research#http://vivoweb.org/ontology/core#ConferencePaper%20">
                                 Conference Paper
                                 </a>
                                 
-                                <a class="primary-btn  white" href="#">
-                                Journals
+                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Thesis%20">
+                                Thesis
                                 </a>
                             </div>
                         </div>
