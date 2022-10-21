@@ -89,14 +89,16 @@
     </section>
 
 <#else>
-    <section id="individuals-in-class" class="${currentServlet} latest-news" role="region">
-        <ul role="list" class="row">
+    <section id="individuals-in-class" class="${currentServlet} grey-image-links" role="region">
+        
+        <ul role="list" class="grid-container">
        
 
      
 
             <#-- Will be populated dynamically via AJAX request -->
         </ul>
+        </div>
     </section>
 </#if>
 
