@@ -25,7 +25,11 @@
 <link rel="stylesheet" href="${urls.theme}/css/test.css" />
 <link rel="stylesheet" href="${urls.theme}/css/swiper-bundle.min.css" />
 <link rel="stylesheet" href="${urls.theme}/css/slider.css" />
+<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/institutionalInternalClass.css" />
+<link rel="stylesheet" href="${urls.base}/css/account/account.css" />
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.22/dist/yasqe.min.css">
+
+<link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
 
 <#include "headScripts.ftl">
 
