@@ -189,10 +189,10 @@
 
 
                 	<tr>
-                    	<td> <a class="primary-btn"> <input type="button" id="saveButt" class="form-button"
-                               	   value="Save" onclick="writeProp()"/> </a></td>
-                    	<td><a class="primary-btn"><input type="button" id="dismissButt" class="form-button" value="cancel"
-                                   onclick="update()"/></a></td>
+                    	<td> <input type="button" id="saveButt" class="form-button"
+                               	   value="Save" onclick="writeProp()"/> </td>
+                    	<td><input type="button" id="dismissButt" class="form-button" value="cancel"
+                                   onclick="update()"/></td>
                 	</tr>
             	</table>
         	</div>
