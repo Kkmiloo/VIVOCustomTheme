@@ -2,6 +2,7 @@
 
 <#-- Template for displaying list of user accounts -->
 
+<div id="wrapper-content"> 
 <h3>${i18n().manage_profile_editing}</h3>
 
 <#if message??>
@@ -22,9 +23,10 @@
 </section>
 
 <section class="proxy-profile">
-    <h4>${i18n().relate_editors_profiles} <img src="${urls.images}/iconInfo.png" alt="${i18n().info_icon}" title="${i18n().profile_editing_title(siteName!)}" /></h4>
+    <h4>${i18n().relate_editors_profiles} <a href="" class="icon icon-info-circle" title="The editors you select on the left hand side will have the ability to edit the VIVO profiles you select on the right hand side. You can select multiple editors and multiple profiles, but you must select a minimum of 1 each."></a><#--  <img src="${urls.images}/iconInfo.png" alt="${i18n().info_icon}" title="${i18n().profile_editing_title(siteName!)}" />  --></h4>
 
     <form id="add-relation" action="${formUrls.create}" method="POST">
+        <div class="relationcontainer">  
         <fieldset class="proxy">
             <legend>${i18n().select_editors}</legend>
 
@@ -88,6 +90,7 @@
                 </ul>
             </section>
         </fieldset>
+        </div>
 
         <input class="submit pos-submit" type="submit" name="createRelationship" value="${i18n().save_button}"  role="button" />
     </form>
@@ -182,7 +185,7 @@
     </form>
 </section>
 </#list>
-
+</div>
 <script type="text/javascript">
 var proxyContextInfo = {
     baseUrl: '${urls.base}',

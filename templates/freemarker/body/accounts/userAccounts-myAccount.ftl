@@ -2,9 +2,10 @@
 
 <#-- Template for editing a user account -->
 
+<div id="wrapper-content"> 
 <#assign strings = i18n() />
 
-<h3>${strings.myAccount_heading}</h3>
+<h2>${strings.myAccount_heading}</h1>
 
     <#if errorEmailIsEmpty??>
         <#assign errorMessage = strings.error_no_email />
@@ -83,7 +84,7 @@
         <p class="requiredHint">* ${strings.required_fields}</p>
     </form>
 </section>
-
+</div>
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/account/account.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/edit/forms/css/customForm.css" />')}
 
