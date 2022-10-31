@@ -1,0 +1,88 @@
+# $This file is distributed under the terms of the license in LICENSE$
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix core: <http://vivoweb.org/ontology/core#> .
+@prefix vivoweb: <http://vivoweb.org/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+# academic departments datagetter
+
+<freemarker:lib-home-page.ftl> display:hasDataGetter display:academicDeptsDataGetter .
+
+<freemarker:recentPub.ftl> display:hasDataGetter display:recentPubDataGetter .
+
+display:academicDeptsDataGetter
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter> ;
+    display:saveToVar "academicDeptDG" ;
+    display:query """
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX vivo: <http://vivoweb.org/ontology/core#>
+
+    SELECT DISTINCT ?theURI ?name
+    WHERE
+    {
+          ?theURI a vivo:AcademicDepartment .
+          ?theURI rdfs:label ?name .
+    }
+
+    """ .
+
+display:recentPubDataGetter
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "recentPubDG" ;
+    display:query """
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX vivo: <http://vivoweb.org/ontology/core#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX bibo: <http://purl.org/ontology/bibo/>
+
+
+      SELECT ?title ?dt ?dtp ?uri ?pvLabel (GROUP_CONCAT(?author;SEPARATOR="- ") AS ?authors) 
+
+      WHERE 
+      { 
+            ?uri a bibo:Document  ; rdfs:label ?title ;vivo:dateTimeValue ?dateP ;  vivo:relatedBy ?rb ; 
+            OPTIONAL
+            { 
+                  ?uri vivo:hasPublicationVenue ?pv .
+                  ?pv rdfs:label ?pvLabel .
+            }
+            ?dateP vivo:dateTime ?dt ; vivo:dateTimePrecision ?dtp . 
+            ?rb vivo:relates ?f .
+            ?f a vivo:FacultyMember ; rdfs:label ?author
+      }
+      GROUP BY ?title ?dt ?dtp ?uri ?pvLabel
+      order by desc(?dt)
+      LIMIT 4
+
+    """ .
+
+
+
+"""
+      PREFIX fo: <http://purl.org/ontology/fo/>
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      PREFIX vivo: <http://vivoweb.org/ontology/core#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX bibo: <http://purl.org/ontology/bibo/>
+
+
+      SELECT ?theURI ?author ?title ?dt ?dtp 
+
+      WHERE 
+      { 
+            ?uri a bibo:Document  ; rdfs:label ?title ;vivo:dateTimeValue ?dateP ;  vivo:relatedBy ?rb .
+
+                  ?uri vivo:hasPublicationVenue ?pv .
+                  ?pv rdfs:label ?pvLabel .
+            
+            ?dateP vivo:dateTime ?dt ; vivo:dateTimePrecision ?dtp . 
+            ?rb vivo:relates ?f .
+            ?f a vivo:FacultyMember ; rdfs:label ?author
+      }
+
+      order by desc(?dt)
+"""

@@ -14,15 +14,38 @@
         <#include "headerMenu.ftl">
 
 		<#-- VIVO OpenSocial Extension by UCSF -->
-        <article  class="main-detail-container header-margin" role="main">
-		<#if openSocial??>
-			<#if openSocial.visible>
-            	<div id="gadgets-tools" class="gadgets-gadget-parent"></div>
-            </#if>
-		</#if>
 
-        ${body}
-        </article>
+        <#assign mainServlets = ['people','display','organizations', 'research','individual' ]/>
+
+        <#list mainServlets as item>
+            <#if item== currentServlet>
+                <#assign isMainContent=true>
+                <#break>
+            </#if>
+            <#assign isMainContent=false>
+        </#list>
+        <#if isMainContent==false>
+            <div id="wrapper-content" role="main">
+                <#if openSocial??>
+                    <#if openSocial.visible>
+                        <div id="gadgets-tools" class="gadgets-gadget-parent"></div>
+                    </#if>
+                </#if>
+
+                ${body}
+            </div>
+        <#else>
+            <article  class="main-detail-container header-margin ${currentServlet} " role="main">
+                <#if openSocial??>
+                    <#if openSocial.visible>
+                        <div id="gadgets-tools" class="gadgets-gadget-parent"></div>
+                    </#if>
+                </#if>
+
+                ${body}
+            </article>
+        </#if>
+
         <#include "footer.ftl">
     </body>
 </html>

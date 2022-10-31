@@ -2,7 +2,6 @@
 
 <#-- Template for editing a user account -->
 
-<div id="wrapper-content"> 
 <#assign strings = i18n() />
 
 <h2>${strings.myAccount_heading}</h1>
@@ -84,7 +83,7 @@
         <p class="requiredHint">* ${strings.required_fields}</p>
     </form>
 </section>
-</div>
+
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/account/account.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/edit/forms/css/customForm.css" />')}
 

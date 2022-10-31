@@ -44,6 +44,7 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 <#assign requiredHint="<span class='requiredHint'> *</span>"/>
 <#assign yearHint     = "<span class='hint'>(${i18n().year_hint_format})</span>" />
 
+
 <h2>${formAction} ${i18n().posn_entry_for} ${editConfiguration.subjectName}</h2>
 
 <#--Display error messages if any-->

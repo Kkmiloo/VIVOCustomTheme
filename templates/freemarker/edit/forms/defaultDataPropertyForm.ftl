@@ -5,7 +5,6 @@
     <#assign submissionErrors = editSubmission.validationErrors/>
 </#if>
 
-
 <h2>${editConfiguration.formTitle}</h2>
 
 <#--Display error messages if any-->

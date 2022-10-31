@@ -147,10 +147,10 @@ name will be used as the label. -->
 <#macro showAddLink propertyLocalName label url rangeUri domainUri="">
     <#if (rangeUri?contains("Authorship") && domainUri?contains("IAO_0000030")) || (rangeUri?contains("Editorship") && domainUri?contains("IAO_0000030"))|| rangeUri?contains("URL") || propertyLocalName == "hasResearchArea">
         <a class="add-${propertyLocalName}" href="${url}" title="${i18n().manage_list_of} ${label?lower_case}">
-        <img class="add-individual" data-domain="${domainUri}" data-range="${rangeUri}" src="	https://cdn-icons-png.flaticon.com/512/861/861319.png" alt="${i18n().manage}" /></a>
+        <span class="add-individual icon icon-folder" data-domain="${domainUri}" data-range="${rangeUri}"></span></a>
     <#else>
         <a class="add-${propertyLocalName}" href="${url}" title="${i18n().add_new} ${label?lower_case} ${i18n().entry}">
-        <img class="add-individual" data-domain="${domainUri}" data-range="${rangeUri}" src="${urls.images}/individual/addIcon.gif" alt="${i18n().add}" /></a>
+        <span class="add-individual icon icon-plus-circle" data-domain="${domainUri}" data-range="${rangeUri}"></span></a>
     </#if>
 </#macro>
 
@@ -200,7 +200,7 @@ name will be used as the label. -->
 </#macro>
 
 <#macro showEditLink propertyLocalName rangeUri url>
-    <a class="edit-${propertyLocalName}" href="${url}" title="${i18n().edit_entry}"><img class="edit-individual" data-range="${rangeUri}" src="${urls.images}/individual/editIcon.gif" alt="${i18n().edit_entry}" /></a>
+    <a class="edit-${propertyLocalName}" href="${url}" title="${i18n().edit_entry}"><span class="edit-individual icon icon-pencil-alt" data-range="${rangeUri}"> </span></a>
 </#macro>
 
 <#macro deleteIndividualLink individual redirectUrl="/">
@@ -210,7 +210,7 @@ name will be used as the label. -->
 
 
 <#macro showDeleteIndividualLink url>
-	<a class="delete-individual" href="${url}" title="${i18n().delete_entry}"><img  class="delete-individual" src="${urls.images}/individual/deleteIcon.gif" alt="${i18n().delete_entry}" /></a>
+	<a class="delete-individual" href="${url}" title="${i18n().delete_entry}"><span class="delete-individual icon icon-trash-alt" > </span></a>
 </#macro>
 
 <#macro deleteLink propertyLocalName propertyName statement rangeUri="">
@@ -235,7 +235,7 @@ name will be used as the label. -->
 </#macro>
 
 <#macro showDeleteLink propertyLocalName rangeUri url>
-    <a class="delete-${propertyLocalName}" href="${url}" title="${i18n().delete_entry}"><img  class="delete-individual" data-range="${rangeUri}" src="${urls.images}/individual/deleteIcon.gif" alt="${i18n().delete_entry}" /></a>
+    <a class="delete-${propertyLocalName}" href="${url}" title="${i18n().delete_entry}"><span  class="delete-individual icon icon-trash-alt" data-range="${rangeUri}" > </span></a>
 </#macro>
 
 <#macro verboseDisplay property>

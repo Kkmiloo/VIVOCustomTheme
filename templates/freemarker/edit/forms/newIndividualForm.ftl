@@ -20,7 +20,7 @@
 	<#assign submissionErrors = editSubmission.validationErrors/>
 </#if>
 
-<div id="wrapper-content"> 
+
 <h2>${i18n().create_new} ${typeName}</h2>
 
 
@@ -82,6 +82,6 @@
 
     </form>
 </section>
-</div> 
+
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customForm.css" />')}
 ${scripts.add('<script type="text/javascript" src="${urls.base}/templates/freemarker/edit/forms/js/newIndividualFormUtils.js"></script>')}
