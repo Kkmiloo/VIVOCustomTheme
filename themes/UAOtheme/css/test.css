@@ -369,28 +369,7 @@ ul#main-nav {
 /* INTRO-BLURB ------>  */
 
 /* LOG IN------>  */
-#login {
-    float: right;
-    width: 314px;
-    border: 1px solid #e8ece9;
-    margin-right: 25px;
-    padding-bottom: 30px;
-    margin-bottom: 30px;
-    overflow: hidden;
-    margin-top: 20px;
-}
 
-body.login #login {
-    float: none;
-}
-
-#login h2 {
-    font-size: 22px;
-    color: #2485ae;
-    padding-left: 15px;
-    padding-top: 18px;
-    border-bottom: none;
-}
 
 
 #error-alert {
@@ -415,119 +394,6 @@ body.login #login {
     color: #a12424;
     padding-top: 5px;
 }
-
-#login-form label {
-    display: block;
-    color: #5e6363;
-    padding-top: 0;
-    padding-left: 38px;
-    font-size: 14px;
-}
-
-#login-form input.text-field {
-    border: 0;
-    font-size: 14px;
-    padding: 5px;
-    width: 219px;
-    height: 24px;
-    margin-left: 38px;
-    background: #fff;
-    border: 1px solid #e0dfdf;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-#login-form input.text-field:focus {
-    border: 1px solid rgba(57, 138, 172, .5);
-    background-color: rgba(57, 138, 172, .1);
-}
-
-#login-form p.submit {
-    width: 100px;
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 38px;
-}
-
-#login-form p.submit-password {
-    height: 40px;
-    margin-top: 20px;
-    margin-left: 38px;
-}
-
-#login-form input.checkbox-remember-me {
-    float: left;
-    height: 14px;
-    width: 14px;
-    color: #5e6363;
-    padding: 0;
-    margin-top: 33px;
-    margin-left: 20px;
-}
-
-#login-form label.label-remember-me {
-    display: block;
-    float: right;
-    color: #5e6363;
-    font-size: 12px;
-    width: 100px;
-    margin: 0;
-    padding: 0;
-    margin-top: 29px;
-    margin-right: 32px;
-}
-
-p.forgot-password {
-    clear: both;
-    margin-left: 38px;
-    font-size: 12px;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
-}
-
-p.request-account {
-    width: 219px;
-    clear: both;
-    float: left;
-    margin-left: 38px;
-    margin-top: 10px;
-    padding-top: 20px;
-    border-top: 1px solid #e8ece9;
-}
-
-p.password-note {
-    font-size: 12px;
-    color: #949696;
-    padding-left: 38px;
-}
-
-#flash-message {
-    border: 1px dotted #E2C822;
-    background-color: #FFF9D7;
-    padding: .5em;
-    margin-bottom: 10px;
-}
-
-#welcome-message {
-    border: 1px dotted #E2C822;
-    background-color: #FFF9D7;
-    padding: .25em;
-    margin-bottom: 8px;
-}
-
-#flash-msg-container,
-#welcome-msg-container {
-    margin-bottom: 8px;
-    margin-top: -10px;
-    margin-right: -10px;
-    height: 34px;
-}
-
-p.external-auth {
-    margin: 0 auto;
-}
-
 
 /* BROWSE ------>  */
 ul#browse-classgroups a {
@@ -1949,7 +1815,7 @@ input [type="text"] {
 }
 
 label {
-    margin-top: 10px;
+    margin: 0.5em 0;
     font-size: 20px;
 }
 
@@ -2418,7 +2284,7 @@ h1.fn .display-title {
     margin: 0 auto;
     margin-bottom: 10px;
     margin-bottom: 20px;
-    border: 1px solid #dfebe5;
+    border: none;
 }
 
 .scroll-up {
@@ -2448,6 +2314,7 @@ article.property ul.property-list li.subclass h3 {
     padding: 10px 10px 10px 0;
     background-color: #fff;
     margin-bottom: 0;
+    color: black;
 }
 
 article.property .data-property-statement {
@@ -3105,11 +2972,17 @@ p {
     margin-bottom: 1rem;
 }
 
+.hero-container .add-individual {
+    height: auto;
+    width: 20px;
+    color: black;
+}
+
 .add-individual {
 
     height: auto;
     width: 20px;
-
+    color: white;
 }
 
 
@@ -3518,10 +3391,37 @@ video {
 }
 
 
+.acSelection {
+    display: none;
+    margin-top: 1em;
+}
+
+.acSelectionInfo {
+    background-color: #d9d9d9;
+    padding: 0.2em 0.35em;
+}
+
+.subsections-scroll .ss-desktop .ssd-first-level>li>a {
+    cursor: pointer;
+}
 
 /* FORM EDIT*/
+.editRequestDispatch label {
+    display: block;
+}
 
-.uploadImages,
+#ie67DisableWrapper {
+    display: none;
+}
+
+form.customForm p {
+    margin-top: 0;
+    /* padding-top: 0; */
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* .uploadImages,
 .editRequestDispatch {
     background-image: url(https://pattern.uao.edu.co/images/bg-desktop-white-grey.jpg);
 }
@@ -3534,7 +3434,7 @@ video {
     margin-bottom: 5rem;
 } */
 
-/* Article */
+/* Article 
 .uploadImages article {
     display: flex;
     flex-direction: row;
@@ -3557,20 +3457,20 @@ video {
     margin: 5rem 0;
 }
 
-/* Photo upload default image */
+/* Photo upload default image 
 #photoUploadDefaultImage {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Paragraph */
+/* Paragraph 
 #photoUploadForm p {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-/* Image */
+/* Image 
 #photoUploadDefaultImage img {
     width: 200px;
     height: 200px;
@@ -3584,25 +3484,25 @@ video {
 
 
 
-/* Submit Button */
+/* Submit Button 
 .primary-btn input {
     background-color: rgba(240, 240, 240, 0);
     color: #ffffff;
     font-size: 16px;
 }
 
-/* Span Tag */
+/* Span Tag 
 #photoUploadForm .or {
     margin-left: 10px;
 }
 
-/* Link */
+/* Link 
 #photoUploadForm .or a {
     margin-left: 10px;
 }
 
 input[type="file"] {
-    /*   display: none; */
+    /*   display: none; 
 }
 
 .customupload {
@@ -3634,14 +3534,14 @@ input[type="file"] {
     opacity: 1
 }
 
-/* Label */
+/* Label 
 #photoUploadForm label {
     margin-right: 10px;
 }
 
 
-/*nuevo*/
-/* Heading */
+/*nuevo
+/* Heading 
 
 #requiredLegend,
 .uploadImages>article:nth-child(6)>form.editForm,
@@ -3650,8 +3550,7 @@ input[type="file"] {
     color: #9e0b0f;
 }
 
-
-/* Label nombre */
+/* Label nombre 
 #label,
 .editRequestDispatch input[type="text"] {
     min-height: 50px;
@@ -3664,7 +3563,7 @@ input[type="file"] {
     box-shadow: -1px 4px 11px 0px rgba(0, 0, 0, 0.4);
 }
 
-/* Label telefono*/
+/* Label telefono
 #telephoneNumber {
     min-height: 50px;
     font-size: 18px;
@@ -3691,16 +3590,6 @@ input.submit:hover {
     cursor: inherit;
 }
 
-.editRequestDispatch h2,
-.editRequestDispatch a,
-.editRequestDispatch label,
-.editRequestDispatch p,
-.editRequestDispatch input,
-#ie67DisableContent>p,
-.editRequestDispatch>article:nth-child(6)>form.customForm>div {
-    margin-bottom: 30px;
-    margin-right: 2rem;
-}
 
 #newIndividual {
     display: flex;
@@ -3721,8 +3610,10 @@ input.submit:hover {
 .uploadImages>article:nth-child(6)>form.customForm>div {
     margin-bottom: 30px;
 }
+ */
 
 
+/* END FORM EDIT */
 
 
 /* jquery.Jcrop.css v0.9.12 - MIT License */
@@ -3955,13 +3846,17 @@ body {
 }
 
 body.home,
-body.display {
+body.display,
+body.people,
+body.organizations,
+body.research {
     background: none;
 }
 
 /* Heading */
 #wrapper-content .editingForm h2 {
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    font-size: 1rem;
 }
 
 /* Division */
@@ -3971,9 +3866,13 @@ body.display {
 
 /* Table Data */
 div .form-background tbody:nth-child(1) tr:nth-child(1) td:nth-child(2) {
-    display: flex;
+    /*     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+}
+
+.form-editingRow {
+    background-color: #f4f4f4;
 }
 
 /* Primary */
@@ -4477,6 +4376,10 @@ a.primary-btn-delete:hover {
     box-shadow: -1px 4px .2rem 0 rgba(0, 0, 0, 0.1);
 }
 
+#search-home-field label {
+    margin: 0
+}
+
 .form-search .input-form-search input[type=search] {
     border: 0rem solid #ffffff00;
 }
@@ -4500,6 +4403,7 @@ a.primary-btn-delete:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5rem;
 }
 
 #wrapper-content img {
@@ -4701,6 +4605,27 @@ input[type="password"] {
     margin-left: 15px;
 }
 
+form.customForm fieldset,
+fieldset.dateTime label,
+form.customForm label.dateTime {
+    display: inline;
+}
+
+form.customForm .hint {
+    color: #9c9c9c;
+    font-weight: normal;
+}
+
+fieldset {
+    border-style: none;
+}
+
+form.customForm p.inline label {
+    display: inline;
+    clear: none;
+    float: none;
+    margin-right: 1em;
+}
 
 #my-account input#email-address {
     width: 15rem;
