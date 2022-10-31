@@ -189,10 +189,10 @@
 
 
                 	<tr>
-                    	<td><input type="button" id="saveButt" class="form-button"
-                               	   value="Save" onclick="writeProp()"/></td>
-                    	<td><input type="button" id="dismissButt" class="form-button" value="cancel"
-                                   onclick="update()"/></td>
+                    	<td> <a class="primary-btn"> <input type="button" id="saveButt" class="form-button"
+                               	   value="Save" onclick="writeProp()"/> </a></td>
+                    	<td><a class="primary-btn"><input type="button" id="dismissButt" class="form-button" value="cancel"
+                                   onclick="update()"/></a></td>
                 	</tr>
             	</table>
         	</div>
@@ -205,4 +205,17 @@
 	</div><!-- END div "authorized" -->
 </c:if><!-- end if (securityLevel less than MIN_EDIT_ROLE) -->
 </div><!-- END div "anybody" -->
+
+<script> 
+	document.addEventListener('DOMContentLoaded', (event) => {const forms = document.querySelectorAll('#wrapper-content form');
+	
+	forms.forEach( element => { const anchor = document.createElement('a') ; anchor.classList="primary-btn" ;  const inputS= element.querySelector('input[type="submit"]') ; anchor.append(inputS) ; element.append(anchor)})
+	
+	const ele = document.querySelectorAll('input[type="button"]')
+	ele.forEach( el => { const anchor =  document.createElement('a'); anchor.classList = "primary-btn"; const parente = el.parentElement; anchor.append(el) ; parente.append(anchor) })
+	});
+	
+	
+	
+	</script>
 

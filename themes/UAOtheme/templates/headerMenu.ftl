@@ -7,7 +7,7 @@
 <header id="header-menu-desktop" class="fixed has-scroll-indicator">
     <div id ="hmd-bottom"> 
         <div id="hmdb-logo-container">
-            <a id="hmdb-logo" href="${urls.base}"></a>
+            <a id="hmdb-logo" href="${urls.base}/"></a>
         </div>
         <#if currentServlet!='home'>
         <#include "search.ftl"> 
@@ -16,6 +16,7 @@
             <#list menu.items as item>
             <li role="listitem"><a href="${item.url}" title="${item.linkText} ${i18n().menu_item}" <#if item.active> class="selected" </#if>>${item.linkText}</a></li>
             </#list>
+            <#include "languageSelector.ftl">
             <#if user.loggedIn>
                 <#-- COMMENTING OUT THE EDIT PAGE LINK FOR RELEASE 1.5. WE NEED TO IMPLEMENT THIS IN A MORE
                      USER FRIENDLY WAY. PERHAPS INCLUDE A LINK ON THE PAGES THEMSELVES AND DISPLAY IF THE
@@ -25,10 +26,12 @@
                         <li role="listitem"><a href="${page.URLToEditPage}" title="${i18n().identity_edit}">${i18n().identity_edit}</a></li>
                      </#if>
                 -->
-                    <li class="dropdown">
-                        <ul >
-                            <li><a href="#" title="${i18n().identity_user}">Hola, ${user.loginName}</a>
-                                <ul class="dropdown-content" >
+                    <li class="hov">
+                        
+                            <a href="#" title="${i18n().identity_user}">Hola, ${user.loginName}
+                                <span class="icon icon-angle-down"></span>
+                            </a>
+                                <ul class="dropList" >
                                      <#if user.hasProfile>
                                          <li role="listitem"><a href="${user.profileUrl}" title="${i18n().identity_myprofile}">${i18n().identity_myprofile}</a></li>
                                      </#if>
@@ -40,8 +43,8 @@
                                      </#if>
                                      <li role="listitem"><a href="${urls.logout}" title="${i18n().menu_logout}">${i18n().menu_logout}</a></li>
                                 </ul>
-                            </li>
-                         </ul>
+                            
+                         
                      </li>
 
                 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/userMenu/userMenuUtils.js"></script>')}
@@ -49,7 +52,7 @@
             <#else>
                 <li role="listitem"><a class="log-out" title="${i18n().menu_loginfull}" href="${urls.login}">${i18n().menu_login}</a></li>
             </#if>
-            <#include "languageSelector.ftl">
+            
 
         </ul>
     </div>

@@ -5,7 +5,7 @@
 <#import "userAccounts-accountsNav.ftl" as p>
 
 <#assign strings = i18n() />
-
+<div id="wrapper-content"> 
 <form method="POST" action="${formUrls.add}" id="add-account" class="customForm" role="Add account">
     <h3><span>${strings.user_accounts_link} | </span><input type="submit" class="submit add-account" value="${strings.add_new_account}" /></h3>
 </form>
@@ -179,7 +179,7 @@
 
     <@p.accountsNav />
 </form>
-
+</div>
 <script type="text/javascript">
     confirm_delete_account_singular = "${strings.confirm_delete_account_singular}"
     confirm_delete_account_plural = "${strings.confirm_delete_account_plural}"
