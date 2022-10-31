@@ -5,7 +5,6 @@
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/admin.css" />')}
 
 
-<div id="wrapper-content"> 
 
     <div class="tab">
     <h2>${i18n().site_administration}</h2>
@@ -27,5 +26,5 @@ ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/admin.css" />')
 </ul>
 </div>
 
-</div>
+
 

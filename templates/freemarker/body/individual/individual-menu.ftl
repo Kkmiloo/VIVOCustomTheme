@@ -1,7 +1,7 @@
 <#-- $This file is distributed under the terms of the license in LICENSE$ -->
 
 <#-- Menu management page (uses individual display mechanism) -->
-<div id="wrapper-content"> 
+
 
 <#include "individual-setup.ftl">
 
@@ -40,7 +40,7 @@
 	    <br />
 	    <p class="note">${i18n().refresh_page_after_reordering}</p>
     </#if>
-</div>
+
     ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/individual/individual.css" />',
                       '<link rel="stylesheet" href="${urls.base}/css/individual/menuManagement-menuItems.css" />')}
 

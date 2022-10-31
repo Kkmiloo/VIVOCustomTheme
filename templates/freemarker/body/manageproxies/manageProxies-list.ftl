@@ -2,7 +2,7 @@
 
 <#-- Template for displaying list of user accounts -->
 
-<div id="wrapper-content"> 
+
 <h3>${i18n().manage_profile_editing}</h3>
 
 <#if message??>
@@ -185,7 +185,7 @@
     </form>
 </section>
 </#list>
-</div>
+
 <script type="text/javascript">
 var proxyContextInfo = {
     baseUrl: '${urls.base}',

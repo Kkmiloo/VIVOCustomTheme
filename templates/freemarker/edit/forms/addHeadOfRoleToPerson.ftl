@@ -29,4 +29,5 @@ roleExamples-->
 <#assign createTitle = "${i18n().create_entry_for_head_role}"/>
 
 <#--Each of the two stage forms will include the form below-->
+
 <#include "addRoleToPersonTwoStage.ftl">

@@ -5,7 +5,6 @@ Institutional Internal Class Form
 To be associated later (upon completion of N3 Refactoring) with
 edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.InstitutionalInternalClassForm.
 -->
-<div id="wrapper-content"> 
     <h2>${i18n().institutional_internal_class}</h2>
 
     <section id="introMessage" role="region">
@@ -83,6 +82,6 @@ edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.Institu
             </#if>
         </form>
     </section>
-</div>
+
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/institutionalInternalClass.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customForm.css" />')}

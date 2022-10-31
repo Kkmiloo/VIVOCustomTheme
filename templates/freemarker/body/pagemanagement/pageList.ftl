@@ -1,5 +1,5 @@
 <#-- $This file is distributed under the terms of the license in LICENSE$ -->
-<div id="wrapper-content"> 
+
 
 <section id="pageList">
     <div class="tab">
@@ -75,7 +75,7 @@
   <br />
  <p style="margin-top:10px">${i18n().use_capitalized} <a id="menuMgmtLink" href="${urls.base}/individual?uri=http%3A%2F%2Fvitro.mannlib.cornell.edu%2Fontologies%2Fdisplay%2F1.1%23DefaultMenu&switchToDisplayModel=true&previous=pageManagement" title="">${i18n().menu_orering}</a> ${i18n().to_order_menu_items}</p>
 </section>
-</div>
+
 <script>
     var i18nStrings = {
         confirmPageDeletion: '${i18n().confirm_page_deletion?js_string}'
