@@ -2333,8 +2333,8 @@ h6 {
 
 @font-face {
     font-family: icomoon;
-    src: url(../../fonts/icomoon.eot?pzqusl);
-    src: url(../../fonts/icomoon.eot?pzqusl#iefix) format("embedded-opentype"), url(../../fonts/icomoon.ttf?pzqusl) format("truetype"), url(../../fonts/icomoon.woff?pzqusl) format("woff"), url(../../fonts/icomoon.svg?pzqusl#icomoon) format("svg");
+    src: url(https://pattern.uao.edu.co/fonts/icomoon.eot?pzqusl);
+    src: url(https://pattern.uao.edu.co/fonts/icomoon.eot?pzqusl#iefix) format("embedded-opentype"), url(https://pattern.uao.edu.co/fonts/icomoon.eot?pzqusl) format("truetype"), url(https://pattern.uao.edu.co/fonts/icomoon.woff?pzqusl) format("woff"), url(https://pattern.uao.edu.co/fonts/icomoon.svg?pzqusl#icomoon) format("svg");
     font-display: swap;
     font-weight: 400;
     font-style: normal
