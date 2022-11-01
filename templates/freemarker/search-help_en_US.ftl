@@ -14,7 +14,7 @@
     <li>Except for boolean operators, searches are <strong>not</strong> case-sensitive, so "Geneva" and "geneva" are equivalent</li>
     <li>If you are unsure of the correct spelling, put ~ at the end of your search term -- e.g., <i>cabage~</i> finds <i>cabbage</i>, <i>steven~</i> finds <i>Stephen</i> and <i>Stefan</i> (as well as other similar names).</li>
 </ul>
-    
+ <#--     
 <h4><a id="advTipsLink" href="#">Advanced Tips</a></h4>    
 <ul id="advanced" class="searchTips" style="visibility:hidden">
     <li>When you enter more than one term, search will return results containing all of them unless you add the Boolean "OR" -- e.g., <i>chicken</i> OR <i>egg</i>.</li>
@@ -24,7 +24,7 @@
     <li>Use the wildcard * character to match an even wider variation -- e.g., <i>nano*</i> will match both <i>nanotechnology</i> and <i>nanofabrication</i>.</li>
     <li>Search uses shortened versions of words -- e.g., a search for <i>cogniti*</i> finds nothing, while <i>cognit*</i> finds both <i>cognitive</i> and <i>cognition</i>.</li> 
 </ul>
-<a id="closeLink" href="#"  style="visibility:hidden;font-size:.825em;padding-left:8px">Close</a>
+<a id="closeLink" href="#"  style="visibility:hidden;font-size:.825em;padding-left:8px">Close</a>  -->
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/search.css" />')}
 <script type="text/javascript">
     $(document).ready(function(){

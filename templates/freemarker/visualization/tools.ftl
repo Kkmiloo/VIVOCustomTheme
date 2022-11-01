@@ -2,7 +2,7 @@
 
 <#assign shortVisualizationURLRoot ="/vis">
 <#assign refreshCacheURL = "${urls.base}${shortVisualizationURLRoot}/refresh-cache">
-
+ <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
 <h2>${i18n().visualization_tools}</h2>
 
 <a href="${refreshCacheURL}">${i18n().refresh_cached_vis_models}</a>

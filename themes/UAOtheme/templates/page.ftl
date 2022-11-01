@@ -15,7 +15,7 @@
 
 		<#-- VIVO OpenSocial Extension by UCSF -->
 
-        <#assign mainServlets = ['people','display','organizations', 'research','individual' ]/>
+        <#assign mainServlets = ['people','display','organizations', 'research','individual', 'login','search' ]/>
 
         <#list mainServlets as item>
             <#if item== currentServlet>
