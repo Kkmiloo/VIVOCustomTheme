@@ -2,8 +2,8 @@
 
 <#-- Template for displaying list of user accounts -->
 
-
-<h3>${i18n().manage_profile_editing}</h3>
+ <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
+ <h2>${i18n().manage_profile_editing}</h2>
 
 <#if message??>
     <section class="account-feedback" role="region">

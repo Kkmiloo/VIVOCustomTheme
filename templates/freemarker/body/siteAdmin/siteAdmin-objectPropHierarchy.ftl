@@ -11,7 +11,7 @@
     <#assign propType = "group">
 </#if>
 
-
+ <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
 <section role="region">
 
     <h2>${pageTitle!}</h2>

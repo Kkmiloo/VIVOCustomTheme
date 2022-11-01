@@ -1,5 +1,5 @@
 <#-- $This file is distributed under the terms of the license in LICENSE$ -->
-
+ <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
 <section role="region">
 	<#if propertyName?? >
 		<h2>Classes with a restriction on <em><a href="${editController}${propertyURI?url}">${propertyName!}</a></em></h2>

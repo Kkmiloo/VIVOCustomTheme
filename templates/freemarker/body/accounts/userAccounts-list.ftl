@@ -5,6 +5,7 @@
 <#import "userAccounts-accountsNav.ftl" as p>
 
 <#assign strings = i18n() />
+ <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
 <form method="POST" action="${formUrls.add}" id="add-account" class="customForm" role="Add account">
     <h3><span>${strings.user_accounts_link} | </span><input type="submit" class="submit add-account" value="${strings.add_new_account}" /></h3>
 </form>

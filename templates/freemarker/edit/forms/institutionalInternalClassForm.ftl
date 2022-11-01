@@ -5,6 +5,7 @@ Institutional Internal Class Form
 To be associated later (upon completion of N3 Refactoring) with
 edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.InstitutionalInternalClassForm.
 -->
+    <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
     <h2>${i18n().institutional_internal_class}</h2>
 
     <section id="introMessage" role="region">
