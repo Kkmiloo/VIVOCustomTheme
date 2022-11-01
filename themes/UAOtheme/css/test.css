@@ -1743,7 +1743,7 @@ individuals-in-class.research>ul li.individual h1 {
 
 #individuals-in-class>ul>li>h1 a {
     margin: 1.8rem 0;
-    font-size: 2rem;
+    font-size: ;
 }
 
 #individuals-in-class.people ul {
@@ -4477,7 +4477,18 @@ a.primary-btn-delete:hover {
 #hmd-bottom .hov li {
     min-height: 40px;
     padding-left: 0px;
+    width: 100%;
 }
+
+article.profile-card:before {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.no-individuals {
+    text-align: center;
+}
+
 
 /* List Item */
 #header-menu-desktop #hmd-bottom ul .hov .main li {
