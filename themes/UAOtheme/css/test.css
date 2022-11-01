@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fontstgoogleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
@@ -70,7 +70,65 @@ label.inline {
     font-size: .9em;
 }
 
+.btn,
+a.btn {
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    font-weight: 700;
+    padding: 8px 20px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
+}
 
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+a.btn-secondary:hover,
+a.btn-default:hover,
+.btn-secondary:hover,
+.btn-default:hover,
+input.btn-secondary:hover,
+input.btn-default:hover,
+a.btn-secondary:focus,
+a.btn-default:focus,
+.btn-secondary:focus,
+.btn-default:focus,
+input.btn-secondary:focus,
+input.btn-default:focus,
+a.btn-secondary.hover,
+a.hover.btn-default,
+.btn-secondary.hover,
+.hover.btn-default,
+input.btn-secondary.hover,
+input.hover.btn-default,
+a.btn-default.hover,
+.btn-default.hover,
+a.btn-secondary.focus,
+a.focus.btn-default,
+.btn-secondary.focus,
+.focus.btn-default,
+input.btn-secondary.focus,
+input.focus.btn-default,
+a.btn-default.focus,
+.btn-default.focus {
+    background: #282828;
+    border: 2px solid #61666e;
+    color: #fff;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
 
 .validationError {
     font-weight: normal;
@@ -94,6 +152,10 @@ p.submit {
 .editingForm .entryFormHead {
     background-color: #f1f2ee;
     border-color: #dfe6e6;
+}
+
+.editingForm label {
+    display: block;
 }
 
 .form-item {
@@ -270,7 +332,7 @@ ul.ingestMenu {
 }
 
 /* BACK-END FORMS -------------->  */
-.display-inline {
+.editingForm .display-inline {
     display: inline-block;
 }
 
@@ -544,69 +606,8 @@ ul#individual-tools-people li a {
 /* ------------------------------------------------->  */
 
 /* ADMIN PANEL ------>  */
-#admin {
-    background-color: #f2f9fb;
-}
-
-#admin h3 {
-    background: #2485AE;
-    color: #fff;
-}
-
-#admin .uri-link,
-#verbose-mode span {
-    color: #888c8c;
-}
-
-#admin a {
-    color: #2a98bc;
-}
 
 /* INDIVIDUAL INTRO FOR ANY CLASS ------>  */
-.preferred {
-    padding-top: .2em;
-}
-
-#individual-intro h1 {
-    font-size: 1.375em;
-    color: #2485ae;
-}
-
-#individual-intro span.display-title,
-h1.fn .display-title {
-    font-size: .825em;
-    color: #5e6363;
-    border-left: 1px solid #a6b1b0;
-}
-
-ul#individual-tools {
-    color: #8AA149;
-}
-
-h2#webpage {
-    font-weight: bold;
-}
-
-/* INDIVIDUAL INTRO - LEFT SIDE CONTENT ------>  */
-img.individual-photo {
-    border: 7px solid #ebebeb;
-}
-
-.rdf-url {
-    padding-top: .8em;
-    display: block;
-}
-
-ul#individual-tools {
-    color: #8AA149
-}
-
-#share-contact a.email,
-#share-contact a.tel,
-.editingForm .entryFormHead h2,
-.navlinkblock {
-    color: #5f6464;
-}
 
 ul.individual-urls {
     list-style: url(../../../images/individual/arrow-green.gif);
@@ -1278,78 +1279,78 @@ table#table-listing td a {
 
 /* Submit Button */
 #add-account h3 .add-account {
-    font-family: roboto, sans-serif;
+    font-family: Roboto, sans-serif
 }
 
 /* Filter roles */
 #filter-roles {
-    font-family: roboto, sans-serif;
+    font-family: Roboto, sans-serif
 }
 
 /* Form Division */
 #filter-roles form {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Role filter uri */
 #roleFilterUri {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Form Division */
 #search-accounts form {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Input */
 #search-accounts .customForm input[type=text] {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Submit Button */
 #search-accounts .customForm .submit {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Account display */
 #account-display {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Delete account */
 #account-display .accounts .delete-account {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Span Tag */
 #account-display .accounts span {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Select */
 #account-display .accounts select {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Th */
 #table-listing tr th {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Table Data */
 #table-listing tr td {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif;
     font-size: 14px;
 }
 
 /* Link */
 #table-listing td a {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 /* Navigation */
 #account-display .accounts nav {
-    font-family: 'roboto';
+    font-family: Roboto, sans-serif
 }
 
 
@@ -1629,7 +1630,7 @@ article.property h3 {
 
 #hmd-bottom ul li a {
 
-    font-family: 'Roboto';
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
@@ -1732,7 +1733,7 @@ a.link-image-button figure {
     margin-top: 0.6rem;
     margin-bottom: 13px;
     display: block ruby;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 12px;
@@ -1742,7 +1743,7 @@ a.link-image-button figure {
 
 .abstract {
 
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 12px;
@@ -2078,7 +2079,7 @@ section.hero-section .hhs-container::before {
 }
 
 #individual-info #preferredTitle {
-    font-family: 'Roboto';
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -2568,7 +2569,7 @@ a.delete-mainImage {
 }
 
 p {
-    font-family: "Roboto";
+    font-family: Roboto, sans-serif
 }
 
 #pub_count_short_sparkline_vis_img>table>tbody>tr>td>img {
@@ -3242,7 +3243,7 @@ footer {
 }
 
 #hmd-bottom ul li a {
-    font-family: 'Roboto';
+    font-family: Roboto, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
@@ -3344,6 +3345,19 @@ footer {
     height: 3.1rem;
     width: 4rem;
 }
+
+a.btn-secondary,
+a.btn-default,
+.btn-secondary,
+.btn-default,
+input.btn-secondary,
+input.btn-default {
+    background: none;
+    border: 1px solid #6d727c !important;
+    color: #555961;
+    border-radius: 1.25rem;
+}
+
 
 a.primary-btn {
     min-width: 6rem;
@@ -3854,11 +3868,11 @@ body.research {
 }
 
 /* Heading */
-#wrapper-content .editingForm h2 {
+/* #wrapper-content .editingForm h2 {
     margin-bottom: 0;
     font-size: 1rem;
 }
-
+ */
 /* Division */
 #wrapper-content .editingForm>div {
     margin-top: 30px;
@@ -4283,7 +4297,6 @@ a.primary-btn-delete:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    left: 0px !important;
     width: 200px;
     margin-top: 70px;
 }
@@ -4364,11 +4377,16 @@ a.primary-btn-delete:hover {
     margin-left: 20px;
 }
 
-.form-search .input-form-search input[type="search"]:focus~label,
-.form-search .input-form-search input[type="search"]:valid~label {
+.nav-search .form-search .input-form-search input[type="search"]:focus~label,
+.nav-search .form-search .input-form-search input[type="search"]:valid~label {
     color: rgb(0, 0, 0);
     text-shadow: none;
     font-style: normal;
+}
+
+.form-search .input-form-search input[type="search"]:focus~label,
+.form-search .input-form-search input[type="search"]:valid~label {
+    color: white;
 }
 
 #search-homepage {
@@ -4416,6 +4434,18 @@ a.primary-btn-delete:hover {
 #wrapper-content h2 {
     margin-top: 0px;
     display: block;
+    font-size: 2rem;
+    text-align: start;
+}
+
+#introMessage p {
+    font-weight: 300;
+    font-size: 1rem;
+    margin-bottom: 1.3em;
+}
+
+form.customForm p {
+    margin-top: 8px;
 }
 
 /*No matching results*/
@@ -4744,17 +4774,21 @@ input.delete:hover {
 /* Proxy profile */
 #wrapper-content .proxy-profile {
     padding-bottom: 20px;
-    background-color: rgba(255, 0, 0, 5%);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    margin-top: 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     transform: translatex(0px) translatey(0px);
     margin-bottom: 20px;
+}
+
+.profile {
+    width: 440px;
+    float: right;
+    border-left: 1px dotted #d7d6d6;
+    padding-left: 30px;
+    padding-right: 1em;
+    margin-bottom: 1em;
 }
 
 /* Input */
@@ -4873,3 +4907,174 @@ span.controls {
 }
 
 /* END MENUORDERING.CSS */
+
+
+/*  MANAGEPAGES.css */
+
+/* $This file is distributed under the terms of the license in LICENSE$ */
+
+.pageContent {
+    padding-left: 6px;
+    padding-top: 2px;
+}
+
+.pageContentContainer {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    margin-bottom: 4px;
+}
+
+.pageContentTypeLabel {
+    padding-left: 6px;
+    color: #064D68;
+}
+
+.pageContentWrapper {
+    background-color: #f9f9f9;
+    padding-left: 6px;
+    padding-top: 2px;
+    border-top-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+.pageContentExpand {
+    float: right;
+    padding-right: 5px;
+}
+
+.contentSectionContainer {
+    background-color: #f9f9f9;
+    padding-left: 6px;
+    padding-top: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+.arrow {
+    width: 13px;
+    height: 9px;
+    display: block;
+}
+
+.expandArrow {
+    background: url(../../images/vitro_plus_sign.gif) right center no-repeat;
+    min-height: 18px;
+}
+
+.collapseArrow {
+    background: url(../../images/vitro_minus_sign.gif) right center no-repeat;
+    min-height: 18px;
+}
+
+.deleteButton {
+    margin-bottom: 5px;
+}
+
+section#floatRight {
+    margin-top: 0px;
+    float: right;
+    background-color: #fff;
+    width: 580px;
+    margin-right: -4px;
+}
+
+select#typeSelect {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+section#headerBar {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-width: 0px;
+    padding-left: 6px;
+    color: #064D68;
+}
+
+input#moreContent {
+    margin-top: 8px;
+}
+
+section#pageDetails {
+    background-color: #fff;
+}
+
+p#templatePTag {
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+p#menuCheckboxPTag {
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+section.hideMenuSection {
+    margin-top: 10px;
+    display: none;
+}
+
+section.showMenuSection {
+    margin-top: 10px;
+}
+
+section#addPageOne {
+    margin-bottom: -12px;
+    margin-top: 8px;
+}
+
+input.doneWithContent {
+    display: inline;
+    padding: 5px 18px 7px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+    background-color: #398aac;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    margin-right: .6em;
+    margin-bottom: 8px;
+    margin-top: 0px;
+}
+
+input#contentCheckbox {
+    margin-left: 30px;
+    margin-top: 5px;
+    vertical-align: top;
+    padding: 0;
+}
+
+span.deleteLinkContainer {
+    float: left;
+    margin-left: 170px;
+    margin-top: -36px;
+}
+
+form#managePage textarea {
+    width: 98.5%;
+}
+
+#internal-class {
+    padding: 10px 0 2px 10px;
+    background: #f0f0f0;
+    margin-right: .4em;
+    margin-bottom: .8em;
+    width: 65%;
+}
+
+
+/**************************/
