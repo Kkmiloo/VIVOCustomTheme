@@ -43,9 +43,9 @@ ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/uploadImages.cs
                 <input type="hidden" name="y" value="" />
                 <input type="hidden" name="w" value="" />
                 <input type="hidden" name="h" value="" />
-                <a href class="primary-btn"> 
+                
                 <input  class="submit" type="submit" value="${i18n.submit_save}">
-                </a>
+                
                 <span class="or"> ${i18n.or} <a class="cancel"  href="${cancelUrl}" title="${i18n.cancel_title}">${i18n.cancel_link}</a></span>
             </form>
        </section>
