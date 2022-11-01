@@ -17,10 +17,17 @@
 <#-- Default individual profile page template -->
 <#--@dumpAll /-->
 <#include "individual-adminPanel.ftl">
-<section id="individual-intro" class="vcard" role="region" <@mf.sectionSchema individual/>>
 
-    <section id="share-contact" role="region">
-        <#-- Image -->
+<section class="hero-section"> 
+<div id="" class="hhs-container with-temporary-notice" role="region" <@mf.sectionSchema individual/>>
+
+
+
+
+
+
+<#--      <section id="share-contact" role="region">
+        <#-- Image 
         <#assign individualImage>
         <@p.image individual=individual
             propertyGroups=propertyGroups
@@ -33,37 +40,45 @@
             <#assign infoClass = 'class="withThumb"'/>
         </#if>
         <div id="photo-wrapper">${individualImage}</div>
-    </section>
+    </section>  -->
     <!-- start section individual-info -->
-    <section id="individual-info" ${infoClass!} role="region">
+    <div id="" ${infoClass!} class="hhsc-left" role="region">
 
         <#if individualProductExtensionPreHeader??>
             ${individualProductExtensionPreHeader}
         </#if>
 
-        <header>
+        
             <#if relatedSubject??>
                 <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
                 <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
             <#else>
-                <h1 class="fn" itemprop="name">
+                <div class="hero-title" itemprop="name">
                     <#-- Label -->
+                    <@p.mostSpecificTypes individual />
+                    <h1>
                     <@p.label individual editable labelCount localesCount languageCount/>
+                    
                     <#if editable>
                         <@p.deleteIndividualLink individual />
                     </#if>
+                     </h1>
                     <#--  Most-specific types -->
-                    <@p.mostSpecificTypes individual />
-                    <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>
-                </h1>
+                    
+                    <#--  <span id="iconControlsVitro"><img id="uriIcon" title="${individual.uri}" class="middle" src="${urls.images}/individual/uriIcon.gif" alt="uri icon"/></span>  -->
+                
             </#if>
-        </header>
+        
 
     <#if individualProductExtension??>
+    <div id="info-extension">
         ${individualProductExtension}
+    <div>
     <#else>
-            </section> <!-- individual-info -->
-        </section> <!-- individual-intro -->
+    </div>
+            </div> <!-- individual-info -->
+        </div> <!-- individual-intro -->
+        </section>
     </#if>
 
 <#assign nameForOtherGroup = "${i18n().other}">

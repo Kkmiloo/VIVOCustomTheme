@@ -9,50 +9,58 @@
 
 <section id="noJavascriptContainer" class="hidden" style="display:flex">
 
-<div class="virtual-search-deploy-filter">
-        <div class="virtual-mobile-title">
-          <h2>Filtrar programas</h2>
-          <a href="" class="close-button"
-            ><span class="icon icon-close"></span>Cerrar</a
-          >
-        </div>
-        <div class="vsdf-container">
-          <div class="vsdf-title">
-            <h2>Filtrar</h2>
-          </div>
+    <#assign displayNone= ''>
+<#if currentServlet=='people' >
+    <#assign displayNone= 'display: none'>
+</#if >
+    <div class="virtual-search-deploy-filter" style='${displayNone}'>
+            <div class="virtual-mobile-title">
+            <h2>Filtrar programas</h2>
+            <a href="" class="close-button"
+                ><span class="icon icon-close"></span>Cerrar</a
+            >
+            </div>
+            <div class="vsdf-container">
+            <div class="vsdf-title">
+                <h2>Filtrar</h2>
+            </div>
 
-          <div id="browse-classes" class="vsdf-filter-wrap">
-            <h5>Tipo</h5>
-                <#list vClassGroup?sort_by("displayRank") as vClass>
-                <#------------------------------------------------------------
-                Need to replace vClassCamel with full URL that allows function
-                to degrade gracefully in absence of JavaScript. Something
-                similar to what Brian had setup with widget-browse.ftl
-                ------------------------------------------------------------->
-                <#assign vClassCamel = str.camelCase(vClass.name) />
-                <#-- Only display vClasses with individuals -->
-                <#if (vClass.entityCount > 0)>
-                <li id="${vClassCamel}">
-            <a class="cb-container r-container" href="#${vClassCamel}" title="${i18n().browse_all_in_class}" data-uri="${vClass.URI}">
-
-
+            <div id="browse-classes" class="vsdf-filter-wrap">
+                <h5>Tipo</h5>
+                    <#list vClassGroup?sort_by("displayRank") as vClass>
+                    <#------------------------------------------------------------
+                    Need to replace vClassCamel with full URL that allows function
+                    to degrade gracefully in absence of JavaScript. Something
+                    similar to what Brian had setup with widget-browse.ftl
+                    ------------------------------------------------------------->
+                    <#assign vClassCamel = str.camelCase(vClass.name) />
+                    <#-- Only display vClasses with individuals -->
+                    <#if (vClass.entityCount > 0)>
+                    <label > 
+                    <li id="${vClassCamel}">
+                    <a class="cb-container r-container" href="#${vClassCamel}" title="${i18n().browse_all_in_class}" data-uri="${vClass.URI}">
                     <span class="wpcf7-form-control-wrap aceptar-terminos">
-                    <span class="wpcf7-form-control wpcf7-acceptance">
-                    <span class="wpcf7-list-item">
-                        <input type="radio" name="radio" />
-                    </span>
-                    </span>
-                    </span>
+                        <span class="wpcf7-form-control wpcf7-acceptance">
+                        <span class="wpcf7-list-item">
+                            <input type="radio" name="radio" />
+                        </span>
+                        </span>
+                        </span>
+                        
+                        <span class="icon icon-radio-button-no-check"></span>
                     <span class="count-classes"> ${vClass.name}  (${vClass.entityCount})</span>
+                    </a>
+                    
+                
+                    
+                    </li>
+                        </label>
+                </#if>
+                </#list>
+            </div>
+            </div>
 
-                  </a>
-                  </li>
-               </#if>
-            </#list>
-          </div>
-        </div>
-
-</div>
+    </div>
 
 <section id="browse-by" role="region">
     <nav role="navigation">
@@ -106,4 +114,5 @@
 </section>
 <script type="text/javascript">
     $('section#noJavascriptContainer').removeClass('hidden');
+
 </script>
