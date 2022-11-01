@@ -376,6 +376,30 @@ hr.formDivider {
     border: none;
 }
 
+.editingForm table {
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    border-bottom: 0.1875rem solid #8b0304;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 1.875rem 0;
+    width: 100%;
+}
+
+#wrapper-content>div>table>tbody>tr:nth-child(1) {
+
+    background-color: #8b0304;
+    color: #fff;
+
+}
+
+.database_header {
+    background-color: #8b0304;
+    color: #fff;
+}
+
 /* ------------------------------------------------->  */
 /* HOMEPAGE AND INTERIOR PAGES STYLES -------------->  */
 /* ------------------------------------------------->  */
@@ -426,6 +450,13 @@ ul#main-nav {
     background: #fff;
     min-height: 710px;
     padding: 20px;
+}
+
+#wrapper-content label {
+
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+
 }
 
 /* INTRO-BLURB ------>  */
@@ -1223,6 +1254,7 @@ p#mngLabelsText {
     margin-left: 25px;
     margin-bottom: 12px;
 }
+
 
 
 /* HOME STATS----->  */
@@ -2537,6 +2569,10 @@ a.delete-mainImage {
     border-radius: 1.25rem;
 }
 
+#right-hand-column form {
+    margin-top: 0.5rem;
+}
+
 .collaboratorship-link-separator {
     line-height: 1.5em;
     margin: 0;
@@ -3059,10 +3095,8 @@ footer {
     grid-auto-rows: minmax(100px, auto);
 }
 
-.row {
-    display: block;
-    -ms-flex-pack: center;
-    justify-content: center;
+.editingForm .row {
+    display: revert;
 }
 
 #admin {}
@@ -3961,7 +3995,12 @@ div .form-background tbody:nth-child(1) tr:nth-child(1) td:nth-child(2) {
 
 .form-background th,
 .form-background td {
-    padding: 12px 15px;
+    padding: 0px;
+
+}
+
+.form-background form {
+    margin: 10px 0;
 }
 
 .form-background tbody tr {
@@ -4047,15 +4086,25 @@ div .form-background tbody:nth-child(1) tr:nth-child(1) td:nth-child(2) {
 }
 
 /* Input */
-#propbody .form-row-odd td input[type=button] {
-    padding-left: 6px;
-    padding-right: 6px;
+#propbody td input[type=button] {
+
+    padding: 0.5rem 2.625rem 0.5rem 1.875rem;
+    ;
     margin-left: 12px;
+    margin: 4px;
 }
 
 /* Input */
-#propbody .form-row-even td input[type=button] {
-    margin-left: 12px;
+#propbody td input[type=button]:hover {
+    cursor: pointer;
+}
+
+#objectVar {
+    max-width: 17rem;
+}
+
+#objectVar option {
+    max-width: 17rem;
 }
 
 /*BOTON EDIT*/
@@ -4438,6 +4487,33 @@ a.primary-btn-delete:hover {
     text-align: start;
 }
 
+#add-relation input.pos-submit,
+#search-proxy input.submit,
+.form-button,
+input[type="submit"] {
+    background-color: #9e0b0f !important;
+    border-radius: 1.25rem;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: -.03125rem;
+    margin: 0 auto;
+    padding: 0.5rem 2.625rem 0.5rem 1.875rem;
+    position: relative;
+    text-align: center;
+}
+
+#add-relation input.pos-submit:hover,
+#search-proxy input.submit:hover,
+.form-button:hover,
+input[type="submit"]:hover {
+    background-color: #f82e35 !important;
+}
+
+.blue {
+    text-align: start;
+}
+
 #introMessage p {
     font-weight: 300;
     font-size: 1rem;
@@ -4583,6 +4659,7 @@ input[type="password"] {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     margin-bottom: 0.8em;
+    margin-top: 0.8em;
 }
 
 /* end  vivostyles.css */
@@ -5078,3 +5155,456 @@ form#managePage textarea {
 
 
 /**************************/
+
+/* class Hirancy */
+
+/* $This file is distributed under the terms of the license in LICENSE$ */
+
+table.classHierarchy {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 22px;
+    font-size: .8em;
+    min-width: 900px;
+    max-width: 900px;
+    background-color: #f8f8f8;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #f0f0f0;
+}
+
+table.classHierarchy td {
+    padding-left: 6px;
+}
+
+table.classHierarchy .classDetail,
+td.classDetail {
+    width: 90px;
+    color: #064D68;
+    white-space: nowrap;
+}
+
+table.subclassTable {
+    margin-left: 15px;
+    margin-bottom: 4px;
+    margin-top: -4px;
+    display: none;
+}
+
+td.subclassCell {
+    width: 810px;
+    font-size: 1.2em;
+    padding-bottom: 4px;
+}
+
+section#container div {
+    width: 925px;
+    background-color: #f2f2f2;
+    vertical-align: middle;
+    height: 26px;
+}
+
+section#container div a {
+    margin-left: 6px;
+    font-weight: bold;
+}
+
+section#container div span {
+    padding-right: 10px;
+    float: right;
+}
+
+span.headerSpanPlus {
+    width: 12px;
+    background: url(../images/vitro_plus_sign.gif) left center no-repeat;
+    cursor: default;
+}
+
+span.headerSpanMinus {
+    width: 12px;
+    background: url(../images/vitro_minus_sign.gif) left center no-repeat;
+    cursor: default;
+}
+
+span.subclassExpandPlus {
+    padding-right: 14px;
+    background: url(../images/vitro_plus_sign.gif) left center no-repeat;
+    cursor: default;
+}
+
+span.subclassExpandMinus {
+    padding-right: 14px;
+    background: url(../images/vitro_minus_sign.gif) left center no-repeat;
+    cursor: default;
+}
+
+span#expandAll {
+    margin-right: 10px;
+    float: right;
+    font-size: 0.85em;
+}
+
+span.rangeClass {
+    color: #064D68;
+    padding-left: 22px;
+    padding-right: 8px;
+}
+
+div#expandLink {
+    margin-top: -10px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+label#displayOptions {
+    display: inline-block;
+    padding-right: 6px;
+    margin-top: 20px;
+}
+
+table.innerDefinition {
+    margin-top: -5px;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    line-height: 20px;
+}
+
+
+
+/************************/
+#createAndLink select {
+    height: 2.5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+#createAndLink .citation_error:before {
+    content: url('../../../images/createAndLink/error.png');
+    transform: scale(0.5);
+    margin-top: 10px;
+    margin-right: 10px;
+    float: left;
+}
+
+#createAndLink .citation_error {
+    height: 70px;
+}
+
+#createAndLink .citation_claimed:before {
+    content: url('../../../images/createAndLink/tick.png');
+    transform: scale(0.75);
+    margin-top: -17px;
+    margin-left: 535px;
+    float: left;
+    position: absolute;
+}
+
+#createAndLink .citation_claimed:hover:before {
+    opacity: 0.2;
+}
+
+#createAndLink .citation_claimed .citation {
+    opacity: 0.2;
+}
+
+#createAndLink .citation_claimed:hover .citation {
+    opacity: 1.0;
+}
+
+#createAndLink .citation_type {
+    font-style: italic;
+    padding: 5px;
+}
+
+#createAndLink .citation_title {
+    font-weight: bold;
+}
+
+#createAndLink .citation_journal {
+    font-style: italic;
+}
+
+#createAndLink .claimed {
+    font-weight: bold;
+}
+
+#createAndLink .linked {
+    font-style: italic;
+}
+
+#createAndLink .entryId {
+    background-color: #3e8baa;
+    /* #E0E0E0; */
+    color: #ffffff;
+    padding: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#createAndLink .entry {
+    border: 2px solid #3e8baa;
+    /* #E0E0E0; */
+    padding: 5px;
+}
+
+#createAndLink label {
+    display: inline;
+}
+
+#createAndLink .radioWithLabel:checked+.labelForRadio {
+    font-weight: bold;
+}
+
+#createAndLink .description {
+    padding-left: 22px;
+}
+
+#createAndLink .remainder {
+    font-style: italic;
+}
+
+#createAndLink .claim-for {
+    float: right;
+    border: 2px solid #3e8baa;
+    /* #E0E0E0; */
+    padding: 5px;
+}
+
+#createAndLink .claim-for h3 {
+    text-align: center;
+}
+
+/* page-createaddlink.css */
+
+/* uploadimg.css*/
+
+
+/* $This file is distributed under the terms of the license in LICENSE$ */
+
+/* <------ UPLOAD PICTURE*/
+#photoUpload {
+    margin-left: 0;
+    height: 280px;
+    background: #fff;
+    padding: 15px;
+}
+
+#photoUploadDefaultImage {
+    width: 130px;
+    float: left;
+}
+
+#photoUploadDefaultImage img {
+    margin-bottom: 10px;
+}
+
+#photoUploadForm {
+    width: 400px;
+    float: left;
+    padding-left: 25px;
+    margin-left: 1.2em;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+#photoUploadForm label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+#photoUploadForm label span {
+    font-size: .7em;
+}
+
+#photoUploadForm input {
+    margin-bottom: 10px;
+}
+
+/* <------ CROP PICTURE*/
+#photoCropping {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    background: #fff;
+    padding: 15px 0 15px 15px;
+}
+
+#photoCroppingPreview {
+    width: 180px;
+    float: left;
+}
+
+.photoCroppingNote {
+    margin-top: 15px;
+    font-size: .8em;
+}
+
+.photoCroppedPreview {
+    width: 115px;
+    height: 115px;
+    overflow: hidden;
+}
+
+/* <------ DELETE PICTURE*/
+#photoDeletingContainer {
+    margin-left: 0;
+    width: 720px;
+    height: 330px;
+    background: #fff;
+    padding: 15px;
+}
+
+/* <------ ERROR ALERTS*/
+#error-alert {
+    color: #900;
+    padding: 0;
+    margin-bottom: 5px;
+    height: 30px;
+}
+
+#photoUpload h3 {
+    padding: 10px 0 12px 0;
+    font-size: 1.125em;
+}
+
+#error-alert p {
+    padding-left: 35px;
+    font-size: .9em;
+    line-height: 30px;
+}
+
+.or {
+    display: inline;
+}
+
+
+/***************/
+
+/* AddConcept.css*/
+/* $This file is distributed under the terms of the license in LICENSE$ */
+
+.conceptsListContainer {
+    overflow: hidden;
+    width: 100%;
+}
+
+.concepts .row {
+    clear: both;
+    float: left;
+    border-bottom: 1px solid #5F6464;
+}
+
+.conceptType {
+    width: 40px;
+}
+
+.conceptDefinition {
+    width: 400px;
+}
+
+.conceptRemoval {
+    width: 50px;
+}
+
+/* For adding an empty element under the best match column*/
+.emptyColumn {
+    width: 67px;
+    height: 18px;
+    background: url("../images/conceptSpacer.png") no-repeat left center;
+}
+
+/*For adding the checkmark under the best match column*/
+.bestMatchFlag {
+    width: 67px;
+    height: 18px;
+    background: url("../images/conceptCheckMark.png") no-repeat left center;
+}
+
+form#addConceptForm {
+    display: none;
+}
+
+form#addConceptForm span#createOwnOne {
+    float: left;
+    margin-top: 24px
+}
+
+/*For existing concepts, display will also be tabular with columns*/
+
+.existingConcept .row,
+.conceptHeadings .row {
+    clear: both;
+    float: left;
+}
+
+.existingConcept .column,
+.conceptHeadings .column,
+.concepts .column {
+    float: left;
+    padding-right: 3px;
+    clear: none !important;
+    /*Overriding customFor div's clearing*/
+}
+
+/*label and semantic type if it exists*/
+.conceptLabel,
+.existingConcept .conceptLabelInfo,
+.conceptHeadings .conceptLabelInfo,
+existingConcept .conceptVocabSource,
+.conceptHeadings .conceptVocabSource {
+    width: 220px;
+}
+
+.conceptHeadings .row {
+    border-bottom: 1px solid #5F6464;
+}
+
+/*For showing and hiding more results, copied from individual.css*/
+a.more-less {
+    margin-left: 1.5em;
+    padding: .3em .8em;
+    font-size: .8em;
+    text-decoration: none;
+    color: #666;
+    background: #eee;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+a:hover.more-less {
+    color: #fff;
+    background: #888;
+}
+
+#existingConcepts .container {
+    height: auto;
+    width: auto;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-bottom: 0rem;
+}
+
+.verbosePropertyListing {
+    color: #000000
+}
+
+.verbosePropertyListing span {
+    color: #363636;
+    font-weight: 600;
+}
+
+#wrapper-content>div>table>tbody>tr.header>td.verticalfieldlabel {
+    color: white
+}
+
+
+
+/************/
