@@ -279,13 +279,15 @@ form.deleteForm {
     border-top: 1px dotted #e3e9e9;
 }
 
-#editForm .delete {
+#editForm .delete,
+#account-display .delete {
     background-color: #ffffff !important;
     color: #000000;
     box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
 }
 
-#editForm .delete:hover {
+#editForm .delete:hover,
+#account-display .delete:hover {
     box-shadow: 0 .3125rem .6875rem 0 rgba(0, 0, 0, .6);
     background-color: #9E0B0F !important;
     ;
@@ -393,6 +395,23 @@ hr.formDivider {
 .editingForm table {
     width: 100%;
     border: none;
+}
+
+table td {
+    border-left: thin solid #9e9e9e;
+    border-right: thin solid #9e9e9e;
+    padding: 0 0.3125rem;
+    vertical-align: top;
+}
+
+table tr:nth-child(2n+2) {
+    background-color: #f4f4f4;
+}
+
+table th {
+    border-right: thin solid #fff;
+    padding: 0 0.3125rem;
+    height: 2.8125rem;
 }
 
 .editingForm table {
@@ -818,6 +837,14 @@ section.accounts input.delete:hover {
     color: #fff;
     background-color: #88acbb;
     border: 1px solid #88acbb; */
+}
+
+label {
+    display: block;
+}
+
+label.in-line {
+    display: inline;
 }
 
 input.add-account,
@@ -2279,11 +2306,11 @@ img.individual-photo {
 }
 
 #mainImage {
-    position: absolute;
+    /*     position: absolute;
     padding: 5px 5px 8px 5px;
     background-color: rgba(255, 255, 255, 0.6);
     top: 6px;
-    left: 6px;
+    left: 6px; */
 }
 
 h2#mainImage,
@@ -3500,7 +3527,7 @@ video {
 
 /* FORM EDIT*/
 .editRequestDispatch label {
-    display: block;
+    /* display: block; */
 }
 
 #ie67DisableWrapper {
@@ -4515,7 +4542,8 @@ a.primary-btn-delete:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4.2rem;
+    padding-bottom: 6rem;
 }
 
 #wrapper-content img {
@@ -4730,11 +4758,15 @@ input[type="password"] {
     margin-top: 20px;
 }
 
-.note,
-.requiredHint {
-    font-weight: 500;
-    color: #9E0B0F;
+.note {
+    color: #9e9e9e;
     font-size: 14px;
+}
+
+.requiredHint {
+    font-size: 14px;
+    color: #9E0B0F;
+
 }
 
 /* Link */
@@ -5257,6 +5289,14 @@ section#container div a {
 section#container div span {
     padding-right: 10px;
     float: right;
+}
+
+#container table td,
+.form-background td,
+.sparkline_style td {
+    /* border-left: thin solid #9e9e9e; */
+    /* border-right: thin solid #9e9e9e;*/
+    border: none;
 }
 
 span.headerSpanPlus {
