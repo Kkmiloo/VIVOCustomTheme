@@ -1733,6 +1733,19 @@ article.property h3 {
     margin: auto;
 }
 
+individuals-in-class.research>ul li.individual h1 {
+    padding: 2rem;
+}
+
+#individuals-in-class>ul>li>h1 {
+    margin: 1.8rem 0;
+}
+
+#individuals-in-class>ul>li>h1 a {
+    margin: 1.8rem 0;
+    font-size: ;
+}
+
 #individuals-in-class.people ul {
     /*! display: grid; */
     /*! grid-template-columns: 1fr 1fr; */
@@ -1860,6 +1873,42 @@ li.ts-6 {
     background-color: white;
     padding: 40px;
     width: 500px;
+}
+
+.login {
+    margin-bottom: 0rem;
+}
+
+#login-form {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 300px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-form .column {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#login-form p {
+    margin-left: 7.5px;
+}
+
+#login-form a {
+    margin-right: 7.5px;
+}
+
+#login-form h2 {
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
 }
 
 .flex-input {
@@ -2643,7 +2692,10 @@ a.delete-mainImage {
 
 #right-hand-column form {
     margin-top: 0.5rem;
+    float: none !important;
+
 }
+
 
 .collaboratorship-link-separator {
     line-height: 1.5em;
@@ -4425,7 +4477,18 @@ a.primary-btn-delete:hover {
 #hmd-bottom .hov li {
     min-height: 40px;
     padding-left: 0px;
+    width: 100%;
 }
+
+article.profile-card:before {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.no-individuals {
+    text-align: center;
+}
+
 
 /* List Item */
 #header-menu-desktop #hmd-bottom ul .hov .main li {

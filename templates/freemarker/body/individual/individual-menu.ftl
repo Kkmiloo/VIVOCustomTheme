@@ -7,7 +7,7 @@
 
 <#assign hasElement = propertyGroups.pullProperty("${namespaces.display}hasElement")!>
 <#assign returnURL = "/vivo/individual?uri=http%3A%2F%2Fvitro.mannlib.cornell.edu%2Fontologies%2Fdisplay%2F1.1%23DefaultMenu&switchToDisplayModel=true" />
-
+<div id="wrapper-content"> 
 <#if hasElement?has_content>
     <script type="text/javascript">
         var menuItemData = [];
@@ -64,3 +64,4 @@
 <#else>
     <p id="error-alert">${i18n().display_has_element_error}</p>
 </#if>
+</div>
