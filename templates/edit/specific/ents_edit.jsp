@@ -207,15 +207,6 @@
 </div><!-- END div "anybody" -->
 
 <script> 
-	document.addEventListener('DOMContentLoaded', (event) => {const forms = document.querySelectorAll('#wrapper-content form');
 	
-	forms.forEach( element => { const anchor = document.createElement('a') ; anchor.classList="primary-btn" ;  const inputS= element.querySelector('input[type="submit"]') ; anchor.append(inputS) ; element.append(anchor)})
-	
-	const ele = document.querySelectorAll('input[type="button"]')
-	ele.forEach( el => { const anchor =  document.createElement('a'); anchor.classList = "primary-btn"; const parente = el.parentElement; anchor.append(el) ; parente.append(anchor) })
-	});
-	
-	
-	
-	</script>
+</script>
 
