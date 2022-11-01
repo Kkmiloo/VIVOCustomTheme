@@ -279,6 +279,25 @@ form.deleteForm {
     border-top: 1px dotted #e3e9e9;
 }
 
+#editForm .delete {
+    background-color: #ffffff !important;
+    color: #000000;
+    box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
+}
+
+#editForm .delete:hover {
+    box-shadow: 0 .3125rem .6875rem 0 rgba(0, 0, 0, .6);
+    background-color: #9E0B0F !important;
+    ;
+    color: #fff;
+    opacity: 1;
+    transition: 300ms;
+}
+
+#primaryAction.submit {
+    box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
+}
+
 form.editForm span {
     color: #c00;
     font-weight: normal;
@@ -2068,9 +2087,35 @@ p {
 
 section.hero-section .hhs-container::after,
 section.hero-section .hhs-container::before {
-    position: inherit;
+    position: absolute;
 }
 
+section.hero-section .hhs-container.with-temporary-notice:before {
+    top: 3.55rem;
+}
+
+section.hero-section {
+    background: url(https://pattern.uao.edu.co/images/bg-desktop-ingenieria.jpg) no-repeat;
+}
+
+#info-extension {
+    z-index: 1;
+    margin-top: 1rem;
+}
+
+#info-extension #individual-hasResearchArea>li {
+    display: flex;
+    margin: 0;
+}
+
+#info-extension h2 {
+    font-size: 1rem;
+}
+
+#info-extension h2,
+#info-extension ul {
+    text-align: left;
+}
 
 #individual-intro {
     display: flex;
@@ -2389,7 +2434,7 @@ article.property ul.subclass-property-list li {
     margin-left: 10px;
     padding-left: 8px;
     padding-right: 1px; */
-    vertical-align: middle;
+    /* vertical-align: middle; */
 }
 
 .edit-mainImage {
@@ -2412,7 +2457,7 @@ a.edit-mainImage img.edit-individual {
 
 .middle,
 .delete-individual {
-    vertical-align: middle;
+    /*  vertical-align: middle; */
 }
 
 a.more-less {
