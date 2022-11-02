@@ -22,7 +22,7 @@
 	var urlsBase = '${urls.base}';
 </script>
 
-	<img id="downloadIcon" src="images/download-icon.png" alt="${i18n().download_results}" title="${i18n().download_results}" />
+	<#--  <img id="downloadIcon" src="images/download-icon.png" alt="${i18n().download_results}" title="${i18n().download_results}" />  -->
 <#-- <span id="downloadResults" style="float:left"></span>  -->
 </h1>
 </div>
