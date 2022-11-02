@@ -2,6 +2,7 @@
 
 <#-- Template for displaying search error message -->
 
+<div id="wrapper-content"> 
 <#if title??>
     <h2>${title?html}</h2>
 </#if>
@@ -20,3 +21,4 @@ ${message?html}
                     </div>
 
     </div>
+</div>
