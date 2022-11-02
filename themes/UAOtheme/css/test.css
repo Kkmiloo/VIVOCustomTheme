@@ -1084,9 +1084,8 @@ span.subclassExpandMinus {
     padding-top: 5px;
 }
 
-.searchResultsHeader {
-    width: 675px;
-    float: left;
+#list-relation {
+    display: flex;
 }
 
 a.close {
