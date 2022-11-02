@@ -15,7 +15,7 @@
     <li>Si no está seguro de la ortografía correcta, ponga ~ al final de su término de búsqueda -- por ejemplo, <i>cabage~</i> encuentra <i>cabbage</i>, <i>steven~</i> encuentra <i>Stephen</i> y <i>Stefan</i> (así como otros nombres similares).</li>
 </ul>
     
-<h4><a id="advTipsLink" href="#">Consejos Avanzados</a></h4>    
+<#--  <h4><a id="advTipsLink" href="#">Consejos Avanzados</a></h4>    
 <ul id="advanced" class="searchTips" style="visibility:hidden">
     <li>Cuando se introduce más de un término, la búsqueda devolverá resultados que contengan todas ellas a menos que agregue el operador booleano "OR" -- por ejemplo, <i>pollo</i> OR <i>huevos</i>.</li>
     <li>"NOT" puede ayudar a limitar búsquedas -- por ejemplo, <i>clima</i> NOT <i>cambia</i>.</li>
@@ -24,7 +24,7 @@
     <li>Utilice el carácter comodín * para que coincida con una variación aún mayor -- por ejemplo, <i>nano*</i> encuentra también <i>nanotecnología</i> y <i>nanofabricación</i>.</li>
     <li>Una búsqueda utiliza versiones acortadas de palabras -- por ejemplo, una búsqueda de <i>cogniti*</i> no encuentra nada, mientras que "cogni*" encuentra tanto <i>cognitivo</i> y <i>cognición</i>.</li> 
 </ul>
-<a id="closeLink" href="#"  style="visibility:hidden;font-size:.825em;padding-left:8px">Cerrar</a>
+<a id="closeLink" href="#"  style="visibility:hidden;font-size:.825em;padding-left:8px">Cerrar</a>  -->
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/search.css" />')}
 <script type="text/javascript">
     $(document).ready(function(){
