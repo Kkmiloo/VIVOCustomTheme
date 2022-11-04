@@ -32,7 +32,7 @@
 
    <section id="login" class="container-log hidden">
    
-<#--          <#if infoMessage??>
+<#--        <#if infoMessage??>
             <h3>${infoMessage}</h3>
         </#if>
 
@@ -62,7 +62,17 @@
             <h2 class="o-h2">Inicio de sesión</h2>
 
 
+      <#if infoMessage??>
+            <h3>${infoMessage}</h3>
+        </#if>
 
+        <#if errorMessage??>
+            <#assign infoClassShow = ' id="vivoAccountError"'/>
+
+            <section id="error-alert" role="alert"><img src="${urls.images}/iconAlert.png" alt="${i18n().error_alert_icon}" />
+                <p class="login-alert">${errorMessage}</p>
+            </section>
+        </#if>
                 <input class="flex-input input-login ts-6" type="text" name="loginName" id="loginName"
                     placeholder="Correo institucional, usuario ó documento" value="${loginName!}" required autofocus />
 
