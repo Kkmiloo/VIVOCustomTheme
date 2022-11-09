@@ -115,4 +115,29 @@
 <script type="text/javascript">
     $('section#noJavascriptContainer').removeClass('hidden');
 
+    const options = document.querySelectorAll(".cb-container");
+
+    options.forEach((option) => {
+      option.addEventListener("click", changeState);
+    });
+
+    function changeState(e) {
+      e.preventDefault();
+      clearClass();
+      const parentLabel = e.target;
+      parentLabel.classList.add("checked-acceptance");
+        console.log(parentLabel);
+    }
+
+    function clearClass() {
+      options.forEach((option) => {
+        
+        if (option.classList.contains("checked-acceptance")) {
+            console.log(option);
+          option.classList.remove("checked-acceptance");
+          return;
+        }
+      });
+    }
+
 </script>
