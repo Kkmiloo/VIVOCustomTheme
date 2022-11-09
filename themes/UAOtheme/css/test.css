@@ -4413,6 +4413,7 @@ a.primary-btn-delete:hover {
 
 }
 
+/* 
 .dropList li:nth-child(odd) {
     transform: translateY(-50px);
     opacity: 0;
@@ -4432,7 +4433,7 @@ a.primary-btn-delete:hover {
     transform: translateY(0px);
     opacity: 100;
 }
-
+ */
 .dropList li:first-child {
     margin-top: 0;
 }
@@ -4502,6 +4503,22 @@ article.profile-card:before {
 }
 
 /* Hov */
+
+.hov {
+    position: relative;
+    display: inline-block;
+}
+
+.hov .dropList {
+    display: none;
+    position: absolute;
+
+}
+
+.hov:hover .dropList {
+    display: block;
+}
+
 #hmd-bottom ul .hov {
     background-color: transparent;
 }
