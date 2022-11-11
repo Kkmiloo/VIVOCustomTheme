@@ -40,19 +40,6 @@ body {
 /* ------------------------------------------------->  */
 /* EDITING STYLES ---------------------------------->  */
 /* ------------------------------------------------->  */
-input[type="text"],
-select,
-input[type="password"] {
-    border: 0;
-    font-size: 14px;
-    padding: .5em;
-    background: #fff;
-    border: 1px solid #e0dfdf;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    margin-bottom: .8em;
-}
 
 input.block {
     margin-bottom: 20px;
@@ -1673,7 +1660,7 @@ figure.pc-figure {
 
 .property-container {
 
-    margin: 0 271px;
+    /*     margin: 0 271px; */
 }
 
 article.property {
@@ -1855,7 +1842,7 @@ li.ts-6 {
 }
 
 .container-log {
-    background-image: url("../images/example-image.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://www.uao.edu.co/wp-content/uploads/2020/05/programa-editorial-catalogo-uao_Mesa-de-trabajo-1.png");
     background-position: center;
     /* Center the image */
     background-repeat: no-repeat;
@@ -1864,7 +1851,7 @@ li.ts-6 {
     /* Resize the background image to cover the entire container */
     display: flex;
     justify-content: center;
-    height: 900px;
+    height: calc(100vh - 100px);
     align-items: center;
 }
 
@@ -1907,16 +1894,16 @@ li.ts-6 {
 #login-form h2 {
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
-.flex-input {
+/* .flex-input {
     display: flex;
     flex-direction: row;
     margin-bottom: 30px;
     margin-top: 30px;
 
-}
+} */
 
 input [type="text"] {
     padding: 10px;
@@ -1925,16 +1912,44 @@ input [type="text"] {
 }
 
 
-.input-login {
-    font-size: 15px;
+.form-group .input-login {
+
+    font-size: 14px;
     width: 100%;
-    border: 0;
-    border-bottom: 2px solid gray;
-    outline: 0;
     color: black;
     padding: 7px 0;
+    padding-left: 40px;
     background: transparent;
     transition: border-color 0.2s;
+}
+
+.fa {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color: #a2a6ad;
+    font-size: 18px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.input-login:focus {
+
+    border-color: #495057;
+    ;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.column .btn-block {
+    width: 190px;
 }
 
 .o-h2 {
@@ -2433,7 +2448,7 @@ h1.fn .display-title {
 .property-group {
     position: relative;
     clear: both;
-    width: 95%;
+    width: 70%;
     margin: 0 auto;
     margin-bottom: 10px;
     margin-bottom: 20px;
@@ -3541,10 +3556,11 @@ a:active {
     align-items: center;
     height: auto;
     width: auto;
+    flex-wrap: wrap;
 }
 
-#intro>div>div>div>a {
-    margin-left: 20px;
+.btn-list a> {
+    margin-left: 1rem;
 }
 
 .library-hero h2 {
@@ -4465,12 +4481,11 @@ a.primary-btn-delete:hover {
 #hmd-bottom ul ul {
     top: 0px;
     bottom: 0px;
-    right: -63px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 200px;
+    width: 199px;
     margin-top: 70px;
 }
 
@@ -4810,8 +4825,6 @@ input[type="password"] {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
-    margin-bottom: 0.8em;
-    margin-top: 0.8em;
 }
 
 /* end  vivostyles.css */

@@ -72,18 +72,27 @@
             <section id="error-alert" role="alert"><img src="${urls.images}/iconAlert.png" alt="${i18n().error_alert_icon}" />
                 <p class="login-alert">${errorMessage}</p>
             </section>
-        </#if>
-                <input class="flex-input input-login ts-6" type="text" name="loginName" id="loginName"
+        </#if>  
+                
+
+                <div class="form-group"> 
+                    <span class="fa icon icon-user" data-range=""> </span>
+                    <input class="flex-input input-login ts-6" type="text" name="loginName" id="loginName"
                     placeholder="Correo institucional, usuario ó documento" value="${loginName!}" required autofocus />
 
-                <input class="flex-input input-login ts-6" type="password" name="loginPassword" id="loginPassword" placeholder="Contraseña"/>
+                </div>
+
+                <div class="form-group"> 
+                <span class="fa icon icon-lock" data-range=""> </span>
+                    <input class="flex-input input-login ts-6" type="password" name="loginPassword" id="loginPassword" placeholder="Contraseña"/>
+                </div>
 
 
-            <div class="column">
+                <div class="column"> 
                 <a class="ts-6" href="">No puedes acceder a la cuenta?</a>
-                <p class="submit"><input name="loginForm" type="submit" value="Acceder" value="${i18n().login_button}" class="MyButton"> </p>
+                <input name="loginForm" type="submit" value="Acceder" value="${i18n().login_button}" class="btn btn-primary btn-block mt-1"> 
+                </div>
 
-            </div>
 
 
         </form>
