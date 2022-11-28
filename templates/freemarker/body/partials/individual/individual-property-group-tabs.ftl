@@ -22,16 +22,16 @@
                             <#assign groupNameHtmlId = "${i18n().properties}" >
                         </#if>
                         <#if tabCount = 1 >
-                            <li class="selectedGroupTab clickable" groupName="${groupNameHtmlId?replace("/","-")}"> <a> ${p.capitalizeGroupName(groupName)} </a></li>
+                            <li > <a href="#${groupNameHtmlId?replace("/","-")}"> ${p.capitalizeGroupName(groupName)} </a></li>
                             <#assign tabCount = 2>
                         <#else>
-                            <li class="nonSelectedGroupTab clickable" groupName="${groupNameHtmlId?replace("/","-")}"><a> ${p.capitalizeGroupName(groupName)} </a></li>
+                            <li ><a href="#${groupNameHtmlId?replace("/","-")}">  ${p.capitalizeGroupName(groupName)} </a></li>
                         </#if>
                     </#if>
                 </#list>
                 <#if (propertyGroups.all?size > 1) >
-                <li  class="nonSelectedGroupTab clickable" groupName="viewAll"> <a> ${i18n().view_all_capitalized} </a></li>
-        </#if>
+                <#--  <li  class="selectedGroupTab clickable" style="display: hiden" groupName="viewAll"> <a> ${i18n().view_all_capitalized} </a></li>  -->
+  </#if>
 </ul>
      </div>
 </div>
@@ -43,7 +43,7 @@
                 <#assign groupName = group.getName(nameForOtherGroup)>
                 <#assign groupNameHtmlId = p.createPropertyGroupHtmlId(groupName) >
                 <#assign verbose = (verbosePropertySwitch.currentValue)!false>
-                <section id="${groupNameHtmlId?replace("/","-")}" class="property-group" role="region" style="<#if (sectionCount > 1) >display:none<#else>display:block</#if>">
+                <section id="${groupNameHtmlId?replace("/","-")}" class="property-group" role="region" style="display:block">
                 <nav id="scroller" class="scroll-up hidden" role="navigation">
                     <a href="#branding" title="${i18n().scroll_to_menus}" >
                         <img src="${urls.images}/individual/scroll-up.gif" alt="${i18n().scroll_to_menus}" />
@@ -54,9 +54,9 @@
                 <#if groupName?has_content>
                     <#--the function replaces spaces in the name with underscores, also called for the property group menu-->
                     <#assign groupNameHtmlId = p.createPropertyGroupHtmlId(groupName) >
-                    <h2 id="${groupNameHtmlId?replace("/","-")}" pgroup="tabs" class="hidden">${p.capitalizeGroupName(groupName)}</h2>
+                    <h2 id="${groupNameHtmlId?replace("/","-")}" pgroup="tabs" >${p.capitalizeGroupName(groupName)}</h2>
                 <#else>
-                    <h2 id="properties" pgroup="tabs" class="hidden">${i18n().properties_capitalized}</h2>
+                    <h2 id="properties" pgroup="tabs" >${i18n().properties_capitalized}</h2>
                 </#if>
                 <div id="${groupNameHtmlId?replace("/","-")}Group" >
                     <#-- List the properties in the group   -->
