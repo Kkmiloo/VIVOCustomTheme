@@ -36,7 +36,7 @@
      </div>
 </div>
 
-<div class="property-container">
+<div class="property-container detail-content">
 
         <#list propertyGroups.all as group>
             <#if (group.properties?size > 0)>
