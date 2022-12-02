@@ -27,7 +27,9 @@
           
           <div class="details">
             <div class="margin-details">
-             <@p.mostSpecificTypes individual />
+            <#--   <@p.mostSpecificTypes individual />  -->
+            <a href="${urls.base}/" class="category-tag">
+Investigación </a>
                 <#if relatedSubject??>
                     <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
                     <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
