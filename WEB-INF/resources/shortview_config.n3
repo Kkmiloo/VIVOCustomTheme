@@ -131,6 +131,8 @@ vivo:ResearchOrganization
     display:hasCustomView   mydomain:organizationBrowseView .
                     vivo:Company
     display:hasCustomView   mydomain:organizationBrowseView .
+    vivo:Program
+    display:hasCustomView   mydomain:organizationBrowseView .
 
 mydomain:organizationBrowseView
     a                          display:customViewForIndividual ;

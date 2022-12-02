@@ -10,7 +10,7 @@
 <section id="noJavascriptContainer" class="hidden" style="display:flex">
 
     <#assign displayNone= ''>
-<#if currentServlet=='people' >
+<#if currentServlet=='people' || currentServlet=='groups' >
     <#assign displayNone= 'display: none'>
 </#if >
     <div class="virtual-search-deploy-filter" style='${displayNone}'>
@@ -78,7 +78,7 @@
     </nav>
 
 
-<#if currentServlet=="people"  >
+<#if currentServlet=="people" || currentServlet='groups'  >
     <section id="individuals-in-class" class="${currentServlet} " role="region">
         <ul role="list"  class="list" >
        

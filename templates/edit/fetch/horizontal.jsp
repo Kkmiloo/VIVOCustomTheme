@@ -15,13 +15,12 @@ if (request.getAttribute("title") == "Tabs") { %>
 }
 %>
 
-<table style="margin-bottom:1.5ex;">
-<tr>
-  <td style="width:0;padding:0;margin:0;"/>
+
+
 
 
 <%if (request.getAttribute("horizontalJspAddButtonUrl") != null) {%>
-  <td>
+
     <form action="<%=request.getAttribute("horizontalJspAddButtonUrl")%>" method="get"><input type="submit" class="form-button" value="<%=request.getAttribute("horizontalJspAddButtonText")%>"/>
 <%  if (request.getAttribute("horizontalJspAddButtonControllerParam") != null) {%>
         <input type="hidden" name="controller" value="<%=request.getAttribute("horizontalJspAddButtonControllerParam")%>"/>
@@ -30,7 +29,7 @@ if (request.getAttribute("title") == "Tabs") { %>
         <input type="hidden" name="home" value="<%=request.getAttribute("home")%>"/>
 <%  }%>
     </form>
-  </td>
+
 <%
 }
 List <ButtonForm> topButtons = (List)request.getAttribute("topButtons");
@@ -38,7 +37,7 @@ if (topButtons!=null) {
     Iterator iter = topButtons.iterator();
     while (iter.hasNext()){
        ButtonForm b = (ButtonForm)iter.next();%>
-       <td>
+
        <form <%=b.getCssClass()%> action="<%=b.getAction()%>" method="get">
 <%         HashMap<String,String> params=b.getParams();
            if (params!=null) {
@@ -48,11 +47,11 @@ if (topButtons!=null) {
            }%>
            <input type="submit" class="form-button" value="<%=b.getLabel()%>"/>
        </form>
-       </td>
+
 <%  }
 }%>
 
-</tr></table>
+
 
 <div class="editingForm">
 

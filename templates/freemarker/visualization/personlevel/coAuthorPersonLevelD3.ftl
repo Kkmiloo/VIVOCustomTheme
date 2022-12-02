@@ -136,6 +136,7 @@ $(document).ready(function(){
 
     var svg = d3.select('#chord').append('svg')
             .attr('width', width+padding)
+            .attr('class', 'svgNetwork')
             .attr('height', height+padding)
             .append('g').attr('transform', 'translate(' + (width+padding) / 2 + ',' + (height+padding) / 2 +')')
             .datum(chord(matrix));

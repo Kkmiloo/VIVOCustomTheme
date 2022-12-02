@@ -21,15 +21,15 @@
         <div class="breadcrumb-desktop">
             <a href="${urls.base}/">Inicio</a>
             <span> &gt; </span>
-            <a href="${urls.base}/groups"> Grupos de Investigación</a>
-             <span> &gt; </span>
-            <a href="${urls.base}/people"> Inserte Facultad</a>
+            <a href="${urls.base}/groups">Grupos de investigación</a>
         </div>
         <div class="hero-container group-container">
           
           <div class="details">
             <div class="margin-details">
-             <@p.mostSpecificTypes individual />
+            <#--   <@p.mostSpecificTypes individual />  -->
+            <a href="${urls.base}/" class="category-tag">
+Investigación </a>
                 <#if relatedSubject??>
                     <h2>${relatedSubject.relatingPredicateDomainPublic} for ${relatedSubject.name}</h2>
                     <p><a href="${relatedSubject.url}" title="${i18n().return_to(relatedSubject.name)}">&larr; ${i18n().return_to(relatedSubject.name)}</a></p>
@@ -128,7 +128,8 @@
 
      <#include "individual-property-group-menus.ftl">
 -->
-<#include "individual-property-group-tabs.ftl">
+<#--  <#include "individual-property-group-tabs.ftl">  -->
+<#include "faculty-researchGroups.ftl">
 
 <#assign rdfUrl = individual.rdfUrl>
 

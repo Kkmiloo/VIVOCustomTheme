@@ -1,0 +1,32 @@
+# Este archivo va en la ruta:
+#                               ${vivo-home}/rdf/display/everytime/
+#                           ej: /usr/local/vivo/home/rdf/display/everytime
+
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+ 
+vivo:Program display:hasDataGetter display:getResearchGroups .
+
+
+display:getResearchGroups
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "researchGroupsResults";
+    display:query """
+            PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+            prefix obo: <http://purl.obolibrary.org/obo/>
+            PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
+            select ?facultyName ?facultyLink ?facultyImg
+            where 
+            {
+            ?individualURI obo:BFO_0000051 ?facultyLink .
+            ?facultyLink rdfs:label ?facultyName . 
+            optional{
+             ?facultyLink vitro:mainImage ?mi .
+             ?mi vitro:downloadLocation ?facultyImg
+            }
+
+            }
+      """ .

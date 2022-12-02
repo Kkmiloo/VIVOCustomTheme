@@ -53,10 +53,10 @@
 
             <c:choose>
                 <c:when test="${!empty formOnCancel}">
-                    <input type="submit" class="delete" name="_cancel" onclick="${formOnCancel}" value="Cancel"/>
+                    <!-- <input type="submit" class="delete" name="_cancel" onclick="${formOnCancel}" value="Cancel"/> -->
                 </c:when>
                 <c:otherwise>
-		            <input type="submit" class="delete" name="_cancel" value="Cancel"/>
+		           <!--  <input type="submit" class="delete" name="_cancel" value="Cancel"/> -->
                 </c:otherwise>
             </c:choose>
 

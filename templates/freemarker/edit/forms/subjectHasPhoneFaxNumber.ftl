@@ -44,6 +44,8 @@
         <#assign disabledVal=""/>
 </#if>
 
+<div class="card-body">
+
 <#assign requiredHint = "<span class='requiredHint'> *</span>" />
 
 <h2>${titleVerb}&nbsp;${titleString} ${editConfiguration.subjectName}</h2>
@@ -65,26 +67,41 @@
 
 <section id="personHasTelephoneNumber" role="region">
 
-    <form id="personHasTelephoneNumber" class="customForm noIE67" action="${submitUrl}"  role="add/edit phone">
+    <form id="personHasTelephoneNumber" class="customForm noIE67 mform" action="${submitUrl}"  role="add/edit phone">
 
-        <p>
-            <label for="telephoneNumber">${labelString} ${requiredHint}</label>
-            <input  size="25"  type="text" id="telephoneNumber" name="telephoneNumber" value="${telephoneNumberValue}" />
-        </p>
-
+      
+            <div class= "d-flex">
+                <div class="form-label d-flex" > 
+                    <label for="telephoneNumber">${labelString} ${requiredHint}</label>
+                </div>
+                <div class="form-input d-flex" > 
+                    <input  size="25"  type="text" id="telephoneNumber" name="telephoneNumber" value="${telephoneNumberValue}" />
+                </div>
+            </div>
         <input type="hidden" id="editKey" name="editKey" value="${editKey}"/>
 
-        <p class="submit">
-            <input type="submit" id="submit" value="${submitButtonText}"/><span class="or"> ${i18n().or} </span>
-            <a class="cancel" href="${cancelUrl}" title="${i18n().cancel_title}">${i18n().cancel_link}</a>
-        </p>
+        <div class= "d-flex">
+            <div class="form-label d-flex" > 
+            </div>
+            <div class="form-input d-flex" > 
+            
+                <p class="submit">
+                    <input type="submit" id="submit" class="primary-btn" value="${submitButtonText}"/><#--  <span class="or"> ${i18n().or} </span>  -->
+                    
 
+                    <a class="cancel " href="${cancelUrl}" title="${i18n().cancel_title}">
+                    <input class="btn-secondary" type="button" value="${i18n().cancel_link}" />
+                    
+                    </a>
+                </p>
+            </div>
+        </div>
         <p id="requiredLegend" class="requiredHint">* ${i18n().required_fields}</p>
 
     </form>
 
 </section>
-
+</div>
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/js/jquery-ui/css/smoothness/jquery-ui-1.12.1.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customForm.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customFormWithAutocomplete.css" />')}

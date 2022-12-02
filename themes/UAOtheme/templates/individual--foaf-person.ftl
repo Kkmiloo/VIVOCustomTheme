@@ -27,6 +27,11 @@
 
 
     <div class="profile-hero">
+            <div class="breadcrumb-desktop">
+            <a href="${urls.base}/">Inicio</a>
+            <span> &gt; </span>
+            <a href="${urls.base}/people">Investigadores</a>
+        </div>
       <div class="hero-container profile">
 
         <!--imagen-->
