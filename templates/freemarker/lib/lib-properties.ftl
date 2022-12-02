@@ -56,7 +56,7 @@
 
 <#macro dataPropertyList property editable template=property.template>
     <#list property.statements as statement>
-        <@propertyListItem property statement editable ><#include "${template}"></@propertyListItem>
+        <@propertyListItem property statement editable ><p><#include "${template}"></p></@propertyListItem>
     </#list>
 </#macro>
 
