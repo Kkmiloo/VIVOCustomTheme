@@ -8,6 +8,8 @@
 <#assign hasElement = propertyGroups.pullProperty("${namespaces.display}hasElement")!>
 <#assign returnURL = "/vivo/individual?uri=http%3A%2F%2Fvitro.mannlib.cornell.edu%2Fontologies%2Fdisplay%2F1.1%23DefaultMenu&switchToDisplayModel=true" />
 <div id="wrapper-content"> 
+ <nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="${urls.base}/siteAdmin" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
+
 <#if hasElement?has_content>
     <script type="text/javascript">
         var menuItemData = [];
