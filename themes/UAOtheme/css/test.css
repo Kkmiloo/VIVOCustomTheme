@@ -2732,6 +2732,10 @@ h1.fn .display-title {
 .property-group {
     position: relative;
     clear: both;
+
+
+    width: 60%;
+
     margin: 0 auto;
     margin-bottom: 10px;
     margin-bottom: 20px;
@@ -6068,6 +6072,7 @@ a:hover.more-less {
     /* Right hand column */
     #right-hand-column {}
 
+
 }
 
 
@@ -6599,4 +6604,5 @@ section.visualizationTools p {
 
 body.vis {
     background: #f3f3f0 url(https://pattern.uao.edu.co/images/bg-desktop-white.png) center 0 no-repeat;
+
 }
