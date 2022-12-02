@@ -18,6 +18,13 @@
 <#--@dumpAll /-->
 <#include "individual-adminPanel.ftl">
   <section class="hero show-breadcrumb">
+        <div class="breadcrumb-desktop">
+            <a href="${urls.base}/">Inicio</a>
+            <span> &gt; </span>
+            <a href="${urls.base}/groups"> Grupos de Investigación</a>
+             <span> &gt; </span>
+            <a href="${urls.base}/people"> Inserte Facultad</a>
+        </div>
         <div class="hero-container group-container">
           
           <div class="details">
