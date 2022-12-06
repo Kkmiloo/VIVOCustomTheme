@@ -2729,7 +2729,7 @@ h1.fn .display-title {
 }
 
 /* PROPERTY GROUP------>  */
-.property-group {
+/* .property-group {
     position: relative;
     clear: both;
 
@@ -2740,7 +2740,7 @@ h1.fn .display-title {
     margin-bottom: 10px;
     margin-bottom: 20px;
     border: none;
-}
+} */
 
 .scroll-up {
     position: absolute;
@@ -6605,4 +6605,9 @@ section.visualizationTools p {
 body.vis {
     background: #f3f3f0 url(https://pattern.uao.edu.co/images/bg-desktop-white.png) center 0 no-repeat;
 
+}
+
+.form-search .input-form-search input[type=search]:focus,
+.form-search .input-form-search input[type=search]:valid {
+    border-color: #c4161c;
 }
