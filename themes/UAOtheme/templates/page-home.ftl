@@ -56,7 +56,7 @@
                             </form>
                             <h2>¿Qué estás buscando?</h2>
                             <div class="btnslist">
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Article%20">
+                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Article">
                                 Article
                                 </a>
                                 
@@ -107,7 +107,7 @@
         <#-- builds a json object that is used by js to render the academic departments section -->
          <#--  <@lh.listAcademicDepartments />   -->
 
-        
+        <@lh.researchClasses />
     </article>
         <#include "footer.ftl">
 
