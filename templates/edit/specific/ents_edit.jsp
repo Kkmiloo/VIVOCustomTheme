@@ -21,8 +21,6 @@
 <jsp:include page="/templates/edit/fetch/vertical.jsp"/>
 <c:set var='individual' value='${requestScope.entityWebapp}'/>
 
-<nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="javascript:window.history.back()" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
-
 <c:if test="${isEditor}">
 	<div name="authorized" align="center">
 	<table class="form-background" border="0" cellpadding="2" cellspacing="2" width="100%">
