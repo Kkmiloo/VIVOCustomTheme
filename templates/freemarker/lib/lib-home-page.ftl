@@ -119,14 +119,25 @@
 <#-- Renders the html for the research section on the home page. -->
 <#-- Works in conjunction with the homePageUtils.js file -->
 <#macro researchClasses classGroups=vClassGroups>
-<#assign foundClassGroup = false />
-<section id="home-research" class="home-sections">
-    <h4>${i18n().research_capitalized}</h4>
+    <#assign foundClassGroup = false />
+  <#--    <section id="home-research" class="home-sections">  -->
+  <#--    <h4>${i18n().research_capitalized}</h4>  -->
     <ul>
         <#list classGroups as group>
             <#if (group.individualCount > 0) && group.uri?contains("publications") >
                 <#assign foundClassGroup = true />
+                                 <div class="btnslist">
                 <#list group.classes as class>
+                    <#if (class.individualCount > 0) && (class.uri?contains("AcademicArticle") || class.uri?contains("Book") || class.uri?contains("Chapter") ||class.uri?contains("ConferencePaper") || class.uri?contains("Grant") || class.uri?contains("Report")) >
+                           
+                                   <a class="primary-btn  white" href=${urls.base}/research#${class.uri}>
+        ${class.name}
+        </a>
+                         
+                    </#if>
+                </#list>
+               </div>
+                <#--  <#list group.classes as class>
                     <#if (class.individualCount > 0) && (class.uri?contains("AcademicArticle") || class.uri?contains("Book") || class.uri?contains("Chapter") ||class.uri?contains("ConferencePaper") || class.uri?contains("Grant") || class.uri?contains("Report")) >
                         <li role="listitem">
                             <span>${class.individualCount!}</span>&nbsp;
@@ -139,16 +150,17 @@
                             </a>
                         </li>
                     </#if>
-                </#list>
-                <li><a href="${urls.base}/research" alt="${i18n().view_all_research}">${i18n().view_all}</a></li>
+                </#list>  -->
+               <#--   <li><a href="${urls.base}/research" alt="${i18n().view_all_research}">${i18n().view_all}</a></li>  -->
             </#if>
         </#list>
         <#if !foundClassGroup>
             <p><li style="padding-left:1.2em">${i18n().no_research_content_found}</li></p>
         </#if>
     </ul>
-</section>
+<#--      </section>  -->
 </#macro>
+
 
 <#-- Renders the html for the academic departments section on the home page. -->
 <#-- Works in conjunction with the homePageUtils.js file -->
