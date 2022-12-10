@@ -55,27 +55,10 @@
                             </button>
                             </form>
                             <h2>¿Qué estás buscando?</h2>
-                            <div class="btnslist">
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Article">
-                                Article
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Book%20">
-                                Book
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Chapter%20">
-                                Chapter
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://vivoweb.org/ontology/core#ConferencePaper%20">
-                                Conference Paper
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Thesis%20">
-                                Thesis
-                                </a>
-                            </div>
+
+                            <#--  <#include "researchClasses.ftl">  -->
+                           <@lh.researchClasses />
+                          
                         </div>
                     </div>
 
@@ -106,8 +89,8 @@
         
         <#-- builds a json object that is used by js to render the academic departments section -->
          <#--  <@lh.listAcademicDepartments />   -->
-
-        <@lh.researchClasses />
+<#--   <@lh.researchClasses />  -->
+        
     </article>
         <#include "footer.ftl">
 
