@@ -20,16 +20,74 @@
 <div name="anybody" class="editingForm">
 <jsp:include page="/templates/edit/fetch/vertical.jsp"/>
 <c:set var='individual' value='${requestScope.entityWebapp}'/>
-
 <c:if test="${isEditor}">
 	<div name="authorized" align="center">
+		<form name="newEntityForm" action="editForm" method="get">
+			<select id="VClassURI" name="VClassURI" class="form-item">
+				<form:option name="VClassURI"/>
+			</select><br/>
+			<input type="submit" class="form-button" value="Add New Individual of above Type"/>
+			<input type="hidden" name="controller" value="Entity"/>
+		</form>
+
+		<p>-------------------------------------------------------</p> 
+		<form action="entity" method="get">
+			<input type="submit" class="form-button" value="Display This Individual (public)"/>
+			<input type="hidden" name="uri" value="${individual.URI}"/>
+		</form>
+		<form action="editForm" method="get">
+			<input name="uri" type = "hidden" value="${individual.URI}" />
+			<input name="controller" type = "hidden" value="Entity" />
+			<input type="submit" class="form-button" value="Edit This Individual"/>
+		</form><br/>
+
+		<c:if test="${!empty individual.externalIds}">
+			<form action="editForm" method="get">
+				<select name="multiplexedParam" class="form-item">
+					<form:option name="externalIds"/>
+				</select><br/>
+				<input type="hidden" name="IndividualURI" value="${individual.URI}"/>
+				<input type="submit" class="form-button" value="Edit External Identifiers"/>
+				<input type="hidden" name="controller" value="ExternalId"/>
+			</form>
+		</c:if>
+		<form action="editForm" method="get">
+			<input type="submit" class="form-button" value="Change URI"/>
+			<input type="hidden" name="oldURI" value="${individual.URI}"/>
+			<input type="hidden" name="mode" value="renameResource"/>
+			<input type="hidden" name="controller" value="Refactor"/>
+		</form>
+		<p>--------------------------------</p>
+
+		<c:if test="${!empty types}">
+			<form action="individualTypeOp" method="get">
+				<ul style="list-style-type:none;">
+				<c:forEach var="type" items="${types}">
+					<c:url var="individualURL" value="entityEdit">
+						<c:param name="uri" value="${type.URI}"/>
+					</c:url>
+					<c:url var="typeURL" value="/vclassEdit">
+						<c:param name="uri" value="${type.URI}"/>
+					</c:url>
+					<li><input type="checkbox" name="TypeURI" value="${type.URI}" class="form-item"/><a href="${typeURL}"> ${type.pickListName} </a></li>
+				</c:forEach>
+				</ul>
+				<input type="hidden" name="individualURI" value="${individual.URI}"/>
+				<input type="submit" class="form-button" value="Remove Checked Asserted Types"/>
+				<input type="hidden" name="operation" value="remove"/>
+				<input type="hidden" name="_epoKey" value="${epoKey}"/>
+			</form>
+				 </c:if>
+			<form action="editForm" method="get">
+				<input type="hidden" name="controller" value="IndividualType"/>
+				<input type="hidden" name="IndividualURI" value="${individual.URI}"/>
+				<input type="submit" class="form-button" value="Add Type"/>
+			</form>
+
 	<table class="form-background" border="0" cellpadding="2" cellspacing="2" width="100%">
     	<tr valign="top" align="center">
     	<td>
-        	<form action="entity" method="get">
-            	<input type="submit" class="form-button" value="Display This Individual (public)"/>
-            	<input type="hidden" name="uri" value="${individual.URI}"/>
-        	</form>
+        	
 
         	<c:set var="query"
                  value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -63,37 +121,10 @@
 
     	</td>
     	<td valign="bottom" align="center">
-        	<form action="editForm" method="get">
-            	<input name="uri" type = "hidden" value="${individual.URI}" />
-            	<input name="controller" type = "hidden" value="Entity" />
-            	<input type="submit" class="form-button" value="Edit This Individual"/>
-        	</form><br/>
-
-        	<c:if test="${!empty individual.externalIds}">
-	        	<form action="editForm" method="get">
-	            	<select name="multiplexedParam" class="form-item">
-	            		<form:option name="externalIds"/>
-	            	</select><br/>
-                    <input type="hidden" name="IndividualURI" value="${individual.URI}"/>
-	            	<input type="submit" class="form-button" value="Edit External Identifiers"/>
-	            	<input type="hidden" name="controller" value="ExternalId"/>
-	        	</form>
-	    	</c:if>
+        	
     	</td>
     	<td valign="bottom">
-       		<form name="newEntityForm" action="editForm" method="get">
-            	<select id="VClassURI" name="VClassURI" class="form-item">
-                	<form:option name="VClassURI"/>
-            	</select><br/>
-            	<input type="submit" class="form-button" value="Add New Individual of above Type"/>
-            	<input type="hidden" name="controller" value="Entity"/>
-        	</form>
-        	<form action="editForm" method="get">
-            	<input type="submit" class="form-button" value="Change URI"/>
-            	<input type="hidden" name="oldURI" value="${individual.URI}"/>
-            	<input type="hidden" name="mode" value="renameResource"/>
-            	<input type="hidden" name="controller" value="Refactor"/>
-        	</form>
+
     	</td>
     </tr>
     <tr><td colspan="3"><hr/></td></tr>
@@ -102,30 +133,7 @@
 
     <tr valign="bottom" align="center">
 	<td colspan="1" valign="bottom" align="left">
-	    <c:if test="${!empty types}">
-		<form action="individualTypeOp" method="get">
-			<ul style="list-style-type:none;">
-			<c:forEach var="type" items="${types}">
-				<c:url var="individualURL" value="entityEdit">
-					<c:param name="uri" value="${type.URI}"/>
-				</c:url>
-				<c:url var="typeURL" value="/vclassEdit">
-					<c:param name="uri" value="${type.URI}"/>
-				</c:url>
-				<li><input type="checkbox" name="TypeURI" value="${type.URI}" class="form-item"/><a href="${typeURL}"> ${type.pickListName} </a></li>
-			</c:forEach>
-			</ul>
-			<input type="hidden" name="individualURI" value="${individual.URI}"/>
-			<input type="submit" class="form-button" value="Remove Checked Asserted Types"/>
-			<input type="hidden" name="operation" value="remove"/>
-			<input type="hidden" name="_epoKey" value="${epoKey}"/>
-		</form>
-             </c:if>
-        <form action="editForm" method="get">
-			<input type="hidden" name="controller" value="IndividualType"/>
-			<input type="hidden" name="IndividualURI" value="${individual.URI}"/>
-			<input type="submit" class="form-button" value="Add Type"/>
-		</form>
+	   
 	</td>
 
 <td colspan="2">
@@ -134,21 +142,23 @@
 
 </tr>
 
+<div>
+	<table class="form-background" border="0" cellpadding="2" cellspacing="2" width="100%">
+		<tr><td colspan="3" align="center"><h2>Object (individual-to-individual) Property Statements</h2></td></tr>
+		<tr><td><input id="newPropButton" class="form-button" type="button" value="add new statement" onclick="newProp();"/></td>
+			<td><input class="form-button" type="button" value="refresh list" onclick="update();"/></td>
+		</tr>
+	</table>
+	</div>
+
 	</table>
 
 	<c:if test="${dwrDisabled != true}">
     	<div id="entityUriForDwr" style="visibility:hidden;">${individual.URI}</div>
-    		<div>
-        	<table class="form-background" border="0" cellpadding="2" cellspacing="2" width="100%">
-            	<tr><td colspan="3" align="center"><h2>Object (individual-to-individual) Property Statements</h2></td></tr>
-            	<tr><td><input id="newPropButton" class="form-button" type="button" value="add new statement" onclick="newProp();"/></td>
-                	<td><input class="form-button" type="button" value="refresh list" onclick="update();"/></td>
-            	</tr>
-        	</table>
-    		</div>
+    		
     		<div align="center">
         	<!-- ____________________ properties table using dwr ____________________ -->
-        	<div id="propertyTableDiv">
+        	<div id="propertyTableDiv" class="form-table">
             	<table class="form-background" border="1" width="100%" align="center">
                 	<thead class="form-table-head">
                 	<tr><th rowspan="1" colspan="1">Subject</th>
