@@ -4356,20 +4356,21 @@ div .form-background tbody:nth-child(1) tr:nth-child(1) td:nth-child(2) {
     width: 75% !important;
 }
 
-#wrapper-content .editingForm {
+/* #wrapper-content .editingForm {
     background-color: #ffffff;
 }
 
-/* Table Data */
+/* Table Data 
 .editingForm>div>.form-background td {
     background-color: #ffffff;
 }
 
-/* Table Data */
+/* Table Data 
 .editingForm>div>div>.form-background td {
     background-color: #ffffff;
 }
 
+*/
 .form-background {
     border-collapse: collapse;
     margin: 25px 0;
@@ -6244,9 +6245,20 @@ p.datatable {
     font-weight: normal;
 }
 
-table.sparkline_wrapper_table td,
+/* table.sparkline_wrapper_table td,
 th {
     vertical-align: bottom;
+}
+ */
+
+.editingForm .form-table table td {
+    border-left: none;
+    border-right: none;
+    vertical-align: baseline;
+}
+
+.form-row-odd {
+    background-color: aliceblue;
 }
 
 #ego_profile {
