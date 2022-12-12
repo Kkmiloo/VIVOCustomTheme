@@ -2315,6 +2315,7 @@ label {
     letter-spacing: -0.55008px;
     line-height: 28px;
     list-style-type: none;
+    text-decoration: none;
 
 }
 
@@ -6123,6 +6124,7 @@ input:focus {
 
 .card-display {
     display: block;
+    text-decoration: none;
 }
 
 
