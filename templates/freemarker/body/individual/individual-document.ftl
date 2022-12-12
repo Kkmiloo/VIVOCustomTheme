@@ -45,7 +45,9 @@
                 </h1>
                 </#if>
                 <#include "individual-document-datetime.ftl">
+                <#include "individual-document-DOI.ftl">
                 <#include "individual-document-authors.ftl">
+                
 
                 <#if individualProductExtension??>
                     ${individualProductExtension}
