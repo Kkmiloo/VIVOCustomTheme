@@ -153,7 +153,8 @@
             </#if>
         </#if>
     </#local>
-
+  <p>
     ${resourceTitle} ${citationDetails} <@dt.yearSpan "${statement.dateTime!}" /> ${altMetric} ${plum}
+                        </p>
 </#if>
 </#macro>

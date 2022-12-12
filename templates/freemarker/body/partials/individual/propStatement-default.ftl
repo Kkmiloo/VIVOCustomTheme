@@ -13,9 +13,13 @@
 <#macro showStatement statement>
     <#-- The query retrieves a type only for Persons. Post-processing will remove all but one. -->
   	<#if statement.subclass??>
+	  <p>
 		<a href="${profileUrl(statement.uri("object"))}" title="${i18n().name}">${statement.label!statement.localName!}</a>
+                        </p>
 	<#else>
+	  <p>
     	<a href="${profileUrl(statement.uri("object"))}" title="${i18n().name}">${statement.label!statement.localName!}</a>&nbsp; ${statement.title!statement.type!}
+                        </p>
 	</#if>
 	<@lmt.addCitationMetaTag uri=(statement.specificObjectType) content=(statement.label!) />
 </#macro>

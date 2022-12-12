@@ -2466,7 +2466,7 @@ section.hero-section .hhs-container::before {
 }
 
 section.hero-section .hhs-container.with-temporary-notice:before {
-    /*  top: 3.55rem; */
+    top: 3.55rem;
 }
 
 section.hero-section {
