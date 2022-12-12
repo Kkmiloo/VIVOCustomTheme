@@ -9,7 +9,7 @@
                 <div class="form-label d-flex" > 
                     <b>Individual Name *</b>
                 </div>
-                <div class="form-inputs d-flex" > 
+                <div class="form-input d-flex" > 
                     <input style="width:80%;" type="text" name="Name" value="<form:value name="Name"/>" />
                     <c:set var="NameError"><form:error name="Name"/></c:set>
                     <c:if test="${!empty NameError}">
