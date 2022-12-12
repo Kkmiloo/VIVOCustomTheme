@@ -146,11 +146,16 @@ name will be used as the label. -->
 
 <#macro showAddLink propertyLocalName label url rangeUri domainUri="">
     <#if (rangeUri?contains("Authorship") && domainUri?contains("IAO_0000030")) || (rangeUri?contains("Editorship") && domainUri?contains("IAO_0000030"))|| rangeUri?contains("URL") || propertyLocalName == "hasResearchArea">
-        <a class="add-${propertyLocalName}" href="${url}" title="${i18n().manage_list_of} ${label?lower_case}">
-        <span class="add-individual icon icon-folder" data-domain="${domainUri}" data-range="${rangeUri}"></span></a>
+        <a class="add-${propertyLocalName} anchor-edit" href="${url}" title="${i18n().manage_list_of} ${label?lower_case}">
+        <button class="btn-circle">
+        <span class="add-individual icon icon-plus" data-domain="${domainUri}" data-range="${rangeUri}"></span>
+        </button></a>
     <#else>
-        <a class="add-${propertyLocalName}" href="${url}" title="${i18n().add_new} ${label?lower_case} ${i18n().entry}">
-        <span class="add-individual icon icon-plus-circle" data-domain="${domainUri}" data-range="${rangeUri}"></span></a>
+        <a class="add-${propertyLocalName} anchor-edit" href="${url}" title="${i18n().add_new} ${label?lower_case} ${i18n().entry}">
+        <button class="btn-circle">
+        <span class="add-individual icon icon-plus" data-domain="${domainUri}" data-range="${rangeUri}">
+        </button>
+        </span></a>
     </#if>
 </#macro>
 
@@ -200,7 +205,7 @@ name will be used as the label. -->
 </#macro>
 
 <#macro showEditLink propertyLocalName rangeUri url>
-    <a class="edit-${propertyLocalName}" href="${url}" title="${i18n().edit_entry}"><span class="edit-individual icon icon-pencil-alt" data-range="${rangeUri}"> </span></a>
+    <a class="edit-${propertyLocalName} anchor-edit" href="${url}" title="${i18n().edit_entry}"><button class="btn-circle"> <span class="edit-individual icon icon-pencil-alt" data-range="${rangeUri}"> </span></button></a>
 </#macro>
 
 <#macro deleteIndividualLink individual redirectUrl="/">
@@ -210,7 +215,7 @@ name will be used as the label. -->
 
 
 <#macro showDeleteIndividualLink url>
-	<a class="delete-individual" href="${url}" title="${i18n().delete_entry}"><span class="delete-individual icon icon-trash-alt" > </span></a>
+	<a class="delete-individual" href="${url}" title="${i18n().delete_entry}"><button class="btn-circle"><span class="delete-individual icon icon-trash-alt" > </button> </span></a>
 </#macro>
 
 <#macro deleteLink propertyLocalName propertyName statement rangeUri="">
@@ -235,7 +240,7 @@ name will be used as the label. -->
 </#macro>
 
 <#macro showDeleteLink propertyLocalName rangeUri url>
-    <a class="delete-${propertyLocalName}" href="${url}" title="${i18n().delete_entry}"><span  class="delete-individual icon icon-trash-alt" data-range="${rangeUri}" > </span></a>
+    <a class="delete-${propertyLocalName} anchor-edit" href="${url}" title="${i18n().delete_entry}"> <button class="btn-circle"><span  class="delete-individual icon icon-trash-alt" data-range="${rangeUri}" ></button> </span></a>
 </#macro>
 
 <#macro verboseDisplay property>
@@ -278,7 +283,7 @@ name will be used as the label. -->
         </a>
         <@editingLinks "${mainImage.localName}" "" mainImage.first() editable />
     <#else>
-        <#local imageLabel><@addLinkWithLabel mainImage editable "${i18n().photo}" /></#local>
+        <#local imageLabel><@addLink mainImage editable "${i18n().photo}" /></#local>
         ${imageLabel}
         <#if showPlaceholder == "always" || (showPlaceholder="with_add_link" && imageLabel?has_content)>
             <img class="" src="${placeholderImageUrl(individual.uri)}" title = "${i18n().no_image}" alt="${i18n().placeholder_image}" width="${imageWidth!}" />
