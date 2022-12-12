@@ -183,22 +183,22 @@ var getRange = function (prop) {
 var getDelete = function (prop) {
   var quote = new RegExp('\'', 'g');
   var dquote = new RegExp('"', 'g');
-  return '<label><input  style="display:none ;" type="button" value="Delete" class="form-button" ' +
+  return '<label><button  style="" type="button" value="Delete" class="btn-circle" ' +
     'onclick="deleteProp(' +
     '\'' + cleanForString(prop.subjectEntURI) + '\', ' +
     '\'' + cleanForString(prop.propertyURI) + '\', ' +
     '\'' + cleanForString(prop.objectEntURI) + '\', ' +
     '\'' + cleanForString(prop.objectName) + '\', ' +
-    '\'' + cleanForString(prop.domainPublic) + '\' )"> <span class="icon icon-trash-alt"></span> </label>';
+    '\'' + cleanForString(prop.domainPublic) + '\' )"> <span class="icon icon-trash-alt"></span> </button></label>';
 };
 
 var getEdit = function (prop) {
   var quote = new RegExp('\'', 'g');
-  return '<label><input style="display:none;" type="button" value="Edit" class="form-button" ' +
+  return '<label><button style="" type="button" value="Edit" class="btn-circle" ' +
     'onclick="editTable(this,' +
     '\'' + cleanForString(prop.subjectEntURI) + '\', ' +
     '\'' + cleanForString(prop.propertyURI) + '\', ' +
-    '\'' + cleanForString(prop.objectEntURI) + '\')"> <span class="icon icon-edit"></span> </label>';
+    '\'' + cleanForString(prop.objectEntURI) + '\')"><span class="icon icon-edit"></span></label>';
 };
 
 var quote = new RegExp('\'', 'g');
