@@ -16,8 +16,10 @@ window.addEventListener('scroll', () => {
         if (position.y <= headerOffset && position.y >= (headerOffset - position.height - h2MarginTop)) {
 
             tabsBar[index].style.backgroundColor = 'red'
+            tabsBar[index].style.transition = 'background-color 0.2s'
         } else {
             tabsBar[index].style.backgroundColor = 'white'
+            tabsBar[index].style.transition = 'background-color 0.2s'
         }
     })
 
