@@ -56,17 +56,25 @@
 
     <form id="personHasAdditionalEmail" class="customForm noIE67" action="${submitUrl}"  role="add/edit phone">
 
-        <p>
-            <label for="additionalEmail">${i18n().email_address} ${requiredHint}</label>
-            <input  size="35"  type="text" id="emailAddress" name="emailAddress" value="${emailAddressValue}" />
-        </p>
+        <div class="d-flex form-group">
+            <div class="form-label"> 
+        
+                <label for="additionalEmail">${i18n().email_address} ${requiredHint}</label>
+            </div>
+            <div class="form-input"> 
+                <input  size="35"  type="text" id="emailAddress" name="emailAddress" value="${emailAddressValue}" />
+            </div>
+        </div>
 
         <input type="hidden" id="editKey" name="editKey" value="${editKey}"/>
 
-        <p class="submit">
+        <div class="submit d-flex form-group">
+            <div class="form-label"> </div>
+            <div class="form-input">
             <input type="submit" id="submit" value="${submitButtonText}"/><span class="or"> ${i18n().or} </span>
             <a class="cancel" href="${cancelUrl}" title="${i18n().cancel_title}">${i18n().cancel_link}</a>
-        </p>
+            </div>
+        </div>
 
         <p id="requiredLegend" class="requiredHint">* ${i18n().required_fields}</p>
 

@@ -130,34 +130,49 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 <form id="addpublicationToPerson" class="customForm noIE67" action="${submitUrl}"  role="add/edit publication">
 
         <#--TODO: Check if possible to have existing publication options here in order to select-->
-    <p class="inline"><label for="typeSelector">${i18n().publication_type}<#if editMode != "edit"> ${requiredHint}<#else>:</#if></label>
+    <div class="d-flex form-group">
+        <div class="form-label"> <label for="typeSelector">${i18n().publication_type}<#if editMode != "edit"> ${requiredHint}<#else>:</#if></label></div>
+        <div class="form-input">
         <select id="typeSelector" name="pubType" acGroupName="publication" >
              <#list pubTypeLiteralOptions?keys as key>
                  <option value="${key}" <#if (publicationTypeValue = key)>selected="selected"</#if>>${pubTypeLiteralOptions[key]}</option>
              </#list>
         </select>
-    </p>
-        <p>
+        </div>
+    </div>
+        <div class="d-flex form-group">
+            <div class="form-label">
             <label for="title">${i18n().title_capitalized} ${requiredHint}</label>
+            </div>
+            <div class="form-input">
             <input class="acSelector" size="60"  type="text" id="title" name="title" acGroupName="publication"  value="${titleValue}" />
-        </p>
+            </div>
+        </div>
 
         <div class="acSelection" acGroupName="publication" id="pubAcSelection">
-            <p class="inline">
+            <div class="d-flex form-group">
+                <div class="form-label">
                 <label>${i18n().selected_publication}:</label>
+                </div>
                 <span class="acSelectionInfo"></span>
                 <a href="" class="verifyMatch"  title="${i18n().verify_match_capitalized}">(${i18n().verify_match_capitalized}</a> ${i18n().or}
                 <a href="#" class="changeSelection" id="changeSelection">${i18n().change_selection})</a>
-            </p>
+            </div>
+            
             <input class="acUriReceiver" type="hidden" id="pubUri" name="pubUri" value="${pubUriValue}"  ${flagClearLabelForExisting}="true" />
         </div>
-    <div id="fieldsForNewPub">
+  <div id="fieldsForNewPub">
     <#-- Published In: collection -->
-    <p>
+    <div class="d-flex form-group">
+        <div class="form-label">
+
         <label for="collection">${i18n().published_in}</label>
+        </div>
+        <div class="form-input">
         <input class="acSelector" size="50"  type="text" id="collection" name="collection" acGroupName="collection"  value="${collectionValue}" />
         <input class="display" type="hidden" id="collectionDisplay" name="collectionDisplay" acGroupName="collection"  value="${collectionDisplayValue}" />
-    </p>
+        </div> 
+    </div>
 
     <div class="acSelection" acGroupName="collection" >
         <p class="inline">
@@ -170,11 +185,15 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     </div>
 
     <#-- Published In: book -->
-    <p>
-        <label for="book">${i18n().published_in}</label>
+    <div class="d-flex form-group">
+        <div class="form-label">
+            <label for="book">${i18n().published_in}</label>
+        </div>
+        <div class="form-input">
         <input class="acSelector" size="50"  type="text" id="book" name="book" acGroupName="book"  value="${bookValue}" />
         <input class="display" type="hidden"  id="bookDisplay" name="bookDisplay" acGroupName="book"  value="${bookDisplayValue}" />
-    </p>
+        </div>
+    </div>
 
     <div class="acSelection" acGroupName="book" >
         <p class="inline">

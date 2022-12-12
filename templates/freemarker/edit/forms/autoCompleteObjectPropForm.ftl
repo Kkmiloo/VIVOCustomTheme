@@ -51,35 +51,51 @@
 <#if editConfiguration.propertySelectFromExisting = true>
     <#if rangeOptionsExist  = true >
         <form class="customForm" action = "${submitUrl}">
+            
             <input type="hidden" name="editKey" id="editKey" value="${editKey}" role="input" />
             <#if editConfiguration.propertyPublicDescription?has_content>
                 <p>${editConfiguration.propertyPublicDescription}</p>
              </#if>
 
             <#---This section should become autocomplete instead-->
-            <p>
+            <div class="form-group d-flex"> 
+                <div class="form-label"> 
+
 				<label for="object"> ${propertyNameForDisplay?capitalize} ${i18n().name_capitalized}<span class='requiredHint'> *</span></label>
+                </div>
+                <div class="form-inpu">
 				<input class="acSelector" size="50"  type="text" id="object" name="objectLabel" acGroupName="object" value="${objectLabel}" />
-			</p>
+                </div>
+            </div>
 
 			<div class="acSelection" acGroupName="object" >
-				<p class="inline">
+				 <div class="form-group d-flex"> 
+                <div class="form-label"> 
 					<label>${i18n().selected}:</label>
+                </div>
+                <div class="form-input"> 
 					<span class="acSelectionInfo"></span>
 					<a href="" class="verifyMatch"  title="${i18n().verify_this_match}">(${i18n().verify_this_match}</a> ${i18n().or}
                     <a href="#" class="changeSelection" id="changeSelection">${i18n().change_selection})</a>
-                </p>
+
                 <input class="acUriReceiver" type="hidden" id="objectVar" name="objectVar" value="${selectedObjectUri}" />
+                </div>
+                </div>
+
 			</div>
 
             <#--The above section should be autocomplete-->
 
-            <p>
+            <div class="d-flex form-group">
+
+                <div class="form-label"> </div>
+                <div class="form-input"> 
                 <input type="submit" id="submit" value="${submitButtonText}" role="button" disabled="disabled"/>
 
                 <span class="or"> ${i18n().or} </span>
                 <a title="${i18n().cancel_title}" class="cancel" href="${cancelUrl}">${i18n().cancel_link}</a>
-            </p>
+                </div>
+            </div>
         </form>
     <#else>
         <p> ${i18n().there_are_no_entries_for_selection} </p>
