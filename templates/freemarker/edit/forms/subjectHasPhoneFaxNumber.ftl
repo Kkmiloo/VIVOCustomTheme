@@ -44,7 +44,7 @@
         <#assign disabledVal=""/>
 </#if>
 
-<div class="card-body">
+
 
 <#assign requiredHint = "<span class='requiredHint'> *</span>" />
 
@@ -101,7 +101,7 @@
     </form>
 
 </section>
-</div>
+
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/js/jquery-ui/css/smoothness/jquery-ui-1.12.1.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customForm.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customFormWithAutocomplete.css" />')}
