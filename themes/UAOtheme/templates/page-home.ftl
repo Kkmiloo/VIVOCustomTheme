@@ -66,7 +66,7 @@
         </section> <!-- #intro -->
 
     <section class="container">
-        <h2>Publicaciones recientes</h2>
+        <h2>${i18n().recen_pub2}</h2>
         <div class="testimonial mySwiper">
             <div class="testi-content swiper-wrapper">
             <#include "recentPub.ftl">
