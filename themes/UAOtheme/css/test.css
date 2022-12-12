@@ -6672,7 +6672,7 @@ form label {
 }
 
 form {
-    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .form-group {
@@ -6909,4 +6909,11 @@ h4.card-title {
 .m-b2 {
 
     margin-bottom: 2rem;
+}
+
+.d-flex form ul li a {
+
+    color: #9e0b0f;
+    text-decoration: underline;
+    pointer-events: all;
 }
