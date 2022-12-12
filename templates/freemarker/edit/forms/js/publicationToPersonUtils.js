@@ -3,7 +3,7 @@
 
 var publicationToPersonUtils = {
 
-    onLoad: function(href, blankSentinel) {
+    onLoad: function (href, blankSentinel) {
         this.initObjectReferences();
         this.bindEventListeners();
         this.autoDateLabel.hide();
@@ -13,13 +13,13 @@ var publicationToPersonUtils = {
         $.extend(this, i18nStrings);
         this.displayFieldsForType();
 
-        if ( this.findValidationErrors() ) {
+        if (this.findValidationErrors()) {
             this.resetLastNameLabel();
         }
 
     },
 
-    initObjectReferences: function() {
+    initObjectReferences: function () {
 
         this.form = $('#addpublicationToPerson');
         this.pubTitle = $('input#title');
@@ -50,8 +50,8 @@ var publicationToPersonUtils = {
         this.fullViewOnly = $('.fullViewOnly');
         this.autoDateLabel = null;
 
-        this.form.find('label').each(function() {
-            if ( $(this).attr('for') == "dateTime-year") {
+        this.form.find('label').each(function () {
+            if ($(this).attr('for') == "dateTime-year") {
                 publicationToPersonUtils.autoDateLabel = $(this);
             }
         });
@@ -65,10 +65,10 @@ var publicationToPersonUtils = {
 
     },
 
-    bindEventListeners: function() {
+    bindEventListeners: function () {
         this.idCache = {};
 
-        this.typeSelector.change(function() {
+        this.typeSelector.change(function () {
             // controls the fieldsForNewPub div. If the user selects an existing pub/title,
             // this div gets hidden.
             publicationToPersonUtils.showFieldsForPub();
@@ -80,35 +80,35 @@ var publicationToPersonUtils = {
 
         // we need the delay in the next two functions to ensure the correct timing after the user
         // selects the ac item. The .change handles a mouse click; .blur an arrow key and tab selection
-        this.pubTitle.change( function(objEvent) {
-           window.setTimeout('publicationToPersonUtils.hideFieldsForPub()', 180);
+        this.pubTitle.change(function (objEvent) {
+            window.setTimeout('publicationToPersonUtils.hideFieldsForPub()', 180);
         });
 
-        this.pubTitle.blur( function(objEvent) {
-           window.setTimeout('publicationToPersonUtils.hideFieldsForPub()', 180);
+        this.pubTitle.blur(function (objEvent) {
+            window.setTimeout('publicationToPersonUtils.hideFieldsForPub()', 180);
         });
 
-        this.changeLink.click( function() {
-           publicationToPersonUtils.showFieldsForPub();
+        this.changeLink.click(function () {
+            publicationToPersonUtils.showFieldsForPub();
         });
 
-        this.form.submit(function() {
+        this.form.submit(function () {
             publicationToPersonUtils.resolveEditorNames();
         });
 
     },
 
-    hideFieldsForPub: function() {
-       if ( this.pubAcSelection.attr('class').indexOf('userSelected') != -1 ) {
-           this.fieldsForNewPub.slideUp(250);
-       }
+    hideFieldsForPub: function () {
+        if (this.pubAcSelection.attr('class').indexOf('userSelected') != -1) {
+            this.fieldsForNewPub.slideUp(250);
+        }
     },
 
-    showFieldsForPub: function() {
+    showFieldsForPub: function () {
         this.fieldsForNewPub.show();
     },
 
-    resetAcSelection: function(groupName) {
+    resetAcSelection: function (groupName) {
         var $acSelection = this.form.find("div.acSelection[acGroupName='" + groupName + "']");
         this.hideFields($acSelection);
         $acSelection.removeClass('userSelected');
@@ -117,19 +117,19 @@ var publicationToPersonUtils = {
         $acSelection.find("a.verifyMatch").attr('href', this.baseHref);
     },
 
-    getAcUriReceiverVal: function(groupName) {
+    getAcUriReceiverVal: function (groupName) {
         var $collectionDiv = this.form.find("div.acSelection[acGroupName='" + groupName + "']");
-        return $collectionDiv.find('input#'+ groupName + 'Uri').val();
+        return $collectionDiv.find('input#' + groupName + 'Uri').val();
     },
 
-    hideAllFields: function() {
-        this.collection.parent('p').hide();
-        this.book.parent('p').hide();
-        this.presentedAt.parent('p').hide();
-        this.proceedingsOf.parent('p').hide();
-        this.editor.parent('p').hide();
-        this.publisher.parent('p').hide();
-        this.locale.parent('p').hide();
+    hideAllFields: function () {
+        this.collection.parent('div').parent('div').hide();
+        this.book.parent('div').parent('div').hide();
+        this.presentedAt.parent('div').parent('div').hide();
+        this.proceedingsOf.parent('div').parent('div').hide();
+        this.editor.parent('div').parent('div').hide();
+        this.publisher.parent('div').parent('div').hide();
+        this.locale.parent('div').parent('div').hide();
         this.volume.hide();
         this.volLabel.hide();
         this.number.hide();
@@ -138,49 +138,49 @@ var publicationToPersonUtils = {
         this.issueLabel.hide();
         this.chapterNbr.hide();
         this.chapterNbrLabel.hide();
-        this.startPage.parent('p').hide();
-        this.sPLabel.parent('p').hide();
+        this.startPage.parent('div').parent('div').hide();
+        this.sPLabel.parent('div').parent('div').hide();
     },
 
-    displayFieldsForType: function() {
+    displayFieldsForType: function () {
         // hide everything, then show what's needed based on type
         // simpler in the event the user changes the type
         this.hideAllFields();
         var selectedType = this.typeSelector.find(':selected').val();
 
-        if ( selectedType == 'http://purl.org/ontology/bibo/AcademicArticle' ) {
+        if (selectedType == 'http://purl.org/ontology/bibo/AcademicArticle') {
             // if the user has changed type, keep any relevant values and display the
             // acSelection as appropriate
             var ckForVal = this.getAcUriReceiverVal('collection');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.collection.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.collection.parent('div').parent('div').show();
             }
             this.volume.show();
             this.volLabel.show();
             this.issue.show();
             this.issueLabel.show();
-            this.startPage.parent('p').show();
-            this.sPLabel.parent('p').show();
+            this.startPage.parent('div').parent('div').show();
+            this.sPLabel.parent('div').parent('div').show();
 
             // if the user has changed type, ensure that irrelevant fields are cleared
             // and reset an acSelection divs
-            if ( this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.book.val('');
                 this.resetAcSelection('book');
             }
-            if ( this.editor.val() != ''  && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.editor.val('');
                 this.resetAcSelection('editor');
             }
-            if ( this.publisher.val() != ''  && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.publisher.val('');
                 this.resetAcSelection('publisher');
             }
-            if ( this.presentedAt.val() != ''  && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.presentedAt.val() != '' && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.presentedAt.val('');
                 this.resetAcSelection('conference');
             }
-            if ( this.proceedingsOf.val() != ''  && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.proceedingsOf.val('');
                 this.resetAcSelection('event');
             }
@@ -189,41 +189,41 @@ var publicationToPersonUtils = {
             this.number.val('');
             this.chapterNbr.val('');
         }
-        else if ( selectedType == 'http://purl.org/ontology/bibo/Chapter' ) {
+        else if (selectedType == 'http://purl.org/ontology/bibo/Chapter') {
             // if the user has changed type, keep any relevant values and display the
             // acSelection as appropriate
             var ckForVal = this.getAcUriReceiverVal('book');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.book.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.book.parent('div').parent('div').show();
             }
             ckForVal = this.getAcUriReceiverVal('editor');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.editor.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.editor.parent('div').parent('div').show();
             }
             ckForVal = this.getAcUriReceiverVal('publisher');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.publisher.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.publisher.parent('div').parent('div').show();
             }
 
-            this.locale.parent('p').show();
+            this.locale.parent('div').parent('div').show();
             this.volume.show();
             this.volLabel.show();
             this.chapterNbr.show();
             this.chapterNbrLabel.show();
-            this.startPage.parent('p').show();
-            this.sPLabel.parent('p').show();
+            this.startPage.parent('div').parent('div').show();
+            this.sPLabel.parent('div').parent('div').show();
 
             // if the user is changing type, ensure that irrelevant fields are cleared
             // and reset an acSelection divs
-            if ( this.collection.val() != ''  && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.collection.val('');
                 this.resetAcSelection('collection');
             }
-            if ( this.presentedAt.val() != ''  && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.presentedAt.val() != '' && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.presentedAt.val('');
                 this.resetAcSelection('conference');
             }
-            if ( this.proceedingsOf.val() != ''  && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.proceedingsOf.val('');
                 this.resetAcSelection('event');
             }
@@ -233,33 +233,33 @@ var publicationToPersonUtils = {
             this.startPage.val('');
             this.endPage.val('');
         }
-        else if ( selectedType == 'http://purl.org/ontology/bibo/Book' || selectedType == 'http://purl.org/ontology/bibo/EditedBook' ) {
+        else if (selectedType == 'http://purl.org/ontology/bibo/Book' || selectedType == 'http://purl.org/ontology/bibo/EditedBook') {
             // if the user has changed type, keep any relevant values and display the
             // acSelection as appropriate
             var ckForVal = this.getAcUriReceiverVal('editor');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.editor.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.editor.parent('div').parent('div').show();
             }
             ckForVal = this.getAcUriReceiverVal('publisher');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.publisher.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.publisher.parent('div').parent('div').show();
             }
 
-            this.locale.parent('p').show();
+            this.locale.parent('div').parent('div').show();
             this.volume.show();
             this.volLabel.show();
 
             // if the user is changing type, ensure that irrelevant fields are cleared
             // and reset an acSelection divs
-            if ( this.collection.val() != ''  && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.collection.val('');
                 this.resetAcSelection('collection');
             }
-            if ( this.presentedAt.val() != ''  && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.presentedAt.val() != '' && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.presentedAt.val('');
                 this.resetAcSelection('conference');
             }
-            if ( this.proceedingsOf.val() != ''  && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.proceedingsOf.val('');
                 this.resetAcSelection('event');
             }
@@ -270,36 +270,36 @@ var publicationToPersonUtils = {
             this.endPage.val('');
             this.chapterNbr.val('');
         }
-        else if ( selectedType == 'http://vivoweb.org/ontology/core#ConferencePaper' ) {
+        else if (selectedType == 'http://vivoweb.org/ontology/core#ConferencePaper') {
             // if the user has changed type, keep any relevant values and display the
             // acSelection as appropriate
             ckForVal = this.getAcUriReceiverVal('conference');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.presentedAt.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.presentedAt.parent('div').parent('div').show();
             }
 
-            this.startPage.parent('p').show();
-            this.sPLabel.parent('p').show();
+            this.startPage.parent('div').parent('div').show();
+            this.sPLabel.parent('div').parent('div').show();
 
             // if the user is changing type, ensure that irrelevant fields are cleared
             // and reset an acSelection divs
-            if ( this.collection.val() != ''  && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.collection.val('');
                 this.resetAcSelection('collection');
             }
-            if ( this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.book.val('');
                 this.resetAcSelection('book');
             }
-            if ( this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.editor.val('');
                 this.resetAcSelection('editor');
             }
-            if ( this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.publisher.val('');
                 this.resetAcSelection('publisher');
             }
-            if ( this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.proceedingsOf.val('');
                 this.resetAcSelection('event');
             }
@@ -310,33 +310,33 @@ var publicationToPersonUtils = {
             this.endPage.val('');
             this.chapterNbr.val('');
         }
-        else if ( selectedType == 'http://vivoweb.org/ontology/core#ConferencePoster' || selectedType == 'http://vivoweb.org/ontology/core#Speech') {
+        else if (selectedType == 'http://vivoweb.org/ontology/core#ConferencePoster' || selectedType == 'http://vivoweb.org/ontology/core#Speech') {
             // if the user has changed type, keep any relevant values and display the
             // acSelection as appropriate
             var ckForVal = this.getAcUriReceiverVal('conference');
-            if ( ckForVal == '' || ckForVal == this.sentinel ) {
-                this.presentedAt.parent('p').show();
+            if (ckForVal == '' || ckForVal == this.sentinel) {
+                this.presentedAt.parent('div').parent('div').show();
             }
 
             // if the user is changing type, ensure that irrelevant fields are cleared
             // and reset an acSelection divs
-            if ( this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.collection.val('');
                 this.resetAcSelection('collection');
             }
-            if ( this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.book.val('');
                 this.resetAcSelection('book');
             }
-            if ( this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.editor.val('');
                 this.resetAcSelection('editor');
             }
-            if ( this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.publisher.val('');
                 this.resetAcSelection('publisher');
             }
-            if ( this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.proceedingsOf.val('');
                 this.resetAcSelection('event');
             }
@@ -351,27 +351,27 @@ var publicationToPersonUtils = {
 
             // if the user is changing type, ensure that irrelevant fields are cleared
             // and reset an acSelection divs
-            if ( this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.collection.val() != '' && this.collection.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.collection.val('');
                 this.resetAcSelection('collection');
             }
-            if ( this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.book.val() != '' && this.book.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.book.val('');
                 this.resetAcSelection('book');
             }
-            if ( this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.editor.val() != '' && this.editor.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.editor.val('');
                 this.resetAcSelection('editor');
             }
-            if ( this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.publisher.val() != '' && this.publisher.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.publisher.val('');
                 this.resetAcSelection('publisher');
             }
-            if ( this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.proceedingsOf.val() != '' && this.proceedingsOf.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.proceedingsOf.val('');
                 this.resetAcSelection('event');
             }
-            if ( this.presentedAt.val() != '' && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting ) {
+            if (this.presentedAt.val() != '' && this.presentedAt.val().substring(0, 18) != publicationToPersonUtils.selectAnExisting) {
                 this.presentedAt.val('');
                 this.resetAcSelection('conference');
             }
@@ -384,50 +384,50 @@ var publicationToPersonUtils = {
             this.chapterNbr.val('');
         }
 
-     },
+    },
 
-     resolveEditorNames: function() {
-         var firstName,
-             lastName,
-             name;
+    resolveEditorNames: function () {
+        var firstName,
+            lastName,
+            name;
 
-         // If editorUri contains the sentinel value, we need to process the name fields
-         // otherwise, disable them so they are not submitted
-         if (this.editor.parent('p').is(':visible') ) {
-             if ( this.editor.val().indexOf('Select an existing') != -1 ) {
-                 this.editor.val('');
-             }
-             if ( this.editorUri.val() == '' || this.editorUri.val() == this.sentinel ) {
-                 firstName = this.firstName.val();
-                 lastName = this.editor.val();
-                 name = lastName;
-                 if (firstName) {
-                     name += ', ' + firstName;
-                 }
-                 this.editor.val(name);
-                 this.lastName.val(lastName);
-             }
-             else {
-                 this.disableNameFields();
-             }
+        // If editorUri contains the sentinel value, we need to process the name fields
+        // otherwise, disable them so they are not submitted
+        if (this.editor.parent('div').parent('div').is(':visible')) {
+            if (this.editor.val().indexOf('Select an existing') != -1) {
+                this.editor.val('');
+            }
+            if (this.editorUri.val() == '' || this.editorUri.val() == this.sentinel) {
+                firstName = this.firstName.val();
+                lastName = this.editor.val();
+                name = lastName;
+                if (firstName) {
+                    name += ', ' + firstName;
+                }
+                this.editor.val(name);
+                this.lastName.val(lastName);
+            }
+            else {
+                this.disableNameFields();
+            }
         }
         else {
             this.disableNameFields();
         }
 
-     },
+    },
 
-     disableNameFields: function() {
-         this.firstName.attr('disabled', 'disabled');
-         this.lastName.attr('disabled', 'disabled');
-     },
+    disableNameFields: function () {
+        this.firstName.attr('disabled', 'disabled');
+        this.lastName.attr('disabled', 'disabled');
+    },
 
-     resetLastNameLabel: function() {
-         var indx = this.editor.val().indexOf(", ");
-         if ( indx != -1 ) {
-             var temp = this.editor.val().substr(0,indx);
-             this.editor.val(temp);
-         }
-     }
+    resetLastNameLabel: function () {
+        var indx = this.editor.val().indexOf(", ");
+        if (indx != -1) {
+            var temp = this.editor.val().substr(0, indx);
+            this.editor.val(temp);
+        }
+    }
 
 }
