@@ -7,4 +7,4 @@
 <http://vivoweb.org/ontology#vitroClassGroupequipment> <http://www.w3.org/2000/01/rdf-schema#label> "equipos"@es .
 <http://vivoweb.org/ontology#vitroClassGrouplocations> <http://www.w3.org/2000/01/rdf-schema#label> "ubicaciones"@es .
 
-##/usr/local/vivo/home/rdf/i18n/es/applicationMetadata/firsttime/propertygroups_labels_es.nt
+##
