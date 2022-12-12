@@ -6917,3 +6917,7 @@ h4.card-title {
     text-decoration: underline;
     pointer-events: all;
 }
+
+.editingForm {
+    margin-top: 2rem;
+}

@@ -28,9 +28,9 @@
 
     <div class="profile-hero">
             <div class="breadcrumb-desktop">
-            <a href="${urls.base}/">Inicio</a>
+            <a href="${urls.base}/">${i18n().home}</a>
             <span> &gt; </span>
-            <a href="${urls.base}/people">Investigadores</a>
+            <a href="${urls.base}/people">${i18n().researchers}</a>
         </div>
       <div class="hero-container profile">
 
