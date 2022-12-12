@@ -4,13 +4,12 @@
 
 <#if siteConfig?has_content>
     <section class="pageBodyGroup" role="region">
-        <article class="directory-card" > 
+        <article  > 
 
-            <header>
-                      <h1>
-                        <div class="clickItem"> ${i18n().site_config}</div>
-                      </h1>
-            </header>
+                      <h4 class="card-title">
+                         ${i18n().site_config}
+                      </h4>
+
   
 
             <ul role="navigation">

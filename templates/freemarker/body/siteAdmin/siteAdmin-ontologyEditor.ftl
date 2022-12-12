@@ -4,13 +4,13 @@
 
 <#if ontologyEditor?has_content>
     <section class="pageBodyGroup" role="region">
-            <article class="directory-card" > 
+            <article class="" > 
 
-            <header>
-                      <h1>
-                        <div class="clickItem">${i18n().ontology_editor}</div>
-                      </h1>
-            </header>
+       
+                      <h4 class="card-title">
+                        ${i18n().ontology_editor}
+                      </h4>
+          
 
 
         <#if ontologyEditor.tboxReasonerStatus?has_content>
@@ -28,14 +28,14 @@
             </li>
         </ul>
 
-        <h4>${i18n().class_management}</h4>
+        <h5>${i18n().class_management}</h5>
 
         <ul role="navigation">
             <li role="listitem"><a href="${ontologyEditor.urls.classHierarchy}" title="${i18n().class_hierarchy}">${i18n().class_hierarchy}</a></li>
             <li role="listitem"><a href="${ontologyEditor.urls.classGroups}" title="${i18n().class_groups}">${i18n().class_groups}</a></li>
         </ul>
 
-        <h4>${i18n().property_management}</h4>
+        <h5>${i18n().property_management}</h5>
 
         <ul role="navigation">
             <li role="listitem"><a href="${ontologyEditor.urls.objectPropertyHierarchy}" title="${i18n().object_property_hierarchy}">${i18n().object_property_hierarchy}</a></li>

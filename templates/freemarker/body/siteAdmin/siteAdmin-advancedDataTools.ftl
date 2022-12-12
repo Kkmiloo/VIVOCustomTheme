@@ -4,13 +4,13 @@
 
 <#if dataTools?has_content>
     <section class="pageBodyGroup" role="region">
-            <article class="directory-card" > 
+            <article class="" > 
 
-            <header>
-                      <h1>
-                        <div class="clickItem"> ${i18n().advanced_data_tools}</div>
-                      </h1>
-            </header>
+       
+                      <h4 class="card-title">
+                        ${i18n().advanced_data_tools}
+                      </h4>
+    
 
         <ul role="navigation">
             <#if dataTools.rdfData?has_content>
