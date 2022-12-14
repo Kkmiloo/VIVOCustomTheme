@@ -14,6 +14,8 @@
 
 <freemarker:recentPub.ftl> display:hasDataGetter display:recentPubDataGetter .
 
+<freemarker:recentPub.ftl> display:hasDataGetter display:researchClassesDataGetter .
+
 display:academicDeptsDataGetter
     a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter> ;
     display:saveToVar "academicDeptDG" ;
@@ -61,28 +63,26 @@ display:recentPubDataGetter
     """ .
 
 
+display:researchClassesDataGetter 
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "researchClasses" ;
+    display:query """
+            PREFIX bibo: <http://purl.org/ontology/bibo/>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            prefix vivoweb: <http://vivoweb.org/ontology#> 
 
-"""
-      PREFIX fo: <http://purl.org/ontology/fo/>
-      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-      PREFIX vivo: <http://vivoweb.org/ontology/core#>
-      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      PREFIX bibo: <http://purl.org/ontology/bibo/>
+            SELECT DISTINCT (sample(?label) as ?LABEL) (count(?type) as ?el ) ?type
+            WHERE {
+            ?entity rdf:type ?type.
+            ?type rdfs:subClassOf* bibo:Document.        
+                  ?type rdfs:label ?label
+            FILTER (lang(?label) = 'en')
+            FILTER (!STRSTARTS(STR(?type), str(bibo:Document)))
+            }
+            group BY ?type
+            order by desc(?el)
+            limit 5
 
-
-      SELECT ?theURI ?author ?title ?dt ?dtp 
-
-      WHERE 
-      { 
-            ?uri a bibo:Document  ; rdfs:label ?title ;vivo:dateTimeValue ?dateP ;  vivo:relatedBy ?rb .
-
-                  ?uri vivo:hasPublicationVenue ?pv .
-                  ?pv rdfs:label ?pvLabel .
-            
-            ?dateP vivo:dateTime ?dt ; vivo:dateTimePrecision ?dtp . 
-            ?rb vivo:relates ?f .
-            ?f a vivo:FacultyMember ; rdfs:label ?author
-      }
-
-      order by desc(?dt)
-"""
+    """ .

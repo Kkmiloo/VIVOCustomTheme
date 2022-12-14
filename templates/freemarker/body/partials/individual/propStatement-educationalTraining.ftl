@@ -39,7 +39,8 @@
             <a href="${profileUrl(statement.uri("edTraining"))}" title="${i18n().missing_organization}">${i18n().missing_organization}</a>
         </#if>
     </#local>
-
+  <p>
     <@s.join [ degree, linkedIndividual!, statement.deptOrSchool!, statement.info! ] /> <@dt.yearIntervalSpan "${statement.dateTimeStart!}" "${statement.dateTimeEnd!}" false/>
+                        </p>
 
 </#macro>

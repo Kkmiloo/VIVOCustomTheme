@@ -7,6 +7,7 @@
  
 bibo:Document display:hasDataGetter display:getDateTimeDocument .
 bibo:Document display:hasDataGetter display:getAuthors .
+bibo:Document display:hasDataGetter display:getDOI .
 
 display:getDateTimeDocument
     a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
@@ -45,5 +46,19 @@ display:getAuthors
                     ?thumbnailImage vitro:downloadLocation ?imgPath 
                 }
             
+            }
+      """ .
+
+      display:getDOI
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "DOIResults" ;
+    display:query """
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+
+            select DISTINCT  ?doi  
+            where { 
+
+                ?individualURI bibo:doi ?doi .
+  		
             }
       """ .

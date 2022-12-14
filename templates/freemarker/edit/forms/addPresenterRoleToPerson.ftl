@@ -98,8 +98,11 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 <section id="addPresenterRoleToPerson" role="region">
 
     <form id="addPresenterRoleToPerson" class="customForm noIE67" action="${submitUrl}"  role="add/edit Presentation">
-    <p class="inline">
+    <div class="d-flex form-group">
+    <div class="form-label"> 
       <label for="presentationType">${i18n().presentation_type}<#if editMode != "edit"> ${requiredHint}<#else>:</#if></label>
+    </div>
+    <div class="form-input">
       <#assign presentationTypeOpts = editConfiguration.pageData.presentationType />
       <select id="typeSelector" name="presentationType" acGroupName="presentation">
         <option value="" selected="selected">${i18n().select_one}</option>
@@ -107,13 +110,18 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
             <option value="${key}" <#if presentationTypeValue = key>selected</#if>><#if presentationTypeOpts[key] == "Other">${i18n().presentation_capitalized}<#else>${presentationTypeOpts[key]}</#if></option>
         </#list>
     </select>
-    </p>
+        </div>
+    </div>
 
-    <p>
+    <div class="d-flex form-group">
+        <div class="form-label">
         <label for="presentation">${i18n().presentation_name_capitalized} ${requiredHint}</label>
+        </div>
+        <div class="form-input">
             <input class="acSelector" size="50"  type="text" id="presentation" acGroupName="presentation" name="presentationLabel" value="${presentationLabelValue}">
             <input class="display" type="hidden" id="presentationDisplay" acGroupName="presentation" name="presentationLabelDisplay" value="${presentationLabelDisplayValue}">
-    </p>
+    </div>
+    </div>
 
     <div class="acSelection" acGroupName="presentation">
         <p class="inline">

@@ -26,6 +26,8 @@
         </#list>
         <#if isMainContent==false>
             <div id="wrapper-content" role="main">
+            <div class="card">
+                <div class="card-body">
                 <#if openSocial??>
                     <#if openSocial.visible>
                         <div id="gadgets-tools" class="gadgets-gadget-parent"></div>
@@ -33,6 +35,8 @@
                 </#if>
 
                 ${body}
+                </div>
+                </div>
             </div>
         <#else>
             <article  class="main-detail-container header-margin ${currentServlet} " role="main">

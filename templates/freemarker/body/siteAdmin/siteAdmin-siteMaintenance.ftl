@@ -4,13 +4,13 @@
 
 <#if siteMaintenance?has_content>
     <section class="pageBodyGroup" role="region">
-            <article class="directory-card" > 
+            <article class="" > 
 
-            <header>
-                      <h1>
-                        <div class="clickItem"> ${i18n().site_maintenance}</div>
-                      </h1>
-            </header>
+          
+                      <h4 class="card-title">
+                         ${i18n().site_maintenance}
+                      </h4>
+           
 
         <ul role="navigation">
             <#if siteMaintenance.rebuildSearchIndex?has_content>

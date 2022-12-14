@@ -25,7 +25,7 @@
 <#else>
     <#local linkedIndividual>
         <#if statement.activity??>
-            <a href="${profileUrl(statement.uri("activity"))}" title="${i18n().activity_name}">${statement.activityLabel!statement.activityName}</a>
+            <a href="${profileUrl(statement.uri("activity"))}" title="${i18n().activity_name}">${statement.activityLabel!statement.activityName}</a>                      
         <#else>
             <#-- This shouldn't happen, but we must provide for it -->
             <a href="${profileUrl(statement.uri("role"))}" title="${i18n().missing_activity}">${i18n().missing_activity}</a>
@@ -35,7 +35,8 @@
     <#local dateTime>
         <@dt.yearIntervalSpan "${statement.dateTimeStart!}" "${statement.dateTimeEnd!}" />
     </#local>
-
+  <p>
     ${linkedIndividual} ${statement.roleLabel!} ${dateTime!}
+                        </p>
 </#if>
 </#macro>

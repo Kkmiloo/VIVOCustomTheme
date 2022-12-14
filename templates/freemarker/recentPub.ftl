@@ -32,7 +32,7 @@
                     <p>  ${authors}</p>
 
               </ul>
-              <a class="primary-btn" href='${urls.base}/individual${uri?substring(uri?last_index_of("/"))}'>Conoce más</a>
+              <a class="primary-btn" href='${urls.base}/individual${uri?substring(uri?last_index_of("/"))}'> ${i18n().more_btn}</a>
         </div>
 
 

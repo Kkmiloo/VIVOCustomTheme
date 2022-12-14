@@ -3,7 +3,7 @@
  
 
     <div class="article-sw browse-margin" role="navigation">
-         <a href="${individual.profileUrl}"> 
+        <a class="card-display" href="${individual.profileUrl}">  
             <div>
 
                         <@p.mostSpecificTypes individual />
@@ -22,11 +22,11 @@
                             </#list>
                         </ul>
 
-                <#if (abstractDetail[0].abstract)??>
+                    <#if (abstractDetail[0].abstract)??>
 
-                    <span class="ts-2">  ${abstractDetail[0].abstract}</span> 
-                
-                </#if>
+                        <span class="ts-2">  ${abstractDetail[0].abstract}</span> 
+                    
+                    </#if>
             </div>
-        </a>
+  </a>
     </div>

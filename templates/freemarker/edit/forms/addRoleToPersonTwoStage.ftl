@@ -130,8 +130,12 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 
     <form id="add${roleDescriptor?capitalize}RoleToPersonTwoStage" class="customForm noIE67" action="${submitUrl}"  role="add/edit grant role">
 
-       <p class="inline">
+       <div class="d-flex form-group">
+       <div class="form-label">
         <label for="typeSelector">${typeSelectorLabel?capitalize}<#if editMode != "edit"> ${requiredHint}<#else>:</#if></label>
+        </div>
+
+        <div class="form-input"> 
         <#--Code below allows for selection of first 'select one' option if no activity type selected-->
         <#if activityTypeValue?has_content>
         	<#assign selectedActivityType = activityTypeValue />
@@ -155,15 +159,20 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
                </#if>
            </#list>
         </#if>
-       </p>
+        </div>
+       </div>
 
 
 <#--   <div class="fullViewOnly"> -->
-            <p>
-                <label for="activity">${genericLabel?capitalize} ${i18n().name_capitalized} ${requiredHint}</label>
+            <div class="d-flex form-group">
+                <div class="form-label">
+                    <label for="activity">${genericLabel?capitalize} ${i18n().name_capitalized} ${requiredHint}</label>
+                </div>
+                <div class="form-input">
                 <input class="acSelector" size="50"  type="text" id="activity" name="activityLabel"  acGroupName="activity" value="${activityLabelValue}" />
                 <input class="display" type="hidden" id="activityDisplay" acGroupName="activity" name="activityLabelDisplay" value="${activityLabelDisplayValue}">
-            </p>
+                </div>
+            </div>
 
             <input type="hidden" id="roleToActivityPredicate" name="roleToActivityPredicate" value="" />
             <!--Populated or modified by JavaScript based on type of activity, type returned from AJAX request-->
@@ -181,35 +190,62 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
             </div>
 
             <#if showRoleLabelField = true>
-            <p><label for="roleLabel">${i18n().role_in} ${genericLabel?capitalize} ${roleExamples}</label>
+            <div class="d-flex form-group">
+                <div class="form-label"> 
+                <label for="roleLabel">${i18n().role_in} ${genericLabel?capitalize} ${roleExamples}</label>
+                </div>
+                <div class="form-input">
                 <input  size="50"  type="text" id="roleLabel" name="roleLabel" value="${roleLabel}" />
-            </p>
+                </div>
+            </div>
         	</#if>
 
             <#if numDateFields == 1 >
                <#--Generated html is a map with key name mapping to html string-->
+               <div class="d-flex">
                <#if htmlForElements?keys?seq_contains("startField")>
+                    <div class="form-label">
                 	<label class="dateTimeLabel" for="startField">${i18n().start_year}</label>
+                    </div>
                		${htmlForElements["startField"]} ${yearHint}
                </#if>
+               </div>
             <#else>
+            
                 <h4 class="label">${i18n().years_participating} </h4>
+                 
                 <#if htmlForElements?keys?seq_contains("startField")>
+                <div class="d-flex form-group">
+                        <div class="form-label">
                 	    <label class="dateTime" for="startField">${i18n().start_capitalized}</label>
+                        
+
                		    ${htmlForElements["startField"]} ${yearHint}
+                        </div>
+                     
+               </div>
                </#if>
-               <p></p>
+               <div class="d-flex form-group">
                <#if htmlForElements?keys?seq_contains("endField")>
+               <div class="form-label">
                		    <label class="dateTime" for="endField">${i18n().end_capitalized}</label>
+
+                        
                		    ${htmlForElements["endField"]} ${yearHint}
+                        </div>
                </#if>
+               </div>
             </#if>
 <#--        </div> -->
-        <p class="submit">
+
+        <div class="d-flex">
+        <div class="form-label">
+        </div>
+        <div class="submit form-input">
             <input type="hidden" id="editKey" name="editKey" value="${editKey}" />
             <input type="submit" id="submit" value="${submitButtonText}"/><span class="or"> ${i18n().or} </span><a class="cancel" href="${cancelUrl}" title="${i18n().cancel_title}">${i18n().cancel_link}</a>
-        </p>
-
+        </div>
+        </div>
         <p id="requiredLegend" class="requiredHint">* ${i18n().required_fields}</p>
     </form>
 

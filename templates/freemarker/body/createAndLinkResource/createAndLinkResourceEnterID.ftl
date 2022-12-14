@@ -1,4 +1,6 @@
 <form id="createAndLink" method="post">
+		<nav class="navbar sticky-top navbar-light uao-back-navbar" id="uao-back-nav" style="display: flex; margin-bottom: 3rem; padding: 0.5rem 0rem;"><a id="buttonsection-uao-3" href="javascript:window.history.back()" class="btn btn-secondary btn-sm" onclick="">Regresar</a></nav>
+
     <#if personLabel??>
         <div class="claim-for">
             <h3>${i18n().create_and_link_claim_for(personLabel)}</h3>

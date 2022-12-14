@@ -46,13 +46,19 @@
             	<a class="icon icon-check" style="text-decoration: none;"></a>
             </#if>
             </td>
-            <td>
+            <td style="display: flex;
+    justify-content: space-around;">
+                
+                <button class="btn-circle"> 
                 <a  class="icon icon-pencil-alt" href="${urls.base}/editRequestDispatch?subjectUri=${pagex.listedPageUri?url}&switchToDisplayModel=1&editForm=edu.cornell.mannlib.vitro.webapp.edit.n3editing.configuration.generators.ManagePageGenerator" title=""><#--  <img src="${urls.images!}/individual/editIcon.gif" alt="${i18n().edit_page}">  --></a>
-                &nbsp;&nbsp;
+                </button>
+          <button class="btn-circle"> 
                 <a  class="icon icon-address-book" href="${urls.base}/individual?uri=${pagex.listedPageUri?url}&switchToDisplayModel=1" title="${i18n().view_profile_for_page}"><#--  <img src="${urls.images!}/profile-page-icon.png" alt="${i18n().view_profile_for_page}">  --></a>
-                &nbsp;&nbsp;
+               </button>
                 <#if !pagex.listedPageCannotDeletePage?has_content >
+                <button class="btn-circle"> 
                     <a class="icon icon-trash-alt" cmd="deletePage" pageTitle=" ${pagex.listedPageTitle!}"  href="${urls.base}/deletePageController?pageURI=${pagex.listedPageUri?url}" title="${i18n().delete_page}"><#--  <img src="${urls.images!}/individual/deleteIcon.gif" alt="${i18n().delete_page}">  --></a>
+                </button>
                 </#if>
             </td>
         </tr>

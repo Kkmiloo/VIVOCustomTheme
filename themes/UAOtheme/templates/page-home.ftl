@@ -48,34 +48,17 @@
                                 required="required"
                                 name="querytext" class="search-homepage"
                                 />
-                                <label for="search-module-input"> Buscar artículos, libros, conferencias... </label>
+                                <label for="search-module-input"> ${i18n().search_placeholder}</label>
                             </div>
                             <button id="search-module-submit" type="submit" value="${i18n().search_button}" class="search">
                                 <span class="icon icon-search"></span>
                             </button>
                             </form>
-                            <h2>¿Qué estás buscando?</h2>
-                            <div class="btnslist">
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Article%20">
-                                Article
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Book%20">
-                                Book
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Chapter%20">
-                                Chapter
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://vivoweb.org/ontology/core#ConferencePaper%20">
-                                Conference Paper
-                                </a>
-                                
-                                <a class="primary-btn  white" href="${urls.base}/research#http://purl.org/ontology/bibo/Thesis%20">
-                                Thesis
-                                </a>
-                            </div>
+                            <h2>${i18n().search_hero}</h2>
+
+                            <#--  <#include "researchClasses.ftl">  -->
+                           <@lh.researchClasses />
+                          
                         </div>
                     </div>
 
@@ -83,7 +66,7 @@
         </section> <!-- #intro -->
 
     <section class="container">
-        <h2>Publicaciones recientes</h2>
+        <h2>${i18n().recent_pub}</h2>
         <div class="testimonial mySwiper">
             <div class="testi-content swiper-wrapper">
             <#include "recentPub.ftl">
@@ -106,7 +89,7 @@
         
         <#-- builds a json object that is used by js to render the academic departments section -->
          <#--  <@lh.listAcademicDepartments />   -->
-
+<#--   <@lh.researchClasses />  -->
         
     </article>
         <#include "footer.ftl">

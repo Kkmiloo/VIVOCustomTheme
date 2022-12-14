@@ -96,8 +96,10 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 <@lvf.unsupportedBrowser urls.base />
 
 <form class="customForm" action ="${submitUrl}" class="customForm noIE67" role="${formAction} position entry">
-  <p class="inline">
+  <div class="d-flex form-group">
+    <div class="form-label">
     <label for="orgType">${i18n().org_type_capitalized}<#if editMode != "edit"> ${requiredHint}<#else>:</#if></label>
+    </div>
     <#assign orgTypeOpts = editConfiguration.pageData.orgType />
 <#--
     <#if editMode == "edit">
@@ -110,19 +112,25 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     <#else>
     </#if>
 -->
+<div class="form-input">
 <select id="typeSelector" name="orgType" acGroupName="organization">
     <option value="" selected="selected">${i18n().select_one}</option>
     <#list orgTypeOpts?keys as key>
         <option value="${key}"  <#if orgTypeValue = key>selected</#if>>${orgTypeOpts[key]}</option>
     </#list>
 </select>
-  </p>
+</div>
+  </div>
 
-  <p>
+  <div class="d-flex form-group">
+    <div class="form-label"> 
     <label for="relatedIndLabel">${i18n().organization_capitalized} ${i18n().name_capitalized} ${requiredHint}</label>
+    </div>
+    <div class="form-input">
     <input type="text" name="orgLabel" id="orgLabel" acGroupName="organization" size="50" class="acSelector" value="${orgLabelValue}" >
     <input class="display" type="hidden" id="orgDisplay" acGroupName="organization" name="orgLabelDisplay" value="${orgLabelDisplayValue}">
-  </p>
+    </div>
+  </div>
     <div class="acSelection" acGroupName="organization">
         <p class="inline">
             <label>${i18n().selected_organization}:</label>
@@ -133,10 +141,20 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
         <input class="acUriReceiver" type="hidden" id="orgUri" name="existingOrg" value="${existingOrgValue}" ${flagClearLabelForExisting}="true" />
     </div>
 
-    <label for="positionTitle">${i18n().position_title} ${requiredHint}</label>
-    <input  size="30"  type="text" id="positionTitle" name="positionTitle" value="${positionTitleValue}" role="input" />
+    <div class="d-flex form-group"> 
+        <div class="form-label"> 
+            <label for="positionTitle">${i18n().position_title} ${requiredHint}</label>
+        </div>
+        <div class="form-label">
+            <input  size="30"  type="text" id="positionTitle" name="positionTitle" value="${positionTitleValue}" role="input" />
+        </div>
+    </div>
 
+    <div class="d-flex form-group"> 
+    <div class="form-label">
       <label for="positionType">${i18n().position_type} ${requiredHint}</label>
+      </div>
+      <div class="form-input">
       <#assign posnTypeOpts = editConfiguration.pageData.positionType />
       <select name="positionType" style="margin-top:-2px" >
           <option value="" <#if positionTypeValue == "">selected</#if>>${i18n().select_one}</option>
@@ -144,6 +162,8 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
               <option value="${key}"  <#if positionTypeValue == key>selected</#if>>${posnTypeOpts[key]}</option>
           </#list>
       </select>
+        </div>
+      </div>
       <p></p>
       <#--Need to draw edit elements for dates here-->
        <#if htmlForElements?keys?seq_contains("startField")>
@@ -160,6 +180,8 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 
       <input type="hidden" name = "editKey" value="${editKey}" role="input"/>
 
+    <div class="d-flex form-group">
+        <div class="form-label"> 
       <p class="submit">
         <#if editMode == "edit">
             <input type="submit" id="submit" name="submit-${formAction}" value="${submitButtonText}" class="submit" />
@@ -169,6 +191,10 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 
         <span class="or"> ${i18n().or} </span><a class="cancel" href="${editConfiguration.cancelUrl}" title="${i18n().cancel_title}">${i18n().cancel_link}</a>
       </p>
+        </div>
+        <div class="form-input"> 
+        </div>
+    </div>
       <p class="requiredHint"  id="requiredLegend" >* ${i18n().required_fields}</p>
 
 </form>

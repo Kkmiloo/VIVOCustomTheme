@@ -7,14 +7,14 @@
 
 <#if dataInput?has_content>
     <section class="pageBodyGroup" role="region">
-        <h3>${i18n().data_input}</h3>
+        <h4 class ="card-title">${i18n().data_input}</h4>
 
         <form id="addIndividualClass" action="${dataInput.formAction}" method="get">
             <select id="VClassURI" name="typeOfNew" class="form-item long-options" role="select">
                 <@form.optionGroups groups=dataInput.groupedClassOptions />
             </select>
             <input type="hidden" name="editForm" value="${generators.NewIndividualFormGenerator}" role="input" />
-            <input type="submit" id="submit" value="${i18n().add_individual_of_class}" role="button" />
+            <button type="submit" id="submit" class="primary-btn" value="${i18n().add_individual_of_class}" role="button" >  <span>${i18n().add_individual_of_class} </span> <button>
         </form>
 
         <section id="addClassBubble" role="region">

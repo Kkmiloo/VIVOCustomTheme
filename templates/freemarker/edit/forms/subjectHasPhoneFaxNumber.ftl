@@ -44,7 +44,7 @@
         <#assign disabledVal=""/>
 </#if>
 
-<div class="card-body">
+
 
 <#assign requiredHint = "<span class='requiredHint'> *</span>" />
 
@@ -80,7 +80,7 @@
             </div>
         <input type="hidden" id="editKey" name="editKey" value="${editKey}"/>
 
-        <div class= "d-flex">
+        <div class= "d-flex form-group">
             <div class="form-label d-flex" > 
             </div>
             <div class="form-input d-flex" > 
@@ -101,7 +101,7 @@
     </form>
 
 </section>
-</div>
+
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/js/jquery-ui/css/smoothness/jquery-ui-1.12.1.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customForm.css" />')}
 ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/templates/freemarker/edit/forms/css/customFormWithAutocomplete.css" />')}

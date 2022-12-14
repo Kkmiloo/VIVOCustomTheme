@@ -12,6 +12,8 @@
 
 <freemarker:lib-home-page.ftl> display:hasDataGetter display:academicDeptsDataGetter .
 
+<freemarker:researchClasses.ftl> display:hasDataGetter display:researchClassesDataGetter .
+
 display:academicDeptsDataGetter
     a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter> ;
     display:saveToVar "academicDeptDG" ;
@@ -28,3 +30,26 @@ display:academicDeptsDataGetter
 
     """ .
 
+display:researchClassesDataGetter 
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter>;
+    display:saveToVar "recentPubDG" ;
+    display:query """
+            PREFIX bibo: <http://purl.org/ontology/bibo/>
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            prefix vivoweb: <http://vivoweb.org/ontology#> 
+
+            SELECT DISTINCT (sample(?label) as ?LABEL) (count(?type) as ?el ) ?type
+            WHERE {
+            ?entity rdf:type ?type.
+            ?type rdfs:subClassOf* bibo:Document.        
+                  ?type rdfs:label ?label
+            FILTER (lang(?label) = 'en')
+            FILTER (!STRSTARTS(STR(?type), str(bibo:Document)))
+            }
+            group BY ?type
+            order by desc(?el)
+            limit 5
+
+    """ .

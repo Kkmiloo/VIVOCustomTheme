@@ -11,7 +11,7 @@
 
 <h2>Add or Remove RDF Data</h2>
 
-<form action="uploadRDF" method="post"  enctype="multipart/form-data" >
+<form action="uploadRDF" method="post" id="uploadRDF"  enctype="multipart/form-data" >
 
 <c:if test="${!empty param.errMsg}">
     <p><strong class="warning">${errMsg}</strong></p>

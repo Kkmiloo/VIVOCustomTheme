@@ -20,19 +20,31 @@
    <input type="hidden" name="domainUri" value="${editConfiguration.domainUri!}"/>
     <input type="hidden" name="rangeUri" value="${editConfiguration.rangeUri!}"/>
     <input type="hidden" value="create" name="cmd" role="input" />
+    <div class="d-flex form-group">
+    <div class="form-label"></div>
+    <div class="form-input">
+        <select id="typeOfNew" name="typeOfNew" role="selection">
+        <#assign typeKeys = typesList?keys />
+        
+        <#list typeKeys as typeKey>
+            <option value="${typeKey}" role="option"> ${typesList[typeKey]} </option>
+        </#list>
+        
+        </select>
+    </div>
+</div>
 
-    <select id="typeOfNew" name="typeOfNew" role="selection">
-    <#assign typeKeys = typesList?keys />
-    <#list typeKeys as typeKey>
-        <option value="${typeKey}" role="option"> ${typesList[typeKey]} </option>
-    </#list>
-    </select>
+    <div class="d-flex form-group">
 
+    <div class="form-label"> </div>
+    <div class="form-input"> 
     <input type="submit" id="offerCreate" class="submit"  value="${i18n().add_new_of_type}" role="button" />
     <#if rangeOptionsExist  = false >
         <span class="or"> ${i18n().or} </span>
         <a title="${i18n().cancel_title}" class="cancel" href="${cancelUrl}">${i18n().cancel_link}</a>
     </#if>
+    </div>
+    </div>
 </form>
 
 
