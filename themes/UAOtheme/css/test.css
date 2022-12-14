@@ -3,6 +3,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 
 /* cyrillic-ext */
 @font-face {
@@ -1593,6 +1629,7 @@ table#table-listing {
     margin: 20px 0 20px 0;
     table-layout: auto;
     text-align: left;
+    width: 100%;
 }
 
 table#table-listing caption {
@@ -5090,9 +5127,10 @@ input[type="password"] {
     font-size: 14px;
     background: #fff;
     border: 1px solid #e0dfdf;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    line-height: 1.5;
 }
 
 /* end  vivostyles.css */
@@ -5288,10 +5326,7 @@ input.delete:hover {
 /* Proxy profile */
 #wrapper-content .proxy-profile {
     padding-bottom: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-radius: 0;
     transform: translatex(0px) translatey(0px);
     margin-bottom: 20px;
 }
@@ -5337,6 +5372,19 @@ input.delete:hover {
 /* Proxy profile */
 #wrapper-content .proxy-profile {
     min-height: 200px;
+}
+
+.proxy-profile label {
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: 0.7rem;
+    display: inline-block;
+}
+
+#add-relation p.search-status {
+    margin-top: 0.7rem;
+    display: inline-block;
+
 }
 
 
@@ -6649,6 +6697,11 @@ body.vis {
     width: 70%;
     margin: auto;
     padding: 2rem;
+
+}
+
+.card p {
+    font-family: 'Roboto';
 }
 
 .card-body {
@@ -6922,4 +6975,19 @@ h4.card-title {
 
 .editingForm {
     margin-top: 2rem;
+}
+
+input {
+    line-height: 1.5
+}
+
+#uploadRDF p {
+
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+#uploadRDF ul {
+    margin-bottom: 1rem;
 }

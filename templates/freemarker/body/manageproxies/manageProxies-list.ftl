@@ -32,7 +32,7 @@
 
             <section name="proxyProxiesPanel" role="section">
                 <label for="selectProfileEditors">${i18n().select_editors}</label>
-                <input id="selectProfileEditors" type="text" name="proxySelectorAC" class="acSelector" size="35" value="${i18n().select_last_name}" role="input" /><span><img class="loading-relateEditor hidden" src="${urls.images}/indicatorWhite.gif" alt="${i18n().processing_indicator}"/></span>
+                <input id="selectProfileEditors" type="text" name="proxySelectorAC" class="acSelector" size="35" value="" placeholder="${i18n().select_last_name}" role="input" /><span><img class="loading-relateEditor hidden" src="${urls.images}/indicatorWhite.gif" alt="${i18n().processing_indicator}"/></span>
                 <p class="search-status"><span name='proxySelectorSearchStatus' moreCharsText='${i18n().type_more_chars}' noMatchText='${i18n().no_match}'>&nbsp;</span></p>
 
                 <#-- Magic div that holds all of the proxy data and the template that shows how to display it. -->
@@ -64,7 +64,7 @@
 
           <section name="proxyProfilesPanel" role="region">
               <label for="selectProfiles">${i18n().select_profiles}</label>
-              <input id="selectProfiles" type="text" name="proxySelectorAC" class="acSelector" size="35" value="${i18n().select_last_name}" role="input" /><span><img class="loading-relateProfile hidden" src="${urls.images}/indicatorWhite.gif"  alt="${i18n().processing_indicator}"/></span>
+              <input id="selectProfiles" type="text" name="proxySelectorAC" class="acSelector" size="35" value="" placeholder="${i18n().select_last_name}" role="input" /><span><img class="loading-relateProfile hidden" src="${urls.images}/indicatorWhite.gif"  alt="${i18n().processing_indicator}"/></span>
 
               <p class="search-status"><span name='proxySelectorSearchStatus' moreCharsText='${i18n().type_more_chars}' noMatchText='${i18n().no_match}'>&nbsp;</span></p>
 

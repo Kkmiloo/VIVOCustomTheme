@@ -10,13 +10,25 @@ ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/edit/forms/css/auto
     <div id="associateProfileBackgroundOne">
         <div id="alignExternalAuthId">
         <#if showAssociation??>
+                <div class="d-flex form-group">
+        <div class="form-label">
              <label for="externalAuthId">${strings.auth_matching_id_label}</label>
+        </div>
+        <div class="form-input">
             <input type="text" name="externalAuthId" value="${externalAuthId}" id="externalAuthId" role="input "/>
             <span id="externalAuthIdInUse" >${strings.auth_id_in_use}</span>
+        </div>
+        </div>
             <p class="explanatoryText">${strings.auth_id_explanation}</p>
         <#else>
+                <div class="d-flex form-group">
+        <div class="form-label">
             <label for="externalAuthId">${strings.auth_id_label}</label>
+        </div>
+        <div class="form-input">
             <input type="text" name="externalAuthId" value="${externalAuthId}" id="externalAuthId" role="input "/>
+        </div>
+        </div>
             <span id="externalAuthIdInUse" >${strings.auth_id_in_use}</span>
         </#if>
         </div>

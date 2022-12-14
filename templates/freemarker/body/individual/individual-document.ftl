@@ -19,7 +19,12 @@
 <#include "individual-adminPanel.ftl">
 <section class="hero show-breadcrumb" role="region" <@mf.sectionSchema individual/>>
 
+        <div class="breadcrumb-desktop">
+            <a href="${urls.base}/">${i18n().home}</a>
+            <span> &gt; </span>
+            <a href="${urls.base}/research"> Publicaciones</a>
 
+        </div>
     <div class="hero-container">
         <div class="article details">
             <div class="margin-details">

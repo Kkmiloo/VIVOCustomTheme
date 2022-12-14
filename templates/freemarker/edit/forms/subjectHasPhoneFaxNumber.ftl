@@ -80,7 +80,7 @@
             </div>
         <input type="hidden" id="editKey" name="editKey" value="${editKey}"/>
 
-        <div class= "d-flex">
+        <div class= "d-flex form-group">
             <div class="form-label d-flex" > 
             </div>
             <div class="form-input d-flex" > 

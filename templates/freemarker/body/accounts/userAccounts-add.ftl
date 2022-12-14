@@ -37,15 +37,34 @@
 
 <section id="add-account" role="region">
     <form method="POST" action="${formUrls.add}" class="customForm" role="add new account">
+        <div class="d-flex form-group">
+        <div class="form-label">
         <label for="email-address">${strings.email_address}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
         <input type="text" name="emailAddress" value="${emailAddress}" id="email-address" role="input" />
+        </div>
+        </div>
 
+        <div class="d-flex form-group">
+        <div class="form-label">
         <label for="first-name">${strings.first_name}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
         <input type="text" name="firstName" value="${firstName}" id="first-name" role="input" />
+        </div>
+        </div>
+
+        <div class="d-flex form-group">
+        <div class="form-label">
 
         <label for="last-name">${strings.last_name}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
         <input type="text" name="lastName" value="${lastName}" id="last-name" role="input" />
+        </div>
 
+        </div>
         <#include "userAccounts-associateProfilePanel.ftl">
 
         <p><input id="externalAuthChkBox" type="checkbox" name="externalAuthOnly" <#if externalAuthOnly?? >checked</#if> />${strings.external_auth_only}</p>
@@ -60,12 +79,25 @@
             <p class="note">${strings.new_account_note}</p>
         <#else>
             <section id="passwordContainer" role="region">
+                    <div class="d-flex form-group">
+        <div class="form-label">
                 <label for="initial-password">${strings.initial_password}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
                 <input type="password" name="initialPassword" value="${initialPassword}" id="initial-password" role="input" />
+        </div>
+        </div>
                 <p class="note">${strings.minimum_password_length(minimumLength, maximumLength)}</p>
 
+        <div class="d-flex form-group">
+        <div class="form-label">
+
                 <label for="confirm-password">${strings.confirm_initial_password}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
                 <input type="password" name="confirmPassword" value="${confirmPassword}" id="confirm-password" role="input" />
+        </div>
+        </div>
             </section>
         </#if>
 
