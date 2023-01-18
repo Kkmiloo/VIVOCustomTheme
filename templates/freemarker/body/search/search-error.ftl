@@ -4,13 +4,17 @@
 
 <div id="wrapper-content"> 
 <#if title??>
-    <h2>${title?html}</h2>
+<div class="virtual-category-title">
+    <h1 class="searchResultsHeader">${title?html}</h1>
+    </div>
 </#if>
 
-<p>
+
+    <div class="con row">
+    <div class="details"> 
+    <h2>
 ${message?html}
-</p>
-    <div class="con">
+</h2>
         <div class="con-tooltip right">
                         <span class="icon icon-question-circle" style="font-size: 30px; "></span>
                         <div class="tooltip"> 
@@ -19,6 +23,6 @@ ${message?html}
                         </div>
                         </div>
                     </div>
-
+ </div>
     </div>
 </div>
