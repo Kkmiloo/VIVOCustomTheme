@@ -3,7 +3,10 @@ const tabsBar = document.querySelectorAll('.ssd-first-level li')
 
 const header = document.querySelector('#header-menu-desktop')
 
-
+document.addEventListener('DOMContentLoaded', () => {
+    tabsBar[0].style.backgroundColor = 'red'
+    tabsBar[index].children[0].style.color = 'white'
+})
 
 window.addEventListener('scroll', () => {
     const tabMarginBot = 29
@@ -17,15 +20,18 @@ window.addEventListener('scroll', () => {
 
             tabsBar[index].style.backgroundColor = 'red'
             tabsBar[index].style.transition = 'background-color 0.2s'
+            tabsBar[index].children[0].style.color = 'white'
         } else {
             tabsBar[index].style.backgroundColor = 'white'
             tabsBar[index].style.transition = 'background-color 0.2s'
+            tabsBar[index].children[0].style.color = 'black'
         }
     })
 
     const positionTab1 = tabsSection[0].getBoundingClientRect();
     if (positionTab1.y >= (headerOffset - positionTab1.height - h2MarginTop)) {
         tabsBar[0].style.backgroundColor = 'red'
+        tabsBar[index].children[0].style.color = 'white'
     }
 
 
