@@ -23,7 +23,7 @@
             <span> &gt; </span>
             <a href="${urls.base}/groups"> ${i18n().research_groups}</a>
              <span> &gt; </span>
-            <a href="${urls.base}/people"> Inserte Facultad</a>
+            <a onclick="history.back()" >  Facultad</a>
         </div>
         <div class="hero-container group-container">
           
