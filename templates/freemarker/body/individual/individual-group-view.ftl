@@ -160,8 +160,8 @@ ${headScripts.add('<script type="text/javascript" src="${urls.base}/js/jquery_pl
 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/imageUpload/imageUploadUtils.js"></script>',
               '<script type="text/javascript" src="${urls.base}/js/fileUpload/fileUploadUtils.js"></script>',
 	          '<script type="text/javascript" src="${urls.base}/js/individual/moreLessController.js"></script>',
-              '<script type="text/javascript" src="${urls.base}/js/individual/individualUriRdf.js"></script>')}
-
+              '<script type="text/javascript" src="${urls.base}/js/individual/individualUriRdf.js"></script>',
+              '<script async type="text/javascript" src="${urls.base}/js/tabsScroll.js"></script>')}
 <script type="text/javascript">
     i18n_confirmDelete = "${i18n().confirm_delete?js_string}";
     i18n_confirmDeleteUploadedFile = "${i18n().file_upload_confirm_delete?js_string}";
