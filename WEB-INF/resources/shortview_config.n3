@@ -18,7 +18,8 @@
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 
 vivo:FacultyMember
-    display:hasCustomView   mydomain:facultyBrowseView .
+    display:hasCustomView   mydomain:facultyBrowseView ;
+    display:hasCustomView   mydomain:facultySearchView .
 
 mydomain:facultyBrowseView
     a                          display:customViewForIndividual ;
@@ -26,6 +27,15 @@ mydomain:facultyBrowseView
     display:hasTemplate        "view-browse-faculty.ftl" ;
     display:hasDataGetter      mydomain:facultyDepartmentDG ;
     display:hasDataGetter      mydomain:facultyPreferredTitleDG .
+
+
+#mydomain:facultySearchView
+#    a display:customViewForIndividual ;
+ #   display:appliesToContext "SEARCH" ;
+  #  display:hasTemplate "view-browse-faculty.ftl" ;
+   # display:hasDataGetter mydomain:facultyDepartmentDG ;
+    
+    #display:hasDataGetter      mydomain:facultyPreferredTitleDG . */
  
 mydomain:facultyDepartmentDG
     a                   <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter> ;

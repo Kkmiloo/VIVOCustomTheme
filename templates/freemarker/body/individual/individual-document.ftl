@@ -22,7 +22,7 @@
         <div class="breadcrumb-desktop">
             <a href="${urls.base}/">${i18n().home}</a>
             <span> &gt; </span>
-            <a href="${urls.base}/research"> Publicaciones</a>
+            <a href="${urls.base}/research"> ${i18n().publications}</a>
 
         </div>
     <div class="hero-container">

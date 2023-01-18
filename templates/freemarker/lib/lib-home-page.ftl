@@ -73,10 +73,23 @@
                         </#if>
                         <#if !group.uri?contains("equipment") && !group.uri?contains("course") >
 
-                        <#if !group.displayName?contains("locations")> <a href="${urls.base}/${group.displayName}">
+                        <#if !group.displayName?contains("locations") || !group.displayName?contains("events") > 
+                        <div class="stats-container">
+                        <#assign urlName = "">
+
+                        <#if group.displayName == "researchers">
+                             <#assign urlName = "people">
+                        <#elseif group.displayName == "organizations">
+                                <#assign urlName = "groups">
+                        <#else>
+                             <#assign urlName = "research">
+                        </#if>
+                        <a href="${urls.base}/${urlName}">
                             <li>
                                 
-                                <h4 class="stats-type">${group.displayName?capitalize}</h4>
+                                <h4 class="stats-type">
+                                ${group.displayName?capitalize}
+                                </h4>
                                     <h2  class="stats-count">
                                         <#if (group.individualCount > 10000) >
                                             <#assign overTen = group.individualCount/1000>
@@ -89,7 +102,9 @@
                                         </#if>
                                     </h2>   
                             </li>
-                        </a></#if>
+                        </a>
+                        </div>
+                        </#if>
                         
                             <#assign groupCount = groupCount + 1>
                         </#if>
