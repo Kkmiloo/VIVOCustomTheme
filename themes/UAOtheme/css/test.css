@@ -1819,6 +1819,7 @@ table#table-listing td a {
     font-size: .875rem;
     font-style: italic;
     letter-spacing: -.025rem;
+    text-transform: capitalize;
 }
 
 .flex {
@@ -1857,7 +1858,7 @@ figure.pc-figure {
 }
 
 .pc-name {
-    color: #ed1d24;
+    color: #c4161c;
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
     line-height: 1.31;
@@ -2464,13 +2465,7 @@ label {
     margin-top: 2rem;
 }
 
-#stats>a {
-    height: 210px;
-    width: 210px;
-    background-color: white;
-    padding: 40px 0;
-
-}
+#stats>a {}
 
 #stats>a h4,
 #stats>a hh2 {
@@ -2504,6 +2499,10 @@ section.hero-section .hhs-container::before {
 
 section.hero-section .hhs-container.with-temporary-notice:before {
     top: 3.55rem;
+}
+
+section.hero-section .hhs-top.hhs-container.with-temporary-notice:before {
+    top: 7.375rem;
 }
 
 section.hero-section {
@@ -2824,9 +2823,14 @@ article.property ul.property-list {
     list-style-type: none;
 }
 
+article.property ul.property-list p {
+
+    margin: 1.25rem 0;
+}
+
 article.property ul.property-list li {
     line-height: 1.2em;
-    padding: 10px 20px 5px 20px;
+    padding: 10px 0px 5px 0px;
     background-color: #fff;
 }
 
@@ -2836,8 +2840,8 @@ article.property ul.subclass-property-list {
 }
 
 article.property ul.subclass-property-list li {
-    line-height: 1.2em;
-    padding: 0 20px 10px 20px;
+    /*     line-height: 1.2em;
+    padding: 0 20px 10px 20px; */
 }
 
 /* EDITING DISPLAY------>  */
@@ -3757,12 +3761,15 @@ footer {
     margin-top: 2rem;
 }
 
-#stats>a {
+#stats>a {}
+
+.stats-container {
     height: 210px;
     width: 210px;
     background-color: white;
     padding: 40px 0;
     box-shadow: 0 0.3125rem 0.25rem 0 rgb(0 0 0 / 20%);
+    text-decoration: none;
 }
 
 #stats>a h4,
@@ -3830,8 +3837,17 @@ a.primary-btn {
 }
 
 
-#stats>a {
+.stats-container a {
     text-align: center;
+    text-decoration: none;
+}
+
+.stats-container:hover {
+    cursor: pointer;
+}
+
+.stats-container:hover>a {
+    opacity: .7;
 }
 
 #stats>a>li>h2 {
@@ -6930,6 +6946,7 @@ button.primary-btn.white:hover,
 button:hover,
 a:hover {
     cursor: pointer;
+
 }
 
 #newPropButton {
@@ -6990,4 +7007,47 @@ input {
 
 #uploadRDF ul {
     margin-bottom: 1rem;
+}
+
+.slide .subclass-property-list a {
+
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -.04188rem;
+    line-height: 1.75rem;
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+.container>h2 {
+    margin-bottom: 1rem;
+    color: #ed1d24;
+}
+
+
+
+.hero .details .margin-details a:not(.category-tag) {
+    color: #c4161c;
+    font-size: 1.1875rem;
+    font-weight: 500;
+}
+
+
+.hero .details .margin-details a:hover {
+
+    color: #f82e35;
+}
+
+
+#pca-list li article:hover .pc-name {
+    color: #f82e35;
+}
+
+.library-hero .hero-container:before {
+    content: none;
+}
+
+.con {
+    margin-top: 50px;
 }
