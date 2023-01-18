@@ -12,16 +12,25 @@
 
 <a class="link-image-button " href='${urls.base}/individual${resultRow["facultyLink"]?substring(resultRow["facultyLink"]?last_index_of("/"))}'>
     <figure>
-     <img loading="lazy" src="https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-335x248.png" srcset="https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-335x248.png 335w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-745x552.png 745w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-190x141.png 190w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-580x429.png 580w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x.png 1490w" alt=""> </figure>
+
+    <#if resultRow["facultyImg"]?has_content>
+     <img loading="lazy" src='${urls.base}/individual${resultRow["facultyImg"]?substring(resultRow["facultyImg"]?last_index_of("/"))}'  alt="">
+
+     
+    <#else>
+     <img loading="lazy" src="https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-335x248.png" srcset="https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-335x248.png 335w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-745x552.png 745w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-190x141.png 190w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x-580x429.png 580w, https://www.uao.edu.co/wp-content/uploads/2021/10/grupo-de-investigacion-conflictos-organizaciones-745x552@2x.png 1490w" alt="">
+    </#if>
+     </figure>
     <div>
     ${resultRow["facultyName"]}
      </div>
 </a>
-</div>
+
 
 
        
     </#list>
+    </div>
 </#if> 
 
 
