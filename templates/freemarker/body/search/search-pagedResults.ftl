@@ -128,11 +128,28 @@
 
     <section class="results"> 
         <div class="cards-container">
+
             <#list individuals as individual>
+
+ 
+          
+                  <@shortView uri=individual.uri viewContext="search" />
             
-            	<@shortView uri=individual.uri viewContext="search" />
-           
-        </#list>
+            </#list> 
+
+        
+<#--              <#list individuals as individual>     
+              <#list individual.mostSpecificTypes as types>
+                <#if types="Faculty Member">
+                 
+                <#else>
+                 <@shortView uri=individual.uri viewContext="search" />
+              </#if>
+            </#list>        
+             </#list>    -->
+
+
+
         </div>
     </section>
 
