@@ -18,8 +18,8 @@
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
 
 vivo:FacultyMember
-    display:hasCustomView   mydomain:facultyBrowseView ;
-    display:hasCustomView   mydomain:facultySearchView .
+    display:hasCustomView   mydomain:facultyBrowseView .
+   # display:hasCustomView   mydomain:facultySearchView .
 
 mydomain:facultyBrowseView
     a                          display:customViewForIndividual ;
