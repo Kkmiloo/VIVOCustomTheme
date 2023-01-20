@@ -187,6 +187,7 @@ var classHierarchyUtils = {
             else {
                 $clickableHeader.removeClass("headerSpanMinus");
                 $('table#classHierarchy' + ctr).find('span.icon').removeClass("icon-minus");
+                $('table#classHierarchy' + ctr).find('span.icon').addClass("icon-plus");
                 $('table#classHierarchy' + ctr).find('table.subclassTable').hide();
                 $clickableHeader.attr('view', 'less');
             }
@@ -230,6 +231,8 @@ var classHierarchyUtils = {
                 classHierarchyUtils.expandAll.text(i18nStrings.expandAll);
                 $('span.headerSpanPlus').removeClass("headerSpanMinus");
                 $('table.classHierarchy').find('span.icon').removeClass("icon-minus");
+                $('table.classHierarchy').find('span.icon').addClass("icon-plus");
+
                 $('table.classHierarchy').find('table.subclassTable').hide();
                 $('section#container').find('span.headerSpanPlus').attr('view', 'less');
             }
