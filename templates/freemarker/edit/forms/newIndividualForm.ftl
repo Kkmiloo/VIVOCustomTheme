@@ -12,7 +12,6 @@
 <#assign firstNameValue = lvf.getFormFieldValue(editSubmission, editConfiguration, "firstName")/>
 <#assign lastNameValue = lvf.getFormFieldValue(editSubmission, editConfiguration, "lastName")/>
 <#assign middleNameValue = lvf.getFormFieldValue(editSubmission, editConfiguration, "middleName")/>
-
 <#assign labelValue = lvf.getFormFieldValue(editSubmission, editConfiguration, "label")/>
 
 <#--If edit submission exists, then retrieve validation errors if they exist-->
@@ -49,20 +48,35 @@
     <form id="newIndividual" class="customForm noIE67" action="${submitUrl}"  role="add new individual">
 
     <#if isPersonType = "true">
-        <p>
+        <div class="d-flex form-group">
+            <div class="form-label"> 
             <label for="firstName">${i18n().first_name} ${requiredHint}</label>
+            </div>
+            <div class="form-input">
             <input size="30"  type="text" id="firstName" name="firstName" value="${firstNameValue}" />
-        </p>
+            </div>
+            
+        </div>
 
-        <p>
+        <div class="d-flex form-group">
+            <div class="form-label"> 
             <label for="lastName">${i18n().middle_name} </label>
-            <input size="30"  type="text" id="middleName" name="middleName" value="${middleNameValue}" />
-        </p>
+            </div>
+            <div class="form-input">
 
-        <p>
+            <input size="30"  type="text" id="middleName" name="middleName" value="${middleNameValue}" />
+            </div>
+        </div>
+
+        <div class="form-group d-flex">
+            <div class="form-label">
+            
             <label for="lastName">${i18n().last_name} ${requiredHint}</label>
+            </div>
+            <div class="from-input">
             <input size="30"  type="text" id="lastName" name="lastName" value="${lastNameValue}" />
-        </p>
+            </div>
+        </div>
 
         <input type="hidden" id="label" name="label" value="${labelValue}" />
     <#else>
@@ -73,9 +87,15 @@
     </#if>
 
     <p class="submit">
+        <div class="form-group d-flex">
+        <div class="form-label"> </div> 
+         
+         <div class="form-input">
         <input type="hidden" name = "editKey" value="${editKey}"/>
         <input type="submit" id="submit" value="${i18n().create_capitalized} ${typeName}"/>
         <span class="or"> ${i18n().or} </span><a class="cancel" href="${urls.base}/siteAdmin" title="${i18n().cancel_title}">${i18n().cancel_link}</a>
+       </div>
+       </div> 
     </p>
 
     <p id="requiredLegend" class="requiredHint">* ${i18n().required_fields}</p>

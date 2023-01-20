@@ -7,33 +7,69 @@
 <form id="addLabelForm" name="addLabelForm" class="customForm" action="${submitUrl}">
            <h2>${i18n().add_label}</h2>
            <#if isPersonType?has_content && isPersonType = "true">
-	        <p>
+	        <div class="d-flex form-group">
+				<div class="form-label">
+
 	            <label for="firstName">${i18n().first_name} ${requiredHint}</label>
+				</div>
+
+				<div class="form-input">
+
 	            <input size="30"  type="text" id="firstName" name="firstName" value="${firstNameValue}" />
-	        </p>
+				</div>
+	        </div>
 			<#--TODO: With ISF changes, add middle name input-->
 
-			<p>
-	            <label for="middleName">${i18n().middle_name} </label>
-	            <input size="30"  type="text" id="middleName" name="middleName" value="${middleNameValue}" />
-	        </p>
+			<div class="form-group d-flex">
+							<div class="form-label">
 
-	        <p>
+	            <label for="middleName">${i18n().middle_name} </label>
+				</div>
+				<div class="form-input">
+
+	            <input size="30"  type="text" id="middleName" name="middleName" value="${middleNameValue}" />
+				</div>
+
+	        </div>
+
+	        <div class="form-group d-flex">
+							<div class="form-label">
+
 	            <label for="lastName">${i18n().last_name} ${requiredHint}</label>
+				</div>
+
+				<div class="form-input">
+
 	            <input size="30"  type="text" id="lastName" name="lastName" value="${lastNameValue}" />
-	        </p>
+				</div>
+	        </div>
 	    <#else>
-	        <p>
+	        <div class="form-group d-flex">
+							<div class="form-label">
+
 	            <label for="name">${i18n().name_capitalized} ${requiredHint}</label>
+				</div>
+
+				<div class="form-input">
+
 	            <input size="30"  type="text" id="label" name="label" value="${labelValue}" />
-	        </p>
+				</div>
+	        </div>
 	    </#if>
 
- 			<input type="hidden" name="editKey" id="editKey" value="${editKey}"/>
+			<div class="form-group d-flex">
+							<div class="form-label">
 
+				</div>
+
+				<div class="form-input">
+
+ 			<input type="hidden" name="editKey" id="editKey" value="${editKey}"/>
         	<input type="submit" class="submit" id="submit" value="${i18n().save_button}" role="button" role="input" />
 			${i18n().or}
 			<a href="${urls.referringPage}" class="cancel" title="${i18n().cancel_title}" >${i18n().cancel_link}</a>
+				</div> 
+
 
             <p id="requiredLegend" class="requiredHint">* ${i18n().required_fields}</p>
             </form>
