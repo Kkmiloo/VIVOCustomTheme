@@ -1724,6 +1724,7 @@ table#table-listing td a {
 #table-listing tr td {
     font-family: Roboto, sans-serif;
     font-size: 14px;
+    vertical-align: middle;
 }
 
 /* Link */
@@ -2045,10 +2046,6 @@ article.property h3 {}
     margin-bottom: 100px;
 }
 
-#individuals-in-class.research>ul {
-    width: 80%;
-    margin: auto;
-}
 
 individuals-in-class.research>ul li.individual h1 {
     padding: 2rem;
@@ -3544,7 +3541,9 @@ footer {
 
 /* Lista */
 #VClassURI,
-#typeSelector {
+#typeSelector,
+#ThemeDir,
+select {
     list-style: none;
     background: #fff;
     border: 1px solid #e0dfdf;
@@ -5388,6 +5387,7 @@ input.delete:hover {
 /* Proxy profile */
 #wrapper-content .proxy-profile {
     min-height: 200px;
+    width: 100%;
 }
 
 .proxy-profile label {
@@ -5750,7 +5750,31 @@ span.subclassExpandMinus {
 span#expandAll {
     margin-right: 10px;
     float: right;
-    font-size: 0.85em;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    width: 110px;
+
+}
+
+.subclassCell .icon {
+    margin-right: 10px;
+}
+
+.subclassCell .icon:hover {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#expandAll .icon {
+
+    display: contents;
+    text-transform: capitalize;
+}
+
+#expandAll .icon:before {
+    margin-right: 5px;
+
 }
 
 span.rangeClass {
@@ -5760,9 +5784,9 @@ span.rangeClass {
 }
 
 div#expandLink {
-    margin-top: -10px;
     width: 100%;
     margin-bottom: 24px;
+    height: 21px;
 }
 
 label#displayOptions {
@@ -6204,6 +6228,17 @@ input:focus {
     opacity: .7;
 }
 
+.card-display:hover .category-tag {
+
+    opacity: 1;
+}
+
+
+
+
+.btn-circle:hover .icon-trash-alt:before {
+    color: red
+}
 
 
 /* PAGE.css*/
