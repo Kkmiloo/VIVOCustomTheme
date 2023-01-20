@@ -3,8 +3,8 @@
  
 
     <div class="article-sw browse-margin" role="navigation">
-        <a class="card-display" href="${individual.profileUrl}">  
-            <div>
+        <a  href="${individual.profileUrl}">  
+            <div class="card-display">
 
                         <@p.mostSpecificTypes individual />
                         <h6  class="article-title" title="${individual.name}">

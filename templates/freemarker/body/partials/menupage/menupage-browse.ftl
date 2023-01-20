@@ -7,7 +7,7 @@
 <p style="padding: 20px 20px 20px 20px;background-color:#f8ffb7">${i18n().browse_page_javascript_one} <a href="${urls.base}/browse" title="${i18n().index_page}">${i18n().index_page}</a> ${i18n().browse_page_javascript_two}</p>
 </noscript>
 
-<section id="noJavascriptContainer" class="hidden" style="display:flex">
+<section id="noJavascriptContainer" class="hidden search-results" style="display:flex">
 
     <#assign displayNone= ''>
 <#if currentServlet=='people' || currentServlet=='groups' >
@@ -79,14 +79,14 @@
 
 
 <#if currentServlet=="people" || currentServlet='groups'  >
-    <section id="individuals-in-class" class="${currentServlet} " role="region">
+    <section id="individuals-in-class" class="${currentServlet}" role="region">
         <ul role="list"  class="list" >
        
             <#-- Will be populated dynamically via AJAX request -->
         </ul>
     </section>
 <#elseif currentServlet!="organizations" >
-    <section id="individuals-in-class" class="${currentServlet}" role="region">
+    <section id="individuals-in-class" class="${currentServlet} results" role="region">
         <ul role="list">
        
 
@@ -97,7 +97,7 @@
     </section>
 
 <#else>
-    <section id="individuals-in-class" class="${currentServlet} grey-image-links" role="region">
+    <section id="individuals-in-class" class="${currentServlet} grey-image-links results"  role="region">
         
         <ul role="list" class="grid-container">
        
