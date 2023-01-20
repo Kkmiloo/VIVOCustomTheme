@@ -5667,7 +5667,7 @@ table.classHierarchy {
     margin-bottom: 22px;
     font-size: .8em;
     min-width: 900px;
-    max-width: 900px;
+    width: calc(100% - 27px);
     background-color: #f8f8f8;
     border-style: solid;
     border-width: 1px;
@@ -5699,7 +5699,7 @@ td.subclassCell {
 }
 
 section#container div {
-    width: 925px;
+
     background-color: #f2f2f2;
     vertical-align: middle;
     height: 26px;
@@ -6188,10 +6188,21 @@ input:focus {
 
 .card-display {
     display: block;
+
+}
+
+.card-display:hover {
+    cursor: pointer;
+}
+
+.article-sw a {
     text-decoration: none;
 }
 
+.card-display:hover {
 
+    opacity: .7;
+}
 
 
 
