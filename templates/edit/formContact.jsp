@@ -39,13 +39,29 @@
 
 			<c:choose>
 				<c:when test='${_action == "insert"}'>
-					<input id="primaryAction" type="submit" class="submit" name="_insert" value="Create new record"/>
+					<div class="d-flex form-group">
+
+						<div class="d-flex form-group">
+							<div class="form-label">
+							</div>
+							<div class="form-input">
+								<input id="primaryAction" type="submit" class="submit" name="_insert" value="Create new record"/>
+							</div>
+						</div>
+					</div>
 				</c:when>
 				<c:otherwise>
-    				<input id="primaryAction" type="submit" class="submit" name="_update" value="Save changes"/>
-                    <c:if test="${ ! (_cancelButtonDisabled == 'disabled') }">
-				        <!--<input type="submit" class="delete" name="_delete" onclick="return confirmDelete();" value="Delete"/>-->
-                    </c:if>
+					<div class="d-flex form-group">
+
+						<div class="form-label"></div>
+						<div class="form-input">
+
+							<input id="primaryAction" type="submit" class="submit" name="_update" value="Save changes"/>
+							<c:if test="${ ! (_cancelButtonDisabled == 'disabled') }">
+								<!--<input type="submit" class="delete" name="_delete" onclick="return confirmDelete();" value="Delete"/>-->
+							</c:if>
+						</div>
+					</div>
 				</c:otherwise>
 			</c:choose>
 
