@@ -29,7 +29,7 @@ ${stylesheets.add('<link rel="stylesheet" href="${urls.base}/css/uploadImages.cs
         <input id="datafile" type="file" name="datafile" size="30" />
          <p class="note">${i18n.maximum_file_size(maxFileSize)}<br />
         ${i18n.minimum_image_dimensions(thumbnailWidth, thumbnailHeight)}</p>
-        <a class="primary-btn">
+        <a class="">
         <input class="submit" type="submit" value="${i18n.submit_upload}"/>
         </a>
         <span class="or"> ${i18n.or} <a class="cancel"  href="${cancelUrl}" title="${i18n.cancel_title}">${i18n.cancel_link}</a></span>
