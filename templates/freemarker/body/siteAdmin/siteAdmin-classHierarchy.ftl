@@ -25,9 +25,9 @@
     	</form>
 
     	<#if displayOption == "group">
-    	    <div id="expandLink"><span id="expandAll" ><a href="javascript:" title="${i18n().hide_show_subclasses}">${i18n().hide_subclasses}</a></span></div>
+    	    <div id="expandLink"><span id="expandAll" ><a class="icon icon-plus" href="javascript:" title="${i18n().hide_show_subclasses}">${i18n().hide_subclasses}</a></span></div>
     	<#else>
-    	    <div id="expandLink"><span id="expandAll" ><a href="#" title="${i18n().expand_all}">${i18n().expand_all}</a></span></div>
+    	    <div id="expandLink"><span id="expandAll"  > <a  class="icon icon-plus" href="#" title="${i18n().expand_all}">${i18n().expand_all}</a></span></div>
     	</#if>
 	</#if>
     <section id="container">

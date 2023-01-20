@@ -226,6 +226,8 @@ var classHierarchyUtils = {
                 $('table.classHierarchy').find('span.icon').addClass("icon-minus");
                 $('table.classHierarchy').find('table.subclassTable').show();
                 $('section#container').find('span.headerSpanPlus').attr('view', 'more');
+                $('#expandAll').find('.icon').removeClass("icon-plus");
+                $('#expandAll').find('.icon').addClass("icon-minus");
             }
             else {
                 classHierarchyUtils.expandAll.text(i18nStrings.expandAll);
@@ -235,6 +237,8 @@ var classHierarchyUtils = {
 
                 $('table.classHierarchy').find('table.subclassTable').hide();
                 $('section#container').find('span.headerSpanPlus').attr('view', 'less');
+                $('#expandAll').find('.icon').removeClass("icon-minus");
+                $('#expandAll').find('.icon').addClass("icon-plus");
             }
         });
     },
