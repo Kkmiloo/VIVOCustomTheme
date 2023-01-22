@@ -38,7 +38,7 @@
 
                 <!-- Image -->
         <#assign individualImage>
-            <@p.image individual=individual
+            <@p.imageMain individual=individual
                       propertyGroups=propertyGroups
                       namespaces=namespaces
                       editable=editable

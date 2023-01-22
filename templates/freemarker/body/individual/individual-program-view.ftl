@@ -54,18 +54,20 @@ Investigación </a>
               -->
                             <!-- Image -->
             <#assign individualImage>
-                <@p.image individual=individual
+                <@p.imageMain individual=individual
                         propertyGroups=propertyGroups
                         namespaces=namespaces
                         editable=editable
-                        showPlaceholder="always" />
+                        showPlaceholder="always"
+                        imageWidth="1492" />
             </#assign>
 
             <#if ( individualImage?contains('<img class="individual-photo"') )>
                 <#assign infoClass = 'class="withThumb"'/>
             </#if>
 
-            <#--  <div id="photo-wrapper"> id="group-figure" --><figure > ${individualImage}</figure><#--  </div>  -->
+            <#--  <div id="photo-wrapper"> id="group-figure" --><figure style="height: 20.938rem;
+    width: 37.25rem;"> ${individualImage}</figure><#--  </div>  -->
           <#--  </div>  -->
           </div>
         </div>

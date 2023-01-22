@@ -291,6 +291,27 @@ name will be used as the label. -->
     </#if>
 </#macro>
 
+<#--  IMAGE FULL-->
+
+<#macro imageMain individual propertyGroups namespaces editable showPlaceholder="never" imageWidth=160 >
+    <#local mainImage = propertyGroups.pullProperty("${namespaces.vitroPublic}mainImage")!>
+    <#local mainImg = individual.imageUrl!>
+    <#-- Don't assume that if the mainImage property is populated, there is a thumbnail image (though that is the general case).
+         If there's a mainImage statement but no thumbnail image, treat it as if there is no image. -->
+    <#if (mainImage.statements)?has_content && mainImg?has_content>
+        <a href="${individual.imageUrl}" title="${i18n().alt_thumbnail_photo}">
+        	<img  src="${mainImg}" title="${i18n().click_to_view_larger}" alt="${individual.name}" width="${imageWidth!}" />
+        </a>
+        <@editingLinks "${mainImage.localName}" "" mainImage.first() editable />
+    <#else>
+        <#local imageLabel><@addLink mainImage editable "${i18n().photo}" /></#local>
+        ${imageLabel}
+        <#if showPlaceholder == "always" || (showPlaceholder="with_add_link" && imageLabel?has_content)>
+            <img class="" src="${placeholderImageUrl(individual.uri)}" title = "${i18n().no_image}" alt="${i18n().placeholder_image}" width="${imageWidth!}" />
+        </#if>
+    </#if>
+</#macro>
+
 <#-- Label -->
 <#macro label individual editable labelCount localesCount=1 languageCount=1>
 	<#assign labelPropertyUri = ("http://www.w3.org/2000/01/rdf-schema#label"?url) />
