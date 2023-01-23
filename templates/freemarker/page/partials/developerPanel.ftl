@@ -28,7 +28,7 @@
 		<h1 id="developerPanelClickMe">${siteName} is running in developer mode.
 			<span id="developerPanelClickText">(click for Options)</span>
 		</h1>
-		<div id="developerPanelBody">
+		<div id="developerPanelBody" style="height:445px"  >
 			<div>
 				<@showCheckbox "developer_enabled",
 						"Enable developer mode" />
