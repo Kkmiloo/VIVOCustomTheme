@@ -16,7 +16,7 @@
 
 <!-- @template -->
 
-<li id="datapropsNN" style="margin-left:0em;margin-top:0.4em;margin-bottom:0.4em;">
+<li id="datapropsNN" style="margin-left:0em;margin-top:1.25rem;margin-bottom:0.4em;">
     <div id="datapropsNNcontent">
         <span id="datapropsNNcontentValue">$$</span>
         <a id="datapropsNNeditLink" href="#" style="margin-left:0.8em;font-style:italic" onClick="convertLiToTextarea(this, 'dataprops');return false;">edit</a>

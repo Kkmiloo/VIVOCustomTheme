@@ -29,7 +29,7 @@
 				<select id="VClassURI" name="VClassURI" class="form-item">
 					<form:option name="VClassURI"/>
 				</select><br/>
-				<input type="submit" class="form-button" value="Add New Individual of above Type"/>
+				<input type="submit" class="" value="Add New Individual of above Type"/>
 				<input type="hidden" name="controller" value="Entity"/>
 			</form>
 		</div> 

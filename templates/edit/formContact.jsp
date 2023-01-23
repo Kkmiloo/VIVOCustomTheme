@@ -22,10 +22,10 @@
 		<h2>${title}</h2>
 			<c:choose>
 				<c:when test='${_action == "insert"}'>
-					<h3 class="blue">Creating New Record</h3>
+					<h3 class="red">Creating New Record</h3>
 				</c:when>
 				<c:otherwise>
-					<h3 class="blue">Editing Existing Record</h3>
+					<h3 class="red">Editing Existing Record</h3>
 				</c:otherwise>
 			</c:choose>
 		<!--<span class="entryFormHeadInstructions">(<sup>*</sup> Required Fields)</span>-->

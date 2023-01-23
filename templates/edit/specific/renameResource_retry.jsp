@@ -10,11 +10,20 @@
 
 <tr class="editformcell">
     <td>
-        <br/>
-        <b>New URI</b>&nbsp;<span class="note"> (must begin with http:// or https://)</span>
-        <br/>
-        <span class="warning"><strong>${epo.attributeMap['errorMsg']}</strong></span>
-        <input type="text" size="95%" name="newURI" value='<%=request.getParameter("oldURI")%>'/>
+        <div class="d-flex form-group">
+
+            <div class="form-label">
+
+                
+                <b>New URI</b>&nbsp;<span class="note"> (must begin with http:// or https://)</span>
+                
+            </div>
+            <div class="form-input">
+
+                <span class="warning"><strong>${epo.attributeMap['errorMsg']}</strong></span>
+                <input type="text" size="95%" name="newURI" value='<%=request.getParameter("oldURI")%>'/>
+            </div>
+        </div>
     </td>
 </tr>
 <script  type="text/javascript">

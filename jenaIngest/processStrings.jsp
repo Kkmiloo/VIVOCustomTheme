@@ -17,42 +17,117 @@
     <h2><a class="ingestMenu" href="ingest">Ingest Menu</a> > Process Property Value Strings</h2>
 
     <form action="ingest" method="get"i>
-        <input type="hidden" name="action" value="processStrings"/>
+        <div class="d-flex form-group">
+            <div class="form-label">
 
-    <input type="text" style="width:80%;" name="className"/>
-    <p>String processor class</p>
+                <p>String processor class</p>
+            </div>
+            <div class="form-input">
 
-    <input type="text" name="methodName"/>
-    <p>String processor method</p>
 
-    <input type="text" name="propertyName"/>
-    <p>Property URI</p>
+                <input type="hidden" name="action" value="processStrings"/>
+                <input type="text" style="width:80%;" name="className"/>
+            </div>
+        </div>
+        <div class="d-flex form-group">
 
-    <input type="text" name="newPropertyName"/>
-    <p>New Property URI</p>
+            <div class="form-label">
+                
+                <p>String processor method</p>
+            </div>
+            
+            <div class="form-input">
+                <input type="text" name="methodName"/>
+                
+            </div>
+        </div>
 
-    <select name="destinationModelName">
-    <c:forEach var="modelName" items="${modelName}">
-        <option value="${modelName}"/>${modelName}</option>
-    </c:forEach>
-    </select>
-    <input type="checkbox" name="processModel" value="TRUE"/> apply changes directly to this model
-    <p>model to use</p>
+        <div class="d-flex form-group">
 
-    <select name="additionsModel">
-		<option value="">none</option>
-		<forEach var="modelName" items="${modelNames}">
-            <option value="${modelName}">${modelName}</option>
-        </forEach>
-	</select>
-    <p>model in which to save added statements</p>
+            <div class="form-label">
 
-    <select name="retractionsModel">
-		<option value="">none</option>
-		<c:forEach var="modelName" items="${modelNames}">
-            <option value="${modelName}">${modelName}</option>
-        </c:forEach>
-	</select>
-    <p>model in which to save retracted statements</p>
+                <p>Property URI</p>
+            </div>
 
-    <input class="submit" type="submit" value="Process property values"/>
+            <div class="form-input">
+
+                <input type="text" name="propertyName"/>
+            </div>
+        </div>
+    
+    
+        <div class="form-group d-flex">
+
+            <div class="form-label">
+
+                <p>New Property URI</p>
+            </div>
+            <div class="form-input">
+
+                <input type="text" name="newPropertyName"/>
+            </div>
+        </div>
+
+        <div class="d-flex form-group">
+
+            <div class="form-label">
+
+                <p>model to use</p>
+            </div>
+            
+            <div class="form-input">
+
+                <select name="destinationModelName">
+                    <c:forEach var="modelName" items="${modelName}">
+                        <option value="${modelName}"/>${modelName}</option>
+                    </c:forEach>
+                </select>
+                <input type="checkbox" name="processModel" value="TRUE"/> apply changes directly to this model
+            </div>
+        </div>
+    
+        <div class="form-group d-flex">
+
+            <div class="form-label">
+
+                <p>model in which to save added statements</p>
+            </div>
+
+            <div class="form-input">
+
+                <select name="additionsModel">
+                    <option value="">none</option>
+                    <forEach var="modelName" items="${modelNames}">
+                        <option value="${modelName}">${modelName}</option>
+                    </forEach>
+                </select>
+            </div>
+        </div>
+            
+        <div class="d-flex form-group">
+
+            <div class="form-label">
+                <p>model in which to save retracted statements</p>
+
+            </div>
+
+            <div class="form-input">
+
+                <select name="retractionsModel">
+                    <option value="">none</option>
+                    <c:forEach var="modelName" items="${modelNames}">
+                        <option value="${modelName}">${modelName}</option>
+                    </c:forEach>
+                </select>
+            </div>
+        </div>
+
+        <div class="d-flex form-group">
+            <div class="form-label"></div>
+            <div class="form-input">
+
+                <input class="submit" type="submit" value="Process property values"/>
+            </div>
+        </div>
+
+    

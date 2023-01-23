@@ -25,10 +25,10 @@
 		<h2>${title}</h2>
 			<c:choose>
 				<c:when test='${_action == "insert"}'>
-					<h3 class="blue">Creating New Record
+					<h3 class="red">Creating New Record
 				</c:when>
 				<c:otherwise>
-					<h3 class="blue">Editing Existing Record
+					<h3 class="red">Editing Existing Record
 				</c:otherwise>
 			</c:choose>
 	 <span class="note">(<sup>*</sup> Required Fields)</span></h3>
@@ -43,28 +43,35 @@
 
 	<tr class="editformcell">
 		<td colspan="${colspan}">
-			<c:choose>
-				<c:when test='${_action == "insert"}'>
-					<input id="primaryAction" type="submit" class="submit" name="_insert" value="Create New Record"/>
-				</c:when>
-				<c:otherwise>
-    				<input id="primaryAction" type="submit" class="submit" name="_update" value="Submit Changes"/>
-                    <c:if test="${ ! (_cancelButtonDisabled == 'disabled') }">
-				        <input type="submit" class="delete" name="_delete" onclick="return confirmDelete();" value="Delete"/>
+			<div class="d-flex form-group">
+				<div class="form-label"></div>
+
+				<div class="form-input">
+
+					<c:choose>
+						<c:when test='${_action == "insert"}'>
+						<input id="primaryAction" type="submit" class="submit" name="_insert" value="Create New Record"/>
+					</c:when>
+					<c:otherwise>
+						<input id="primaryAction" type="submit" class="submit" name="_update" value="Submit Changes"/>
+						<c:if test="${ ! (_cancelButtonDisabled == 'disabled') }">
+						<input type="submit" class="delete" name="_delete" onclick="return confirmDelete();" value="Delete"/>
                     </c:if>
 				</c:otherwise>
 			</c:choose>
 
 			<input type="reset"  class="delete" value="Reset"/>
-
+			
             <c:choose>
-                <c:when test="${!empty formOnCancel}">
+				<c:when test="${!empty formOnCancel}">
                     <input type="submit" class="delete" name="_cancel" onclick="${formOnCancel}" value="Cancel"/>
                 </c:when>
                 <c:otherwise>
-		            <input type="submit" class="delete" name="_cancel" value="Cancel"/>
+					<input type="submit" class="delete" name="_cancel" value="Cancel"/>
                 </c:otherwise>
             </c:choose>
+				</div>
+			</div>
 		</td>
 	</tr>
 </table>

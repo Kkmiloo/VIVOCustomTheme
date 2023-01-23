@@ -28,18 +28,42 @@
     </ul>
 
 
-	<input type="text" name="propertyURI"/>
-    <p>Property URI for which Values Should Be Split</p>
+    <div class="form-group d-flex">
+        <div class="form-label">
 
-	<input type="text" name="splitRegex"/>
-    <p>Regex Pattern on which To Split</p>
+            <p>Property URI for which Values Should Be Split</p>
+        </div>
+        <div class="form-input">
 
-	<input type="text" name="newPropertyURI"/>
-    <p>Property URI To Be Used with the Newly-Split Values</p>
+            <input type="text" name="propertyURI"/>
+        </div>
+    </div>
+
+    <div class="form-group d-flex">
+        <div class="form-label">
+
+            <p>Regex Pattern on which To Split</p>
+        </div>
+        <div class="form-input">
+            <input type="text" name="splitRegex"/>
+
+        </div>
+    </div>
+
+    <div class="form-group d-flex">
+        <div class="form-label">
+
+            <p>Property URI To Be Used with the Newly-Split Values</p>
+        </div>
+        <div class="form-input">
+
+            <input type="text" name="newPropertyURI"/>
+        </div>
+    </div>
 
 	<h3></h3>
 
-	<p>
+	<p style="margin-bottom: 2rem;">
 	<input type="checkbox" name="trim" value="true"/> trim bordering whitespace
 	</p>
 
