@@ -596,6 +596,23 @@ form.deleteForm {
     transition: 300ms;
 }
 
+#editForm table {
+    width: 100%;
+}
+
+#editForm table a {
+    color: #9e0b0f;
+    ;
+    text-decoration: underline;
+}
+
+.red {
+
+    color: #ae002d;
+    text-align: left;
+}
+
+
 #primaryAction.submit {
     box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
 }
@@ -650,6 +667,12 @@ ul.ingestMenu {
 
 .toBeDeleted {
     margin-bottom: 0;
+}
+
+.inline-search {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
 }
 
 /* BACK-END FORMS -------------->  */
@@ -1030,7 +1053,8 @@ a {
     vertical-align: middle;
 }
 
-input[type="submit"] {
+input[type="submit"],
+input[type="reset"] {
     cursor: pointer;
 }
 
@@ -3253,7 +3277,7 @@ a.delete-mainImage {
 
 /* Hero container */
 .profile-hero .hero-container {
-    min-height: 25rem;
+    padding: 1rem;
     height: auto;
 }
 
@@ -4962,7 +4986,9 @@ article.profile-card:before {
 #add-relation input.pos-submit,
 #search-proxy input.submit,
 .form-button,
-input[type="submit"] {
+input[type="submit"],
+input[type="reset"],
+#searchButton {
     /*     background-color: #9e0b0f;
     border-radius: 1.25rem;
     color: #fff;
@@ -4983,12 +5009,15 @@ input[type="submit"] {
     box-shadow: 0 0.3125rem 0.6875rem 0 rgb(248 46 53 / 35%);
     padding: 8px 20px;
     font-size: 16px;
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 #add-relation input.pos-submit:hover,
 #search-proxy input.submit:hover,
 .form-button:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+#searchButton:hover {
     background-color: #f82e35;
 }
 
@@ -5445,6 +5474,7 @@ ul.menuItems {
     margin-top: 1rem;
     width: 35%;
     margin-bottom: 1.5em;
+    border: 1px black solid;
 }
 
 ul.menuItems li {
@@ -6058,7 +6088,7 @@ form#addConceptForm {
 
 form#addConceptForm span#createOwnOne {
     float: left;
-    margin-top: 24px
+
 }
 
 /*For existing concepts, display will also be tabular with columns*/
@@ -6717,7 +6747,7 @@ section.visualizationTools p {
 
 .main-detail-container .detail-content h3 {
     margin: auto;
-
+    text-transform: capitalize;
 }
 
 .main-detail-container .detail-content h2 {
@@ -6767,7 +6797,8 @@ body.vis {
 }
 
 .card-body h3 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .card h2 {
@@ -7050,11 +7081,26 @@ input {
     line-height: 1.5
 }
 
-#uploadRDF p {
+#uploadRDF p,
+form[enctype="multipart/form-data"] p,
+#takeuri p {
 
     font-size: 1rem;
     font-weight: 300;
     margin-bottom: 1rem;
+}
+
+.options {
+    margin-top: 2rem;
+}
+
+.maxWidth {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+form[action="ingest"] ul {
+    margin-bottom: 2rem;
 }
 
 #uploadRDF ul {
@@ -7181,4 +7227,46 @@ class, in case we want to re-enable DD without a page reload. */
 
 form#addAuthorForm {
     display: none;
+}
+
+#startup-trace {
+    width: 100%;
+}
+
+#startup-trace h4 {
+    padding: .5em;
+    margin-bottom: 0;
+    padding-bottom: .5em;
+    padding-top: 1em;
+}
+
+#startup-trace ul.item-spec {
+    margin-bottom: 1em;
+}
+
+#startup-trace ul.item-spec li {
+    padding-left: .5em;
+    padding-bottom: .4em;
+}
+
+#startup-trace li.error {
+    background-color: #FFDDDD;
+}
+
+#startup-trace li.warning {
+    background-color: #FFFFDD;
+}
+
+#startup-trace li.info {
+    background-color: #DDFFDD;
+}
+
+#startup-trace li.not_executed {
+    background-color: #F3F3F0;
+}
+
+.container.concept {
+
+    align-items: flex-start;
+    margin-bottom: 0;
 }
