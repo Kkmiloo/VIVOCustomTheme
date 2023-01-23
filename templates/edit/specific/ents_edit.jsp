@@ -28,15 +28,16 @@
 			<form name="newEntityForm" class="d-content" action="editForm" method="get">
 				<select id="VClassURI" name="VClassURI" class="form-item">
 					<form:option name="VClassURI"/>
-				</select><br/>
-				<input type="submit" class="" value="Add New Individual of above Type"/>
+				</select>
+				<input type="submit" class="" value="Add New Individual"/>
 				<input type="hidden" name="controller" value="Entity"/>
 			</form>
 		</div> 
 
-		<p> Individual</p> 
+		<fieldset class="mform">
+			<legend>Individual </legend> 
 
-		<div class="d-flex m-b2">
+		  <div class="d-flex m-b2 fcontainer ">
 
 			<form action="entity" method="get">
 				<input type="submit" class="form-button" value="Display This Individual (public)"/>
@@ -46,7 +47,7 @@
 				<input name="uri" type = "hidden" value="${individual.URI}" />
 				<input name="controller" type = "hidden" value="Entity" />
 				<input type="submit" class="form-button" value="Edit This Individual"/>
-			</form><br/>
+			</form>
 			
 			<c:if test="${!empty individual.externalIds}">
 				<form action="editForm" method="get">
@@ -65,12 +66,18 @@
 				<input type="hidden" name="controller" value="Refactor"/>
 			</form>
 		</div>
-			<p>Querys</p>
+	</fieldset> 
+
+
+	<fieldset class="mform">
+
+		<legend>Querys </legend> 
+		
 
 
 
         	
-<div class="d-flex m-b2"> 
+<div class="d-flex m-b2 fcontainer"> 
         	<c:set var="query"
                  value="PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -102,11 +109,18 @@
           </form>
 
 		</div>
-<div class="d-flex m-b2">
+
+	</fieldset>
+
+	<fieldset class="mform">
+
+		<legend>Types </legend> 
+<div class="d-flex m-b2" style="flex-direction: column;align-items: flex-start">
+
 	
 	<c:if test="${!empty types}">
-		<form action="individualTypeOp" method="get">
-			<ul style="list-style-type:none;">
+		<form action="individualTypeOp" method="get" style="margin-bottom: 1rem;">
+			<ul style="display: flex;flex-direction: column;align-items: flex-start ; margin-left: 2rem;">
 				<c:forEach var="type" items="${types}">
 					<c:url var="individualURL" value="entityEdit">
 						<c:param name="uri" value="${type.URI}"/>
@@ -118,7 +132,7 @@
 				</c:forEach>
 			</ul>
 			<input type="hidden" name="individualURI" value="${individual.URI}"/>
-			<input type="submit" class="form-button" value="Remove Checked Asserted Types"/>
+			<input type="submit" class="form-button whiteBtn" style="margin-top: 1rem;" value="Remove Checked Asserted Types"/>
 			<input type="hidden" name="operation" value="remove"/>
 			<input type="hidden" name="_epoKey" value="${epoKey}"/>
 		</form>
@@ -128,7 +142,9 @@
 		<input type="hidden" name="IndividualURI" value="${individual.URI}"/>
 		<input type="submit" class="form-button" value="Add Type"/>
 	</form>
+	
 </div>
+</fieldset>
 	<div >
 		
 		<h2>Object (individual-to-individual) Property Statements</h2>

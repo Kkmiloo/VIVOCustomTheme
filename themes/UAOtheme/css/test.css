@@ -580,18 +580,20 @@ form.deleteForm {
 }
 
 #editForm .delete,
-#account-display .delete {
+#account-display .delete,
+.whiteBtn {
     background-color: #ffffff !important;
-    color: #000000;
+    color: #000000 !important;
     box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
 }
 
 #editForm .delete:hover,
-#account-display .delete:hover {
+#account-display .delete:hover,
+.whiteBtn:hover {
     box-shadow: 0 .3125rem .6875rem 0 rgba(0, 0, 0, .6);
     background-color: #9E0B0F !important;
     ;
-    color: #fff;
+    color: #fff !important;
     opacity: 1;
     transition: 300ms;
 }
@@ -5017,7 +5019,8 @@ input[type="reset"],
 #search-proxy input.submit:hover,
 .form-button:hover,
 input[type="submit"]:hover,
-#searchButton:hover {
+#searchButton:hover,
+#whiteBtn:hover {
     background-color: #f82e35;
 }
 
@@ -5467,7 +5470,17 @@ input#submit:hover {
 
 
 /*  menuordering.CSS*/
+legend {
 
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+legend:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 /* MENU ITEMS------>  */
 ul.menuItems {
@@ -7269,4 +7282,9 @@ form#addAuthorForm {
 
     align-items: flex-start;
     margin-bottom: 0;
+}
+
+fieldset.mform {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
 }
