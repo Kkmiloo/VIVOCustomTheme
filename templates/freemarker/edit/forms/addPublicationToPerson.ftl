@@ -206,11 +206,15 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     </div>
 
     <#-- Presented At -->
-    <p>
+    <div class="d-flex form-group">
+        <div class="form-label">
         <label for="conference">${i18n().presented_at}</label>
+        </div>
+        <div class="form-input">
         <input class="acSelector" size="50"  type="text" id="conference" name="conference" acGroupName="conference"  value="${conferenceValue}" />
         <input class="display" type="hidden" id="conferenceDisplay" name="conferenceDisplay" acGroupName="conference"  value="${conferenceDisplayValue}" />
-    </p>
+        </div>
+    </div>
 
     <div class="acSelection" acGroupName="conference" >
         <p class="inline">
@@ -223,11 +227,15 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     </div>
 
     <#-- Proceedings of -->
-    <p>
+    <div class="d-flex form-group">
+            <div class="form-label">
         <label for="event">${i18n().proceedings_of}</label>
+        </div>
+        <div class="form-input">
         <input class="acSelector" size="50"  type="text" id="event" name="event" acGroupName="event"  value="${eventValue}" />
         <input class="display" type="hidden" id="eventDisplay" name="eventDisplay" acGroupName="event"  value="${eventDisplayValue}" />
-    </p>
+        </div>
+    </div>
 
     <div class="acSelection" acGroupName="event" >
         <p class="inline">
@@ -241,15 +249,38 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 
 
     <#-- Editor -->
-    <p>
-        <label class="editor" for="editor">${i18n().editor_capitalized}: ${i18n().last_name}<span style="padding-left:338px">${i18n().first_name}  ${requiredHint}</span>
-            <span class="note">(${i18n().required_with_last_name})</span>
-        </label>
-        <input class="acSelector" size="50"  type="text" id="editor" name="editor" acGroupName="editor"  value="${editorValue}" />
-        <input  size="30"  type="text" id="firstName" name="firstName" value="${firstNameValue}" ><br />
-        <input type="hidden" id="lastName" name="lastName" value="">
-        <input class="display" type="hidden" id="editorDisplay" name="editorDisplay" acGroupName="editor"  value="${editorDisplayValue}" />
-    </p>
+    <div class="form-group d-flex" style="flex-direction:column">
+            ${i18n().editor_capitalized}:
+        <div class="form-group d-flex">
+                    <div class="form-label">
+                        <label class="editor" for="editor"> ${i18n().last_name}
+                        </label>
+                    </div>
+         <div class="form-input">
+
+                    <input type="hidden" id="lastName" name="lastName" value="">
+                    <input class="acSelector" size="50"  type="text" id="editor" name="editor" acGroupName="editor"  value="${editorValue}" />
+            </div>
+           
+        </div> 
+
+        <div class="form-group d-flex">
+
+                <div class="form-label">
+            <label  class="editor" for="editor" >
+            <span >${i18n().first_name}  ${requiredHint}</span>
+                <span class="note">(${i18n().required_with_last_name})</span>
+            </label>
+                 </div>
+            
+        <div class="form-input">
+             <input class="display" type="hidden" id="editorDisplay" name="editorDisplay" acGroupName="editor"  value="${editorDisplayValue}" />
+            <input  size="30"  type="text" id="firstName" name="firstName" value="${firstNameValue}" ><br />
+        </div>
+        </div>
+       
+    </div>
+    
 
     <div class="acSelection" acGroupName="editor" >
         <p class="inline">
@@ -262,11 +293,15 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     </div>
 
     <#-- Publisher -->
-    <p>
+    <div class="d-flex form-group">
+                <div class="form-label">
         <label for="publisher">${i18n().publisher_capitalized}</label>
+        </div>
+        <div class="form-input">
         <input class="acSelector" size="50"  type="text" id="publisher" name="publisher" acGroupName="publisher"  value="${publisherValue}" />
         <input class="display" type="hidden" id="publisherDisplay" name="publisherDisplay" acGroupName="publisher" value="${publisherDisplayValue}" />
-    </p>
+        </div>
+    </div>
 
     <div class="acSelection" acGroupName="publisher" >
         <p class="inline">
@@ -279,10 +314,14 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     </div>
 
     <#-- Place of Publication -->
-    <p>
+    <div class="form-group d-flex">
+            <div class="form-label">
         <label for="locale">${i18n().place_of_publication}</label>
+        </div>
+        <div class="form-input">
         <input  size="30"  type="text" id="locale" name="locale" acGroupName="locale"  value="${localeValue}" />
-    </p>
+        </div>
+    </div>
 
     <#-- Volume, Number and Issue -->
     <p class="inline">
@@ -299,6 +338,8 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
     </p>
 
     <#-- Start/End Pages -->
+
+    <div>
     <p class="inline">
         <label for="startPage" id="sPLabel">${i18n().start_page}</label>
         <label for="endPage" class="sepLabels">${i18n().end_page}</label>
@@ -307,7 +348,7 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
         <input  size="4" type="text" id="startPage" name="startPage" value="${startPageValue}" />
         <input  size="4" class="sepInputs" type="text" id="endPage" name="endPage" value="${endPageValue}" />
     </p>
-
+    </div>
     <#-- Publication Date -->
     <p>
     <#assign htmlForElements = editConfiguration.pageData.htmlForElements />

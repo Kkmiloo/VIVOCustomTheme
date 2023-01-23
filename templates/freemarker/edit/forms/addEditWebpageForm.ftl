@@ -48,10 +48,16 @@
 </#if>
 
 <form class="customForm" action ="${submitUrl}">
+
+    <div class="d-flex form-group">
 	<input type="hidden" name="rangeUri" value="${editConfiguration.rangeUri!}">
 	<input type="hidden" name="domainUri" value="${editConfiguration.domainUri!}">
 
+    <div class="form-label"> 
     <label for="urlType">${i18n().url_type}${requiredHint}</label>
+    </div> 
+
+    <div class="form-input">
     <#assign urlTypeOpts = editConfiguration.pageData.urlType />
     <select name="urlType" style="margin-top:-2px" >
         <#list urlTypeOpts?keys as key>
@@ -66,11 +72,29 @@
             </option>
         </#list>
     </select>
-    <label for="url">URL ${requiredHint}</label>
-    <input  size="70"  type="text" id="url" name="url" value="${url}" role="input" />
+     </div>
+     </div>
 
+     <div class="d-flex form-group">
+
+        <div class="form-label">
+            <label for="url">URL ${requiredHint}</label>
+         </div>
+
+         <div class="form-input"> 
+            <input  size="70"  type="text" id="url" name="url" value="${url}" role="input" />
+         </div>
+    </div>
+
+
+    <div class="d-flex form-group">
+        <div class="form-label">
     <label for="label">${i18n().webpage_name}</label>
+        </div> 
+        <div class="form-input"> 
     <input  size="70"  type="text" id="label" name="label" value="${label?html}" role="input" />
+        </div>
+    </div>
 
     <#if editMode="add">
         <input type="hidden" name="rank" value="${newRank}" />

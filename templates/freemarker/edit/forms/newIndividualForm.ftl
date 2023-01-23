@@ -80,10 +80,16 @@
 
         <input type="hidden" id="label" name="label" value="${labelValue}" />
     <#else>
-        <p>
+        <div class="d-flex form-group">
+        
+            <div class="form-label">
             <label for="name">${i18n().name_capitalized} ${requiredHint}</label>
+             </div>
+
+             <div class="form-input"> 
             <input size="30"  type="text" id="label" name="label" value="${labelValue}" />
-        </p>
+             </div>
+        </div>
     </#if>
 
     <p class="submit">

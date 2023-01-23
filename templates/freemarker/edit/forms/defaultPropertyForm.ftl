@@ -17,15 +17,22 @@
     <#if rangeOptionsExist  = true >
         <#assign rangeOptionKeys = rangeOptions?keys />
         <form class="editForm" action = "${submitUrl}">
+            <div class="d-flex form-group"> 
+            <div class="form-label"> 
             <input type="hidden" name="editKey" id="editKey" value="${editKey}" role="input" />
             <#if editConfiguration.propertyPublicDescription?has_content>
                 <p>${editConfiguration.propertyPublicDescription}</p>
              </#if>
+            </div>
+
+            <div class="form-input">
             <select id="objectVar" name="objectVar" role="select">
                 <#list rangeOptionKeys as key>
                  <option value="${key}" <#if editConfiguration.objectUri?has_content && editConfiguration.objectUri = key>selected</#if> role="option">${rangeOptions[key]}</option>
                 </#list>
             </select>
+             </div>
+            </div>
 
             <p>
                 <input type="submit" id="submit" value="${editConfiguration.submitLabel}" role="button "/>
