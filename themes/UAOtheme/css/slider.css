@@ -71,12 +71,12 @@
   width: 40px;
   border-radius: 50%;
   transform: translateY(30px);
-  background-color: rgba(158, 11, 16, .2);
+  background-color: #9e0b0f;
   transition: 0.2s;
 }
 
 .nav-btn:hover {
-  background-color: rgb(158, 11, 16);
+  background-color: #ed1d24;
 }
 
 .nav-btn::after,
