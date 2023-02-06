@@ -2,21 +2,14 @@
 
 <#-- This is included by identity.ftl  -->
 <#if selectLocale??>
-<li class="hov" id="language-menu">
-
-            <a id="lang-link" href="#" title="${i18n().select_a_language}">${i18n().select_a_language}
-                <span class="icon icon-angle-down"></span>
-            </a>
-        <ul class="sub_menu dropList">
+        <ul class="hmdt-language">
         <#list selectLocale.locales as locale>
 
-                <li <#if locale.selected>status="selected"</#if>>
+                <li <#if locale.selected>status="selected" class="active"</#if>>
                         <a href="${selectLocale.selectLocaleUrl}?selection=${locale.code}" title="${i18n().select_locale} -- ${locale.label}">${locale.label?capitalize}<#if locale.country?has_content> (${locale.country})</#if></a>
                 </li>
         </#list>
         </ul>
-
-</li>
 </#if>
 
 <#--
