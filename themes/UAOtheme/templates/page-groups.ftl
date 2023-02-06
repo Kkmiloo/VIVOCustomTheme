@@ -28,14 +28,6 @@ Grupos de Investigación </h1>
 </div>
 </section>
 
-<article class="section-text-content">
-    <p>La UAO cuenta con 24 grupos de investigación que han sido categorizados por MinCiencias, <a rel="noreferrer noopener" aria-label=" (se abre en una nueva pestaña)" href="https://minciencias.gov.co/sites/default/files/listado_resultados_finales_-_833_de_2018_-_grupos_-_consulta.pdf" target="_blank">convocatoria No. 823 de 2018</a>, de acuerdo al <a rel="noreferrer noopener" aria-label=" (se abre en una nueva pestaña)" href="https://minciencias.gov.co/sites/default/files/upload/convocatoria/4._anexo_1._documento_conceptual_del_modelo_de_reconocimiento_y_medicion_de_grupos_de_investigacion_2018.pdf" target="_blank">Modelo de medición </a>de grupos del Sistema Nacional de Ciencia, Tecnología e Innovación, Sncti.&nbsp;</p>
-    <p><strong>La medición de los grupos de investigación se basa en cuatro tipos de productos fundamentales reconocidos en el Sncti:</strong></p>
-    <ol><li>Productos de nuevo conocimiento. </li><li>Productos de desarrollo tecnológico e innovación.</li><li>Productos de apropiación social del conocimiento, congresos, talleres, reconocimientos y otras prácticas de construcción y circulación colectiva del conocimiento. </li><li>Productos de actividades relacionadas con la formación de talento humano para la CTI.</li></ol>
-    <p>Cada grupo de investigación cuenta con un coordinador y desde la Vicerrectoría de Investigaciones, Innovación y Emprendimiento recibe apoyo para realizar las diferentes actividades de investigación, los procesos de protección de los resultados, la difusión y la transferencia de conocimiento a los actores externos, organizaciones/entidades, comunidades, etc.</p>
-    <p></p>
-</article>
-
 <section class="grey-image-links">
     <div class="grid-container">
     <#list facultades as result>
@@ -56,3 +48,11 @@ Grupos de Investigación </h1>
 
     </div>
  </section>
+
+ <article class="section-text-content">
+    <p>La UAO cuenta con 24 grupos de investigación que han sido categorizados por MinCiencias, <a rel="noreferrer noopener" aria-label=" (se abre en una nueva pestaña)" href="https://minciencias.gov.co/sites/default/files/listado_resultados_finales_-_833_de_2018_-_grupos_-_consulta.pdf" target="_blank">convocatoria No. 823 de 2018</a>, de acuerdo al <a rel="noreferrer noopener" aria-label=" (se abre en una nueva pestaña)" href="https://minciencias.gov.co/sites/default/files/upload/convocatoria/4._anexo_1._documento_conceptual_del_modelo_de_reconocimiento_y_medicion_de_grupos_de_investigacion_2018.pdf" target="_blank">Modelo de medición </a>de grupos del Sistema Nacional de Ciencia, Tecnología e Innovación, Sncti.&nbsp;</p>
+    <p><strong>La medición de los grupos de investigación se basa en cuatro tipos de productos fundamentales reconocidos en el Sncti:</strong></p>
+    <ol><li>Productos de nuevo conocimiento. </li><li>Productos de desarrollo tecnológico e innovación.</li><li>Productos de apropiación social del conocimiento, congresos, talleres, reconocimientos y otras prácticas de construcción y circulación colectiva del conocimiento. </li><li>Productos de actividades relacionadas con la formación de talento humano para la CTI.</li></ol>
+    <p>Cada grupo de investigación cuenta con un coordinador y desde la Vicerrectoría de Investigaciones, Innovación y Emprendimiento recibe apoyo para realizar las diferentes actividades de investigación, los procesos de protección de los resultados, la difusión y la transferencia de conocimiento a los actores externos, organizaciones/entidades, comunidades, etc.</p>
+    <p></p>
+</article>
