@@ -1765,7 +1765,7 @@ table#table-listing td a {
 
 
 .header-margin {
-    margin-top: 0px;
+    margin-top: 189px;
     /*  margin-top: 54px; */
 }
 
@@ -2407,9 +2407,9 @@ label {
 }
 
 .nav-search {
+    display: flex;
+    align-items: center;
 
-
-    min-width: 400px;
 }
 
 #adminDashboard {
@@ -3709,7 +3709,7 @@ select {
     color: #fff
 }
 
-#header-menu-desktop.fixed {
+#header-menu-desktop #hmd-bottom {
     position: sticky;
     border-bottom: 0.0625rem solid #ed1d24;
 }
@@ -3731,7 +3731,7 @@ select {
 }
 
 #hmd-bottom ul li a {
-    font-family: Roboto, sans-serif;
+    font-family: Open Sans, Arial, Verdana;
     font-style: normal;
     font-weight: 700;
     font-size: 1rem;
@@ -4938,6 +4938,7 @@ article.profile-card:before {
 #search-homepage {
     border-radius: 1.75rem;
     box-shadow: -1px 4px .2rem 0 rgba(0, 0, 0, 0.1);
+    min-width: 400px;
 }
 
 #search-home-field label {
@@ -7287,4 +7288,23 @@ form#addAuthorForm {
 fieldset.mform {
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #dee2e6;
+}
+
+.link-image-button,
+#header-menu-desktop,
+#header-menu-mobile {
+
+    font-family: Open Sans, Arial, Verdana;
+    ;
+}
+
+#header-menu-desktop a {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+}
+
+#header-menu-desktop a.campus-virtual:hover {
+    background-color: #ed1d24;
 }
