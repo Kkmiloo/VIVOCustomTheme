@@ -2,9 +2,89 @@
 
 </header>
 
-<#include "developer.ftl">
+
 
 <header id="header-menu-desktop" class="fixed has-scroll-indicator">
+<#include "developer.ftl">
+    <div id ="hmd-top"> 
+        <div class="hmdt-links">
+
+    <ul class="social-links">
+            <li>
+                <a class="icon icon-Facebook" href="https://www.facebook.com/universidadautonomadeoccidente"></a>
+            </li>
+            <li>
+                <a class="icon icon-Twitter" href="https://twitter.com/lauao"></a>
+            </li>
+            <li>
+                <a class="icon icon-Instagram" href="https://www.instagram.com/universidadautonomadeoccidente/"></a>
+            </li>
+            <li>
+                <a class="icon icon-Youtube" href="https://www.youtube.com/user/autonomadeocc"></a>
+            </li>
+            <li>
+                <a class="icon icon-Linkedin" href="https://www.linkedin.com/school/universidadautonomadeoccidente"></a>
+            </li>
+    </ul>
+        <#include "languageSelector.ftl">
+    </div>
+
+
+        <div id="dropdowns-login">              
+        <ul>
+        
+                  <#if user.loggedIn>
+                <#-- COMMENTING OUT THE EDIT PAGE LINK FOR RELEASE 1.5. WE NEED TO IMPLEMENT THIS IN A MORE
+                     USER FRIENDLY WAY. PERHAPS INCLUDE A LINK ON THE PAGES THEMSELVES AND DISPLAY IF THE
+                     USER IS A SITE ADMIN. tlw72
+
+                     <#if (page??) && (page?is_hash || page?is_hash_ex) && (page.URLToEditPage??) >
+                        <li role="listitem"><a href="${page.URLToEditPage}" title="${i18n().identity_edit}">${i18n().identity_edit}</a></li>
+                     </#if>
+                -->
+                    <li class="hov">
+ 
+                            <a href="#" class="campus-virtual" title="${i18n().identity_user}">
+                                 <div class="circle-icon">
+                                <span class="icon icon-user"></span>
+                                </div>
+                                 ${user.loginName}
+                                <span class="icon icon-angle-down"></span>
+                            </a>
+                                                            
+
+                                <ul id="myDIV" >
+                                     <#if user.hasProfile>
+                                         <li role="listitem"><a href="${user.profileUrl}" title="${i18n().identity_myprofile}">${i18n().identity_myprofile}</a></li>
+                                     </#if>
+                                                                    <#if user.hasSiteAdminAccess>
+                                    <li role="listitem"><a href="${urls.siteAdmin}" title="${i18n().identity_admin}">${i18n().identity_admin}</a></li>
+                                    </#if>
+                                     <#if urls.myAccount??>
+                                         <li role="listitem"><a href="${urls.myAccount}" title="${i18n().identity_myaccount}">${i18n().identity_myaccount}</a></li>
+                                     </#if>
+                                     <li role="listitem"><a href="${urls.logout}" title="${i18n().menu_logout}">${i18n().menu_logout}</a></li>
+                                </ul>
+                            
+                         
+                     </li>
+
+                ${scripts.add('<script type="text/javascript" src="${urls.base}/js/userMenu/userMenuUtils.js"></script>')}
+        <#else>
+         <li>
+            <a href="${urls.login}" class="campus-virtual log-out" title="${i18n().menu_loginfull}">
+            <div class="circle-icon">
+            <span class="icon icon-user"></span>
+            </div>
+                                                                ${i18n().menu_login}
+                                                            
+            </a>
+             </li>
+            </#if>
+       
+        </ul>
+        </div>
+    </div>
     <div id ="hmd-bottom"> 
         <div id="hmdb-logo-container">
             <a id="hmdb-logo" href="${urls.base}/"></a>
@@ -16,44 +96,7 @@
             <#list menu.items as item>
             <li role="listitem"><a href="${item.url}" title="${item.linkText} ${i18n().menu_item}" <#if item.active> class="selected" </#if>>${item.linkText}</a></li>
             </#list>
-            <#include "languageSelector.ftl">
-            <#if user.loggedIn>
-                <#-- COMMENTING OUT THE EDIT PAGE LINK FOR RELEASE 1.5. WE NEED TO IMPLEMENT THIS IN A MORE
-                     USER FRIENDLY WAY. PERHAPS INCLUDE A LINK ON THE PAGES THEMSELVES AND DISPLAY IF THE
-                     USER IS A SITE ADMIN. tlw72
-
-                     <#if (page??) && (page?is_hash || page?is_hash_ex) && (page.URLToEditPage??) >
-                        <li role="listitem"><a href="${page.URLToEditPage}" title="${i18n().identity_edit}">${i18n().identity_edit}</a></li>
-                     </#if>
-                -->
-                    <li class="hov">
-                        
-                            <a href="#" title="${i18n().identity_user}">Hola, ${user.loginName}
-                                <span class="icon icon-angle-down"></span>
-                            </a>
-                                <ul class="dropList" >
-                                     <#if user.hasProfile>
-                                         <li role="listitem"><a href="${user.profileUrl}" title="${i18n().identity_myprofile}">${i18n().identity_myprofile}</a></li>
-                                     </#if>
-                                                                    <#if user.hasSiteAdminAccess>
-                                    <li role="listitem"><a href="${urls.siteAdmin}" title="${i18n().identity_admin}">${i18n().identity_admin}</a></li>
-                                </#if>
-                                     <#if urls.myAccount??>
-                                         <li role="listitem"><a href="${urls.myAccount}" title="${i18n().identity_myaccount}">${i18n().identity_myaccount}</a></li>
-                                     </#if>
-                                     <li role="listitem"><a href="${urls.logout}" title="${i18n().menu_logout}">${i18n().menu_logout}</a></li>
-                                </ul>
-                            
-                         
-                     </li>
-
-                ${scripts.add('<script type="text/javascript" src="${urls.base}/js/userMenu/userMenuUtils.js"></script>')}
-
-            <#else>
-                <li role="listitem"><a class="log-out" title="${i18n().menu_loginfull}" href="${urls.login}">${i18n().menu_login}</a></li>
-            </#if>
             
-
         </ul>
     </div>
 </header>
@@ -92,9 +135,6 @@
 
     </div>
 
-   
-
-   
 
         <#if currentServlet!='home'>
         <#include "search.ftl"> 
@@ -103,7 +143,7 @@
             <#list menu.items as item>
             <li role="listitem" class="hmmbp-title"><a href="${item.url}" title="${item.linkText} ${i18n().menu_item}" <#if item.active> class="selected" </#if>>${item.linkText}</a></li>
             </#list>
-            <#include "languageSelector.ftl">
+            
             <#if user.loggedIn>
                 <#-- COMMENTING OUT THE EDIT PAGE LINK FOR RELEASE 1.5. WE NEED TO IMPLEMENT THIS IN A MORE
                      USER FRIENDLY WAY. PERHAPS INCLUDE A LINK ON THE PAGES THEMSELVES AND DISPLAY IF THE
@@ -112,11 +152,7 @@
                      <#if (page??) && (page?is_hash || page?is_hash_ex) && (page.URLToEditPage??) >
                         <li role="listitem"><a href="${page.URLToEditPage}" title="${i18n().identity_edit}">${i18n().identity_edit}</a></li>
                      </#if>
-                -->
-                    
-                        
-                                            
-    
+                -->                                                  
                      <li>
                             <div class="hmmbp-title">
                             <a href="#" title="${i18n().identity_user}">Hola, ${user.loginName}
@@ -174,5 +210,7 @@
 
 
 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/menuMobile.js"></script>')}
+${scripts.add('<script type="text/javascript" src="${urls.base}/js/scrollingHeader.js"></script>')}
+
 
 
