@@ -16,7 +16,7 @@
         </header>
         <#include "menu.ftl">
 
-        <div id="wrapper-content" role="main">
+        <div id="wrapper-content" class="header-margin" role="main">
             <section id="intro" role="region">
                 <h2>${i18n().what_is_vitro}</h2>
 

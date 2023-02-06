@@ -18,7 +18,7 @@
         </header>
         <#include "menu.ftl">
 
-        <div id="wrapper-content" role="main">
+        <div id="wrapper-content" class="header-margin" role="main">
             ${body}
         </div>
         <#include "footer.ftl">

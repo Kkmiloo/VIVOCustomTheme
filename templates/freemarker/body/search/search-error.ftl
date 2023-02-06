@@ -2,7 +2,7 @@
 
 <#-- Template for displaying search error message -->
 
-<div id="wrapper-content"> 
+<div id="wrapper-content" class="header-margin"> 
 <#if title??>
 <div class="virtual-category-title">
     <h1 class="searchResultsHeader">${title?html}</h1>

@@ -25,7 +25,7 @@
             <#assign isMainContent=false>
         </#list>
         <#if isMainContent==false>
-            <div id="wrapper-content" role="main">
+            <div id="wrapper-content" class="header-margin" role="main">
             <div class="card">
                 <div class="card-body">
                 <#if openSocial??>
