@@ -32,7 +32,7 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/yasgui-yasqe@2.11.22/dist/yasqe.min.css">
 
 <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
-
+<link rel="icon" type="image/x-icon" href="https://www.uao.edu.co/wp-content/themes/uao-theme/assets/favicon/favicon-32x32.png">
 <#include "headScripts.ftl">
 
 <#if metaTags??>
