@@ -30,9 +30,8 @@
 
 
 
-   <section id="login" class="container-log hidden">
-   
-<#--        <#if infoMessage??>
+    <section id="login" class="container-log hidden">
+      <#--        <#if infoMessage??>
             <h3>${infoMessage}</h3>
         </#if>
 
@@ -57,22 +56,22 @@
             <div ${infoClassHide} ${infoClassShow}>
             </div>  -->
         
-        <form role="form" id="login-form" action="${formAction}"   method="post" name="login-form" class="login-form"  >
+        <form role="form" id="login-form" action="${formAction}"   method="post" name="login-form" class="login-form">
 
             <h2 class="o-h2">Inicio de sesión</h2>
 
 
-      <#if infoMessage??>
+            <#if infoMessage??>
             <h3>${infoMessage}</h3>
-        </#if>
+            </#if>
 
-        <#if errorMessage??>
+            <#if errorMessage??>
             <#assign infoClassShow = ' id="vivoAccountError"'/>
 
             <section id="error-alert" role="alert"><img src="${urls.images}/iconAlert.png" alt="${i18n().error_alert_icon}" />
                 <p class="login-alert">${errorMessage}</p>
             </section>
-        </#if>  
+            </#if>  
                 
 
                 <div class="form-group"> 
@@ -89,8 +88,8 @@
 
 
                 <div class="column"> 
-                <a class="ts-6" href="">No puedes acceder a la cuenta?</a>
-                <input name="loginForm" type="submit" value="Acceder" value="${i18n().login_button}" class="btn btn-primary btn-block mt-1"> 
+                <#--                  <a class="ts-6" href="">No puedes acceder a la cuenta?</a>  -->
+                    <input name="loginForm" type="submit" value="Acceder" value="${i18n().login_button}" class="btn btn-primary btn-block mt-1"> 
                 </div>
 
 
@@ -104,8 +103,9 @@
 </#macro>
 
 <#macro forcePasswordChange>
-    <section id="login">
-        <h2>${i18n().change_password_to_login}</h2>
+    <section id="login" class="container-log">
+            <form role="form" id="login-form" action="${formAction}" method="post" name="login-form" />
+                <h2>${i18n().change_password_to_login}</h2>
 
             <#if errorMessage??>
                 <div id="error-alert" role="alert"><img src="${urls.images}/iconAlert.png" width="24" height="24" alt="${i18n().error_alert_icon}"/>
@@ -113,7 +113,6 @@
                 </div>
             </#if>
 
-            <form role="form" id="login-form" action="${formAction}" method="post" name="login-form" />
                 <label for="newPassword">${i18n().new_password_capitalized}</label>
                 <input id="newPassword" name="newPassword" class="text-field focus" type="password" required autofocus/>
 
