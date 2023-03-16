@@ -1,0 +1,30 @@
+
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+ 
+<freemarker:page-groups.ftl> display:hasDataGetter display:pageGroupDataGetter .
+ 
+display:pageGroupDataGetter
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter> ;
+    display:saveToVar "facultyResults" ;
+    display:query """
+   			PREFIX vitro: <http://vitro.mannlib.cornell.edu/ns/vitro/public#>
+		PREFIX obo: <http://purl.obolibrary.org/obo/>
+    	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+   		 PREFIX local: <http://vivo.mydomain.edu/individual/>
+          PREFIX vivo: <http://vivoweb.org/ontology/core#>
+          PREFIX bibo: <http://purl.org/ontology/bibo/>
+		PREFIX mydomain: <http://vivo.mydomain.edu/> 
+ 
+    SELECT ?gname ?individualURI ?dl
+
+    WHERE {
+
+		?individualURI a vivo:Program .
+  		?individualURI	 rdfs:label ?gname .
+  	optional{
+  		?individualURI vitro:mainImage ?mi .
+    ?mi vitro:downloadLocation ?dl}
+    }
+     """ .

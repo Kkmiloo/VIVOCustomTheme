@@ -1,0 +1,34 @@
+
+@prefix display: <http://vitro.mannlib.cornell.edu/ontologies/display/1.1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+ 
+<freemarker:page-home-hero.ftl> display:hasDataGetter display:homeHeroDataGetter .
+ 
+display:homeHeroDataGetter
+    a <java:edu.cornell.mannlib.vitro.webapp.utils.dataGetter.SparqlQueryDataGetter> ;
+    display:saveToVar "homeHeroCountResults" ;
+    display:query """
+   			PREFIX bibo: <http://purl.org/ontology/bibo/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+            PREFIX vivo: <http://vivoweb.org/ontology/core#>
+            prefix obo: <http://purl.obolibrary.org/obo/>
+            select  ?facultyCount ?documentCount ?groupCount
+            where 
+            {		
+  				{ 
+    			select (COUNT(?faculty) as ?facultyCount) 
+    				{?faculty a vivo:FacultyMember .}
+            	}
+  	  			{ 
+    			select (COUNT(?document) as ?documentCount) 
+    				{?document a bibo:Document .}
+            	}
+  				{
+        			select (COUNT(?group) as ?groupCount) 
+    				{?group a vivo:ResearchOrganization .}
+            	}
+
+			}
+     """ .
