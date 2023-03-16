@@ -23,7 +23,16 @@
             <span> &gt; </span>
             <a href="${urls.base}/groups"> ${i18n().research_groups}</a>
              <span> &gt; </span>
-            <a onclick="history.back()" >  Facultad</a>
+
+             <#if facultyResult?has_content>
+             
+               <#list facultyResult as resultRow>
+               <a href='${urls.base}/individual${resultRow.facultyLink?substring(resultRow.facultyLink?last_index_of("/"))}' >
+                    ${resultRow.label}
+                </a>  
+               </#list>
+               
+             </#if> 
         </div>
         <div class="hero-container group-container">
           
