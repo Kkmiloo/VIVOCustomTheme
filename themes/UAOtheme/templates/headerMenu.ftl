@@ -5,7 +5,7 @@
 
 
 <header id="header-menu-desktop" class="fixed has-scroll-indicator">
-<#include "developer.ftl">
+    <#include "developer.ftl">
     <div id ="hmd-top"> 
         <div class="hmdt-links">
 
@@ -108,7 +108,7 @@
         <span class="icon icon-hamburguesa"></span>
         <p>Menú</p>
         </a>
-<#--          <a href="https://www.uao.edu.co" class="hmmt-logo">
+        <#--          <a href="https://www.uao.edu.co" class="hmmt-logo">
         <figure class="gf-figure-logo">
         <img loading="lazy" src="https://pattern.uao.edu.co/images/UAO-logo.png" alt="UAO">
         </figure>
@@ -132,7 +132,16 @@
             </div>
             <p>Cerrar</p>
             </a>
+            <#if !user.loggedIn>
+            <a href="${urls.login}" class="campus-virtual log-out" title="${i18n().menu_loginfull}">
+            <div class="circle-icon">
+            <span class="icon icon-user"></span>
+            </div>
 
+                                                                ${i18n().menu_login}
+                                                            
+            </a>
+            </#if>
     </div>
 
 
@@ -177,11 +186,6 @@
                   
 
                 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/userMenu/userMenuUtils.js"></script>')}
-
-            <#else>
-            <div class="hmmbp-title">
-                <a class="log-out" title="${i18n().menu_loginfull}" href="${urls.login}">${i18n().menu_login}</a>
-            </div>
             </#if>
             
 
@@ -211,6 +215,8 @@
 
 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/menuMobile.js"></script>')}
 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/scrollingHeader.js"></script>')}
+${scripts.add('<script type="text/javascript" src="${urls.base}/js/headerDropdown.js"></script>')}
 
+  
 
 
