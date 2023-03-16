@@ -2,13 +2,13 @@
 <section class="hero-section">
 
 <div class="breadcrumb-desktop">
-<a href="${urls.base}/">Inicio</a>
+<a href="${urls.base}/">${i18n().home}</a>
 </div>
 <div class="breadcrumb-mobile">
 <a href="https://www.uao.edu.co/investigacion/">
 <span class="icon icon-angle-left"></span>
 <span>
-Investigación </span>
+${i18n().research_capitalized}  </span>
 </a>
 </div>
 <div class="hhs-container with-temporary-notice hhs-top">
@@ -16,9 +16,9 @@ Investigación </span>
 
 <div class="hero-title">
 <a href="${urls.base}/" class="category-tag">
-Investigación </a>
+${i18n().research_capitalized} </a>
 <h1>
-Grupos de Investigación </h1>
+${i18n().research_groups} </h1>
 </div>
 </div>
 <div class="hhsc-right">
@@ -30,7 +30,8 @@ Grupos de Investigación </h1>
 
 <section class="grey-image-links">
     <div class="grid-container">
-    <#list facultades as result>
+    <#if facultyResults?has_content>
+    <#list facultyResults as result>
 
         <a class="link-image-button" href='${urls.base}/individual${result.individualURI?substring(result.individualURI?last_index_of("/"))}'> 
             <figure> 
@@ -45,7 +46,7 @@ Grupos de Investigación </h1>
         </a>
 
     </#list>
-
+    </#if>
     </div>
  </section>
 
