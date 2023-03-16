@@ -37,30 +37,7 @@
                 <p>${i18n().intro_para1}</p>
                 <p>${i18n().intro_para2}</p>  -->
 
-                    <div class="library-hero">
-                    <h1>CRIS UAO</h1>
-                        <div class="hero-container">
-                            <form id="search-homepage" action="${urls.search}" name="search-home" role="search" method="post" class="form-search">
-                            <div id="search-home-field" class="input-form-search">
-                                <input
-                                id="search-module-input"
-                                type="search"
-                                required="required"
-                                name="querytext" class="search-homepage"
-                                />
-                                <label for="search-module-input"> ${i18n().search_placeholder}</label>
-                            </div>
-                            <button id="search-module-submit" type="submit" value="${i18n().search_button}" class="search">
-                                <span class="icon icon-search"></span>
-                            </button>
-                            </form>
-                            <h2>${i18n().search_hero}</h2>
-
-                            <#--  <#include "researchClasses.ftl">  -->
-                           <@lh.researchClasses />
-                          
-                        </div>
-                    </div>
+            <#include "page-home-hero.ftl">
 
 
         </section> <!-- #intro -->
@@ -84,7 +61,7 @@
     
 
       <#--    <@lh.facultyMbrHtml />  -->
-        <@lh.allClassGroups vClassGroups! />
+    <#--      <@lh.allClassGroups vClassGroups! />  -->
 
         
         <#-- builds a json object that is used by js to render the academic departments section -->
