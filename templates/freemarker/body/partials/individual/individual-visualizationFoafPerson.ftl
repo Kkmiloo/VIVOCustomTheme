@@ -40,12 +40,12 @@
 
             <div class="collaboratorship-link-separator"></div>
 
-  	      	<div id="mapofscience_link_container" class="collaboratorship-link-container">
+    <#--    	      	<div id="mapofscience_link_container" class="collaboratorship-link-container">
             	<div class="collaboratorship-icon">
                     <a href="${mapOfScienceVisUrl}" title="${i18n().map_of_science}"><img src="${mapOfScienceIcon}" alt="${i18n().map_of_science}" width="25px" height="25px" /></a>
                 </div>
                 <div class="collaboratorship-link"><a href="${mapOfScienceVisUrl}" title="${i18n().map_of_science}">${i18n().map_of_science_capitalized}</a></div>
-            </div>
+            </div>  -->
 
             ${scripts.add('<script type="text/javascript" src="${googleJSAPI}"></script>',
                           '<script type="text/javascript" src="${urls.base}/js/visualization/visualization-helper-functions.js"></script>',
