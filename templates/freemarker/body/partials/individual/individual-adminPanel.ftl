@@ -17,11 +17,11 @@
             <#assign newValue = verbosePropertySwitch.currentValue?string("${i18n().verbose_status_off}", "${i18n().verbose_status_on}")>
             <span>${i18n().verbose_property_status} <b>${currentValue}</b> | </span>
 
-
-                <label class="toggle" for="myToggle">
+<#--  
+        <label class="toggle" for="myToggle">
             <input class="toggle__input" name="" type="checkbox" id="myToggle">
             <div class="toggle__fill"></div>
-        </label>
+        </label>  -->
             <a id="${anchorId}" class="verbose-toggle small" href="${verbosePropertySwitch.url}" title="${i18n().verbose_control}"><#if verbosePropertySwitch.currentValue!>${i18n().verbose_turn_off}<#else>${i18n().verbose_turn_on}</#if></a>
             
         </#if>
