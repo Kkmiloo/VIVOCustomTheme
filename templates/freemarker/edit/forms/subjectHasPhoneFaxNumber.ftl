@@ -88,9 +88,9 @@
                 <p class="submit">
                     <input type="submit" id="submit" class="primary-btn" value="${submitButtonText}"/><#--  <span class="or"> ${i18n().or} </span>  -->
                     
-
+                    ${i18n().or}    
                     <a class="cancel " href="${cancelUrl}" title="${i18n().cancel_title}">
-                    <input class="btn-secondary" type="button" value="${i18n().cancel_link}" />
+                         ${i18n().cancel_link}
                     
                     </a>
                 </p>
