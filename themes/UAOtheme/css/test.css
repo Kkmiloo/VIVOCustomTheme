@@ -2055,6 +2055,10 @@ article.property>h3 {
     text-decoration: none;
 }
 
+.letters a {
+    text-transform: capitalize;
+}
+
 .letters a.selected {
     color: #fff;
     background-color: #fe6a6f;
@@ -2203,25 +2207,21 @@ li.ts-6 {
     align-items: center;
 }
 
-.login-form {
-    background-color: white;
-    padding: 40px;
-    width: 500px;
-}
 
 .login {
     margin-bottom: 0rem;
 }
 
 #login-form {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    height: 300px;
+    background-color: white;
+    min-width: 500px;
+    padding: 20px 40px;
     align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 0px;
 }
 
 #login-form .column {
@@ -2326,6 +2326,41 @@ label {
     border: none;
     margin-bottom: 20px;
     margin-left: 220px;
+}
+
+#dropdowns-login li.hov #myDIV {
+    flex-direction: column;
+    padding: 0 1rem;
+    visibility: hidden;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    background-color: #9e0b0f;
+    border-radius: 4px;
+    background-clip: padding-box;
+}
+
+#myDIV a {
+
+    color: white;
+    padding: 16px;
+}
+
+#dropdowns-login li.hov #myDIV:before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    top: 32px;
+    left: 125px;
+    background: #9e0b0f;
+    transform: rotate(45deg);
+}
+
+#dropdowns-login li.hov #myDIV.active {
+    visibility: visible
 }
 
 .MyButton:hover {
@@ -2843,6 +2878,8 @@ article.property ul.property-list {
 article.property ul.property-list p {
 
     margin: 1.25rem 0;
+
+    text-align: justify;
 }
 
 article.property ul.property-list li {
@@ -3373,38 +3410,19 @@ a.delete-mainImage {
     font-size: 25px;
 }
 
-@media (max-width:1366px) {
+@media (max-width:1024px) {
+    #individuals-in-class.people ul {
+        /*! display: grid; */
 
-    /* Info */
-    .profile-hero .info {
-        /*         min-width: 7px;
-        width: 710px; */
+
+        grid-template-columns: repeat(2, auto);
+
+
     }
 
-    /* Verbose property listing */
-    .profile-hero .info .verbosePropertyListing {
-        /*         display: inline-block;
-        transform: translatex(0px) translatey(0px) !important;
-        min-width: 710px;
-        width: 89%; */
-    }
-
-
-    /* Edit main image */
-    #photo-wrapper .edit-mainImage {
-        filter: invert(0.01) saturate(0.1);
-        font-size: 25px;
-    }
-
-    /* Delete main image */
-    #photo-wrapper .delete-mainImage {
-        filter: invert(0.01);
-        font-size: 25px;
-    }
-
-    /* Right hand column */
-    #right-hand-column {}
 }
+
+
 
 /*NUEVO*/
 /* Info */
@@ -3916,6 +3934,7 @@ video {
     position: sticky;
     top: 100px;
     z-index: 1;
+    transition: top .4s;
 }
 
 .subsections-scroll .ss-desktop .ssd-first-level>li>a {
@@ -5014,6 +5033,8 @@ input[type="reset"],
     font-size: 16px;
     margin-left: 1rem;
     cursor: pointer;
+    margin: 5px 0;
+    width: fit-content;
 }
 
 #add-relation input.pos-submit:hover,
@@ -6035,7 +6056,6 @@ table.innerDefinition {
     color: #900;
     padding: 0;
     margin-bottom: 5px;
-    height: 30px;
 }
 
 #photoUpload h3 {
@@ -6179,45 +6199,7 @@ a:hover.more-less {
 
 
 
-/************/
 
-
-
-@media (max-width: 800px) {
-    .profile-hero .hero-container .info {
-        margin: 0 auto;
-        -ms-flex-order: 2;
-        order: 2;
-        padding: 1.25rem 0;
-        text-align: center;
-        max-width: 18.125rem;
-    }
-
-    .profile-hero .hero-container::before {
-        height: calc(100% - 4.6875rem);
-        width: 100%;
-        top: 4rem
-    }
-}
-
-@media (min-width:1367px) {
-
-    /* Info */
-    .profile-hero .info {
-        min-width: 1px;
-
-    }
-
-    /* Photo wrapper */
-    #photo-wrapper {
-        margin-right: 2rem;
-    }
-
-    /* Right hand column */
-    #right-hand-column {}
-
-
-}
 
 
 .form-label {
@@ -6232,6 +6214,7 @@ a:hover.more-less {
 
 .d-flex {
     display: flex;
+    align-items: flex-start;
 }
 
 input {
@@ -6254,7 +6237,7 @@ input:focus {
 }
 
 .card-display:hover {
-    cursor: pointer;
+    /*     cursor: pointer; */
 }
 
 .article-sw a {
@@ -6263,7 +6246,7 @@ input:focus {
 
 .card-display:hover {
 
-    opacity: .7;
+    /*  opacity: .7; */
 }
 
 .card-display:hover .category-tag {
@@ -7008,6 +6991,8 @@ button.primary-btn,
     box-shadow: 0 0.3125rem 0.6875rem 0 rgb(248 46 53 / 35%);
     padding: 8px 20px;
     font-size: 16px;
+    width: fit-content;
+    margin: 5px 5px;
 }
 
 button.primary-btn:hover,
@@ -7307,4 +7292,150 @@ fieldset.mform {
 
 #header-menu-desktop a.campus-virtual:hover {
     background-color: #ed1d24;
+}
+
+
+
+
+
+
+
+@media (min-width:1367px) {
+
+    /* Info */
+    .profile-hero .info {
+        min-width: 1px;
+
+    }
+
+    /* Photo wrapper */
+    #photo-wrapper {
+        margin-right: 2rem;
+    }
+
+    /* Right hand column */
+    #right-hand-column {}
+
+
+}
+
+
+@media (max-width:1366px) {
+
+    /* Info */
+    .profile-hero .info {
+        /*         min-width: 7px;
+        width: 710px; */
+    }
+
+    section#floatRight {
+        margin-top: 0px;
+        float: none;
+        background-color: #fff;
+        width: 100%;
+        margin-right: -4px;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .form-label {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    #addIndividualClass {
+        flex-direction: column;
+    }
+
+    #addIndividualClass button {
+        margin-top: 10px;
+    }
+
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Verbose property listing */
+    .profile-hero .info .verbosePropertyListing {
+        /*         display: inline-block;
+        transform: translatex(0px) translatey(0px) !important;
+        min-width: 710px;
+        width: 89%; */
+    }
+
+
+    /* Edit main image */
+    #photo-wrapper .edit-mainImage {
+        filter: invert(0.01) saturate(0.1);
+        font-size: 25px;
+    }
+
+    /* Delete main image */
+    #photo-wrapper .delete-mainImage {
+        filter: invert(0.01);
+        font-size: 25px;
+    }
+
+    /* Right hand column */
+    #right-hand-column {}
+}
+
+
+@media (max-width: 800px) {
+
+    #login-form {
+        min-width: auto;
+    }
+
+    #individuals-in-class.people ul {
+        grid-template-columns: repeat(1, auto);
+
+    }
+
+    .library-hero .hero-container .form-search .input-form-search {
+        width: 100%;
+    }
+
+    .profile-hero .hero-container .info {
+        margin: 0 auto;
+        -ms-flex-order: 2;
+        order: 2;
+        padding: 1.25rem 0;
+        text-align: center;
+        max-width: 18.125rem;
+    }
+
+    .profile-hero .hero-container::before {
+        height: calc(100% - 4.6875rem);
+        width: 100%;
+        top: 4rem
+    }
+
+    .list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/************/
+@media (max-width: 600px) {
+    .search-results {
+
+        flex-direction: column;
+    }
+
+    .virtual-search-deploy-filter {
+        position: fixed;
+        z-index: 10000000;
+    }
+
+    .virtual-search-deploy-filter .vsdf-container {
+        padding: 4.6875rem 1rem 1.25rem;
+        height: 100vh;
+    }
+
+    .virtual-search-deploy-filter.vsdf-open {
+        left: 0;
+    }
 }
