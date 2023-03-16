@@ -13,6 +13,16 @@
 <#if currentServlet=='people' || currentServlet=='groups' >
     <#assign displayNone= 'display: none'>
 </#if >
+<div class="filter-open-btn">
+<a class="list-btn" href="#">
+<div class="lb-text">
+Filtrar
+</div>
+<div class="lb-arrow">
+<span class="icon icon-chevron-right"></span>
+</div>
+</a>
+</div>
     <div class="virtual-search-deploy-filter" style='${displayNone}'>
             <div class="virtual-mobile-title">
             <h2>Filtrar programas</h2>
@@ -114,3 +124,4 @@
 </section>
 
 ${scripts.add('<script type="text/javascript" src="${urls.base}/js/tabBrowserMenu.js"></script>')}
+${scripts.add('<script type="text/javascript" src="${urls.base}/js/filterMenuMobile.js"></script>')}
