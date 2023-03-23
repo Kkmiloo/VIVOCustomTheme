@@ -2882,6 +2882,10 @@ article.property ul.property-list p {
     text-align: justify;
 }
 
+#preview {
+    max-width: none;
+}
+
 article.property ul.property-list li {
     line-height: 1.2em;
     padding: 10px 0px 5px 0px;
@@ -3595,7 +3599,8 @@ select {
     border-width: 1px;
     color: #595B5B;
     padding: 8px;
-    width: 305px;
+    /*     width: 305px; */
+    max-width: 100%;
 }
 
 #individual-in-class {
@@ -5194,6 +5199,12 @@ input[type="password"] {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     line-height: 1.5;
+    max-width: 100%;
+    padding: 9px 30px 9px 15px;
+}
+
+#literal_ifr {
+    max-width: 100%;
 }
 
 /* end  vivostyles.css */
@@ -6208,6 +6219,7 @@ a:hover.more-less {
 }
 
 .form-input {
+    display: flex;
     flex: 0 0 75%;
     max-width: 75%;
 }
