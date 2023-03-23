@@ -63,7 +63,7 @@
 
 				<label for="object"> ${propertyNameForDisplay?capitalize} ${i18n().name_capitalized}<span class='requiredHint'> *</span></label>
                 </div>
-                <div class="form-inpu">
+                <div class="form-input">
 				<input class="acSelector" size="50"  type="text" id="object" name="objectLabel" acGroupName="object" value="${objectLabel}" />
                 </div>
             </div>
@@ -90,10 +90,12 @@
 
                 <div class="form-label"> </div>
                 <div class="form-input"> 
+                <p class="submit">
                 <input type="submit" id="submit" value="${submitButtonText}" role="button" disabled="disabled"/>
 
                 <span class="or"> ${i18n().or} </span>
                 <a title="${i18n().cancel_title}" class="cancel" href="${cancelUrl}">${i18n().cancel_link}</a>
+                </p> 
                 </div>
             </div>
         </form>
