@@ -238,12 +238,15 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
             </#if>
 <#--        </div> -->
 
-        <div class="d-flex">
+        <div class="d-flex form-group">
         <div class="form-label">
         </div>
         <div class="submit form-input">
+            <p class="submit">
+
             <input type="hidden" id="editKey" name="editKey" value="${editKey}" />
             <input type="submit" id="submit" value="${submitButtonText}"/><span class="or"> ${i18n().or} </span><a class="cancel" href="${cancelUrl}" title="${i18n().cancel_title}">${i18n().cancel_link}</a>
+            </p>
         </div>
         </div>
         <p id="requiredLegend" class="requiredHint">* ${i18n().required_fields}</p>

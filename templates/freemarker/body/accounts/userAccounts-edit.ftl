@@ -37,14 +37,34 @@
 
 <section id="edit-account" role="region">
     <form method="POST" action="${formUrls.edit}" id="userAccountForm" class="customForm" role="edit account">
+
+        <div class="form-group d-flex"> 
+        <div class="form-label">
         <label for="email-address">${strings.email_address}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
         <input type="text" name="emailAddress" value="${emailAddress}" id="email-address" role="input" />
+        </div>
+        </div>
 
+
+        <div class="form-group d-flex"> 
+        <div class="form-label">
         <label for="first-name">${strings.first_name}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
         <input type="text" name="firstName" value="${firstName}" id="first-name" role="input" />
+        </div>
+        </div>
 
+        <div class="form-group d-flex"> 
+        <div class="form-label">
         <label for="last-name">${strings.last_name}<span class="requiredHint"> *</span></label>
+        </div>
+        <div class="form-input">
         <input type="text" name="lastName" value="${lastName}" id="last-name" role="input" />
+        </div>
+        </div>
 
 		<#if externalAuthPermitted??>
             <#include "userAccounts-associateProfilePanel.ftl">
@@ -70,13 +90,27 @@
             </section>
         <#else>
             <section id="passwordContainer" <#if externalAuthOnly?? >class="hidden"</#if> role="region">
+
+                <div class="form-group d-flex"> 
+                <div class="form-label">
                 <label for="new-password">${strings.new_password}</label>
+                </div>
+                <div class="form-input">
                 <input type="password" name="newPassword" value="${newPassword}" id="new-password" role="input" />
+                </div>
+                </div>
+                
                 <p class="note">${strings.minimum_password_length(minimumLength, maximumLength)}<br />
                 ${strings.leave_password_unchanged}</p>
 
+                <div class="form-group d-flex"> 
+                <div class="form-label">
                 <label for="confirm-password">${strings.confirm_password}</label>
+                </div>
+                <div class="form-input">
                 <input type="password" name="confirmPassword" value="${confirmPassword}" id="confirm-password" role="input" />
+                </div>
+                </div>
             </section>
         </#if>
 
