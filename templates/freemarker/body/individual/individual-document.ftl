@@ -55,7 +55,7 @@
                 
 
                 <#if individualProductExtension??>
-                    ${individualProductExtension}
+                   <#--  ${individualProductExtension} -->
                 <#else>
                 </#if>
         
