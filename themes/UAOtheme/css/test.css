@@ -582,9 +582,17 @@ form.deleteForm {
 #editForm .delete,
 #account-display .delete,
 .whiteBtn {
+    margin-left: 1rem;
     background-color: #ffffff !important;
     color: #000000 !important;
     box-shadow: -1px 4px .6875rem 0 rgba(139, 3, 4, .6);
+}
+
+form.customForm input[name="firstName"],
+form.customForm input[name="lastName"],
+form.customForm input[name="newPassword"],
+form.customForm input[name="confirmPassword"] {
+    width: auto !important;
 }
 
 #editForm .delete:hover,
@@ -646,7 +654,11 @@ form select {
     -webkit-border-radius: 5px;
     margin-bottom: .8em;
     margin-top: .7em; */
-    margin-right: .5em;
+
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0.7em;
+
 }
 
 .notice {
@@ -694,6 +706,7 @@ tr.editformcell td input[type="text"] {
 tr.editformcell td input.fullWidthInput {
     width: 70% !important;
     margin-top: 0.7em !important;
+    margin-bottom: 0.5em;
 }
 
 tr.editformcell td input.shortInput {
@@ -3692,6 +3705,7 @@ select {
 
 /* Botón */
 #submit {
+    margin-right: 1rem;
     /*     background-color: #9e0b0f;
     border-radius: 1.25rem;
     color: #fff;
@@ -6091,8 +6105,12 @@ table.innerDefinition {
 
 .or {
     display: inline;
+    margin-right: 1rem;
 }
 
+.cancel {
+    margin-left: 1rem;
+}
 
 /***************/
 
@@ -6231,6 +6249,7 @@ a:hover.more-less {
     display: flex;
     flex: 0 0 75%;
     max-width: 75%;
+    align-items: center;
 }
 
 .d-flex {
