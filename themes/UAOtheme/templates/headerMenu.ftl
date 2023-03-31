@@ -122,6 +122,11 @@
         <span class="scroll-indicator"></span>
     </div>
 
+        <div id="hmm-search-dropdown" class="">
+            
+<#include "search-mobile.ftl"> 
+        </div>
+
     <div id ="hmm-bottom" > 
 
 
@@ -146,7 +151,7 @@
 
 
         <#if currentServlet!='home'>
-        <#include "search.ftl"> 
+        
         </#if>
         <ul class="hmmb-principal" role="list">
             <#list menu.items as item>

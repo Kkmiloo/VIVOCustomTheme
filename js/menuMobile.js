@@ -36,3 +36,31 @@ function dropDown(e) {
 
 }
 
+
+const searchBtn = document.querySelector("#hmmt-search")
+const searchIco = document.querySelector("#hmmt-search > div > span")
+const searhScreen = document.querySelector("#hmm-search-dropdown")
+const pSearch = document.querySelector("#hmmt-search > p")
+
+
+
+searchBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    searhScreen.classList.toggle("active");
+
+    let ico = searchIco.classList[1];
+
+
+    if (ico == "icon-search") {
+
+        searchIco.classList.add("icon-close")
+        searchIco.classList.remove("icon-search")
+        pSearch.innerHTML = "Cerrar"
+    } else {
+
+        searchIco.classList.add("icon-search")
+        searchIco.classList.remove("icon-close")
+        pSearch.innerHTML = "Buscar"
+    }
+
+})

@@ -16,7 +16,13 @@ window.onscroll = function (e) {
             headerMenuDesktop.style = "top: -99px"
         } else {
             headerMenuDesktop.style = "top: -56px"
-            content.style = "margin-top: 146px"
+            if (screen.width <= 1250) {
+                content.style = "margin-top: 68px"
+
+            } else {
+
+                content.style = "margin-top: 146px"
+            }
         }
         hmdBottom.classList.add('scroll')
     } else {
