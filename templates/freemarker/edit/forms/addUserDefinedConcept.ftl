@@ -18,10 +18,19 @@ Set this flag on the input acUriReceiver where you would like this behavior to o
 <form id="addUserDefinedConceptForm" class="customForm noIE67" action = "${submitUrl}" method="post">
     <input type="hidden" name="editKey" id="editKey" value="${editKey}" role="input" />
    <#--Autocomplete for looking up existing skos concepts -->
-						<p>
+				<p>
+                <div class="d-flex form-group">
+
+                    <div class="form-label" >
 		            <label for="relatedIndLabel">${i18n().concept_capitalized} <span class='requiredHint'> *</span></label>
-		            <input class="acSelector" size="50"  type="text" id="relatedIndLabel" acGroupName="concept" name="conceptLabel" value="" />
-		        </p>
+		            </div>
+                    <div class="form-input">
+                    <input class="acSelector" size="50"  type="text" id="relatedIndLabel" acGroupName="concept" name="conceptLabel" value="" />
+		        
+		        </div>
+		        </div>
+                
+                </p>
 
 		        <div class="acSelection" acGroupName="concept">
 		            <p class="inline">
