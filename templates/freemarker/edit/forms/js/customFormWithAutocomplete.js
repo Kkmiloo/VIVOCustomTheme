@@ -489,7 +489,7 @@ var customForm = {
 
     showAutocompleteSelection: function (label, uri, selectedObj) {
         // hide the acSelector field and set it's value to the selected ac item
-        this.hideFields($(selectedObj).parent());
+        this.hideFields($(selectedObj).parent().parent());
         $(selectedObj).val(label);
 
         var $acDiv = this.acSelections[$(selectedObj).attr('acGroupName')];
